@@ -1,0 +1,73 @@
+# CLAUDE.md — [Project Name]
+# Replace all [bracketed placeholders] before using
+
+---
+
+## Project Overview
+
+[2-3 sentences: what this is, who uses it, what problem it solves]
+
+**Status:** [Active development / Maintenance / Archived]
+**Primary user:** [Internal tool / Client-facing / Public]
+
+---
+
+## Tech Stack
+
+- **Frontend:** [e.g., Next.js 15 App Router / React via CDN / Vue 3]
+- **Backend:** [e.g., Next.js API routes / FastAPI / Express]
+- **Database:** [e.g., Neon PostgreSQL via Drizzle ORM / SQLite / MongoDB]
+- **Auth:** [e.g., Clerk / NextAuth / None]
+- **Deployment:** [e.g., Vercel / Railway / Local only]
+- **Styling:** [e.g., Tailwind CSS + shadcn/ui / Plain CSS]
+
+---
+
+## Project Structure
+
+```
+[directory]/        [purpose]
+[directory]/        [purpose]
+[directory]/        [purpose]
+```
+
+---
+
+## Coding Conventions
+
+- [Naming convention — e.g., "Components: PascalCase, files: kebab-case"]
+- [Import convention — e.g., "Always use @/ path aliases, never relative paths from src/"]
+- [Data convention — e.g., "All DB queries through /lib/db.ts, never in components"]
+- [No TypeScript any — or "TypeScript not used"]
+- [No Oxford comma in user-facing copy]
+
+---
+
+## Definition of Done
+
+A feature is complete when:
+- [ ] It works end-to-end in the browser
+- [ ] Build passes (npm run build shows no errors)
+- [ ] Lint passes (npm run lint)
+- [ ] Loading and error states are handled
+- [ ] Mobile layout works at 375px
+
+---
+
+## Allowed Commands (no confirmation needed)
+
+- Reading any file in this directory
+- npm run dev
+- npm run build
+- npm run lint
+- npm test
+- git status, git diff, git log
+
+## Commands That Need My Confirmation
+
+- git commit
+- git push
+- npm install (any package install)
+- Database migrations
+- rm or file deletion
+- Anything deploying to production

@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>App Name</title>
+
+  <!-- React 18 and ReactDOM from CDN -->
+  <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+  <!-- Babel for JSX compilation in the browser -->
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+  <style>
+    /* ============================================================
+       RESET AND BASE
+    ============================================================ */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      font-size: 15px;
+      line-height: 1.5;
+      color: #1a1a1a;
+      background: #f5f5f5;
+      min-height: 100vh;
+    }
+
+    /* ============================================================
+       LAYOUT
+    ============================================================ */
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 24px 16px;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.08), 0 1px 8px rgba(0,0,0,0.04);
+      padding: 24px;
+      margin-bottom: 16px;
+    }
+
+    /* ============================================================
+       TYPOGRAPHY
+    ============================================================ */
+    h1 { font-size: 1.75rem; font-weight: 700; margin-bottom: 8px; }
+    h2 { font-size: 1.25rem; font-weight: 600; margin-bottom: 12px; }
+    h3 { font-size: 1rem; font-weight: 600; }
+
+    .muted { color: #6b7280; font-size: 0.875rem; }
+
+    /* ============================================================
+       FORM ELEMENTS
+    ============================================================ */
+    input, textarea, select {
+      width: 100%;
+      padding: 9px 12px;
+      border: 1.5px solid #e5e7eb;
+      border-radius: 8px;
+      font-size: 0.9375rem;
+      font-family: inherit;
+      color: #1a1a1a;
+      background: #fff;
+      transition: border-color 0.15s;
+      outline: none;
+    }
+
+    input:focus, textarea:focus, select:focus {
+      border-color: #6366f1;
+      box-shadow: 0 0 0 3px rgba(99,102,241,0.12);
+    }
+
+    /* ============================================================
+       BUTTONS
+    ============================================================ */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 9px 16px;
+      border-radius: 8px;
+      font-size: 0.875rem;
+      font-weight: 500;
+      cursor: pointer;
+      border: none;
+      transition: all 0.15s;
+    }
+
+    .btn-primary {
+      background: #6366f1;
+      color: #fff;
+    }
+    .btn-primary:hover { background: #4f46e5; }
+
+    .btn-secondary {
+      background: #f3f4f6;
+      color: #374151;
+      border: 1.5px solid #e5e7eb;
+    }
+    .btn-secondary:hover { background: #e5e7eb; }
+
+    .btn-danger {
+      background: #fee2e2;
+      color: #dc2626;
+    }
+    .btn-danger:hover { background: #fecaca; }
+
+    .btn:disabled { opacity: 0.5; cursor: not-allowed; }
+
+    /* ============================================================
+       BADGES
+    ============================================================ */
+    .badge {
+      display: inline-block;
+      padding: 2px 8px;
+      border-radius: 999px;
+      font-size: 0.75rem;
+      font-weight: 500;
+    }
+    .badge-green  { background: #dcfce7; color: #16a34a; }
+    .badge-yellow { background: #fef9c3; color: #ca8a04; }
+    .badge-red    { background: #fee2e2; color: #dc2626; }
+    .badge-blue   { background: #dbeafe; color: #2563eb; }
+    .badge-gray   { background: #f3f4f6; color: #6b7280; }
+
+    /* ============================================================
+       EMPTY STATE
+    ============================================================ */
+    .empty-state {
+      text-align: center;
+      padding: 48px 24px;
+      color: #9ca3af;
+    }
+    .empty-state .icon { font-size: 2.5rem; margin-bottom: 12px; }
+    .empty-state h3 { color: #4b5563; margin-bottom: 4px; }
+
+    /* ============================================================
+       RESPONSIVE
+    ============================================================ */
+    @media (max-width: 640px) {
+      .card { padding: 16px; border-radius: 8px; }
+      h1 { font-size: 1.375rem; }
+    }
+  </style>
+</head>
+<body>
+  <div id="root"></div>
+
+  <script type="text/babel">
+    const { useState, useEffect, useCallback, useRef, useMemo } = React;
+
+    // ============================================================
+    // CONSTANTS AND CONFIG
+    // ============================================================
+    const STORAGE_KEY = 'myapp-data';  // Change this per app
+    const APP_VERSION = '1.0.0';
+
+    // ============================================================
+    // UTILITY FUNCTIONS
+    // ============================================================
+
+    function generateId() {
+      return Date.now().toString(36) + Math.random().toString(36).slice(2);
+    }
+
+    function loadFromStorage(key, defaultValue) {
+      try {
+        const saved = localStorage.getItem(key);
+        return saved ? JSON.parse(saved) : defaultValue;
+      } catch {
+        return defaultValue;
+      }
+    }
+
+    function saveToStorage(key, value) {
+      try {
+        localStorage.setItem(key, JSON.stringify(value));
+      } catch (e) {
+        console.error('Failed to save to localStorage:', e);
+      }
+    }
+
+    // ============================================================
+    // COMPONENTS
+    // ============================================================
+
+    function EmptyState({ icon = '📭', title = 'Nothing here yet', subtitle = '' }) {
+      return (
+        <div className="empty-state">
+          <div className="icon">{icon}</div>
+          <h3>{title}</h3>
+          {subtitle && <p className="muted">{subtitle}</p>}
+        </div>
+      );
+    }
+
+    // ============================================================
+    // MAIN APP
+    // ============================================================
+
+    function App() {
+      // Load initial state from localStorage
+      const [items, setItems] = useState(() => loadFromStorage(STORAGE_KEY, []));
+
+      // Persist whenever items change
+      useEffect(() => {
+        saveToStorage(STORAGE_KEY, items);
+      }, [items]);
+
+      return (
+        <div className="container">
+          <h1>App Name</h1>
+          <p className="muted" style={{ marginBottom: 24 }}>
+            App subtitle or description
+          </p>
+
+          <div className="card">
+            {items.length === 0 ? (
+              <EmptyState
+                icon="📝"
+                title="No items yet"
+                subtitle="Add your first item to get started"
+              />
+            ) : (
+              <ul>
+                {items.map(item => (
+                  <li key={item.id}>{item.name}</li>
+                ))}
+              </ul>
+            )}
+          </div>
+        </div>
+      );
+    }
+
+    // ============================================================
+    // RENDER
+    // ============================================================
+    ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+  </script>
+</body>
+</html>
