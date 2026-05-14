@@ -122,32 +122,42 @@ Claude Code will implement the FileReader API for import and Blob + URL.createOb
 
 ---
 
-## Real Example: Full Prompt for a Time Tracker
+## Real Example: Full Prompt for a Billable Hours Tracker
+
+For consultants, fractional executives and anyone tracking time across clients, this is the kind of tool that pays for itself in week one:
 
 ```
-Create a single HTML file called time-tracker.html that is a time tracker app.
+Create a single HTML file called billable-hours.html — a billable time tracker
+designed for fractional executives and consultants.
 
-Use React via CDN (unpkg.com React 18). No npm, no build tools, no external CSS frameworks.
+Use React via CDN (unpkg.com React 18). No npm, no build tools, no external 
+CSS frameworks.
 
 Features:
-- Add projects (name + color tag)
-- Start/stop timer for any project with a single click
-- Show elapsed time for each active timer in HH:MM:SS format, updating every second
-- Log completed time entries (project, start time, end time, duration)
-- Filter log by project or date range
-- Summary view: total hours per project this week
-- Export log as CSV
+- Add clients (name, hourly rate, color tag, default project type)
+- Start/stop timer per client with one click
+- Show elapsed time for each active timer in HH:MM:SS, updating every second
+- Log completed entries: client, project description, start, end, duration, 
+  billable amount (auto-calculated from rate × hours)
+- Filter log by client or date range
+- Weekly summary: total billable hours per client, total revenue this week
+- Monthly invoice view: pre-formatted invoice per client ready to copy into 
+  email or Stripe — includes itemized entries with descriptions
+- Export log as CSV for QuickBooks / accountant handoff
 
 Design:
-- Clean white background, card layout
-- Sidebar with project list, main area with timer and log
+- Clean white background, card layout, professional finish
+- Sidebar with client list (with color dot + current week's billable total)
+- Main area: active timer at top, log below
 - Active timer shows in green with a pulsing indicator
+- Invoice view uses serif font and prints cleanly on letter-size paper
 - Responsive for mobile (stack sidebar above main at <768px)
 
-Persist all data in localStorage under key 'time-tracker-data'.
+Persist all data in localStorage under key 'billable-hours-data'.
+No login, no server — pure browser app. Free to use forever.
 ```
 
-This one prompt will produce a complete, production-quality time tracker. That's the power of Claude Code with a well-crafted prompt.
+This one prompt produces a complete tool that replaces $30-50/month of Harvest, Toggl or FreshBooks for a solo operator. That's the leverage Claude Code gives you.
 
 ---
 

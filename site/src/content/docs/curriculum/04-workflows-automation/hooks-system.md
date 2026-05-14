@@ -5,7 +5,11 @@ description: Part of 04-workflows-automation in the PortLev Learn Claude Code cu
 
 # The Hooks System
 
-Hooks let you run shell commands automatically in response to Claude Code events. They're the bridge between Claude Code's actions and your own tooling — linters, formatters, tests, notifications, git checkpoints and more.
+Hooks let you run a command automatically every time Claude Code does something specific: writes a file, finishes a task, runs a shell command. They're how you build small workflows around Claude without thinking about it.
+
+**Why this matters for non-engineers:** when you're learning, hooks are how you turn "Claude shipped some code" into "Claude shipped some code AND a Slack message went to my phone AND a git checkpoint was created AND the local dev server restarted." The complexity stays invisible. You just write the work.
+
+For developers, hooks also do linters, formatters and tests automatically — those examples are below too.
 
 ---
 
