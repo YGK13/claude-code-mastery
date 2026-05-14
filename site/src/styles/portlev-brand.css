@@ -1,0 +1,207 @@
+/*
+ * PortLev Learn — brand stylesheet
+ * Brand-matched to portlev.com:
+ *   primary: #000613 (deep navy / near-black)
+ *   secondary: #4b41e1 (indigo)
+ *   secondary-container: #645efb (lighter indigo)
+ *   accent: #f59e0b (amber / gold)
+ *   surface: #f7f9fb (warm white)
+ *   on-surface: #191c1e (body text)
+ *   on-surface-variant: #43474e (secondary text)
+ *   outline: #74777f (border)
+ *   outline-variant: #c4c6cf (light border)
+ *
+ * Fonts: Manrope (headings) + Inter (body) — loaded via Google Fonts in astro.config.mjs head.
+ */
+
+/* ============================================================
+   Starlight light theme override — match portlev.com palette
+   ============================================================ */
+:root {
+  --sl-color-accent-low: #e3e0fa;
+  --sl-color-accent: #4b41e1;
+  --sl-color-accent-high: #2e26a6;
+
+  --sl-color-white: #ffffff;
+  --sl-color-gray-1: #43474e;
+  --sl-color-gray-2: #5c6168;
+  --sl-color-gray-3: #74777f;
+  --sl-color-gray-4: #c4c6cf;
+  --sl-color-gray-5: #e6e8ea;
+  --sl-color-gray-6: #f2f4f6;
+  --sl-color-gray-7: #f7f9fb;
+  --sl-color-black: #000613;
+
+  /* Body text */
+  --sl-color-text: #191c1e;
+  --sl-color-text-accent: #4b41e1;
+  --sl-color-bg: #f7f9fb;
+  --sl-color-bg-nav: #ffffff;
+  --sl-color-bg-sidebar: #ffffff;
+
+  /* Borders */
+  --sl-color-hairline-light: #e6e8ea;
+  --sl-color-hairline: #c4c6cf;
+  --sl-color-hairline-shade: #74777f;
+
+  /* Font stacks */
+  --sl-font: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --sl-font-mono: 'JetBrains Mono', 'Fira Code', Menlo, Monaco, Consolas, monospace;
+}
+
+/* ============================================================
+   Dark theme — keep PortLev's purple accent, dark surface
+   ============================================================ */
+:root[data-theme='dark'] {
+  --sl-color-accent-low: #1a1538;
+  --sl-color-accent: #645efb;
+  --sl-color-accent-high: #b9b3ff;
+
+  --sl-color-text: #f7f9fb;
+  --sl-color-text-accent: #b9b3ff;
+  --sl-color-bg: #000613;
+  --sl-color-bg-nav: #0a0f1f;
+  --sl-color-bg-sidebar: #0a0f1f;
+
+  --sl-color-hairline-light: #1f2433;
+  --sl-color-hairline: #43474e;
+}
+
+/* ============================================================
+   Headings use Manrope (portlev.com heading font)
+   ============================================================ */
+.sl-markdown-content h1,
+.sl-markdown-content h2,
+.sl-markdown-content h3,
+.sl-markdown-content h4,
+.sl-markdown-content h5,
+.sl-markdown-content h6,
+.hero h1,
+.hero p,
+.site-title {
+  font-family: 'Manrope', 'Inter', system-ui, sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.sl-markdown-content h1 { font-weight: 800; letter-spacing: -0.02em; }
+
+/* ============================================================
+   Hero — landing page splash style
+   ============================================================ */
+.hero {
+  padding-block: 4rem;
+}
+
+.hero h1 {
+  background: linear-gradient(135deg, #4b41e1, #645efb, #818cf8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  line-height: 1.05;
+}
+
+.hero .tagline {
+  color: var(--sl-color-gray-2);
+  font-size: clamp(1.1rem, 2vw, 1.35rem);
+  max-width: 38ch;
+}
+
+/* Primary button — solid indigo (matches portlev.com CTA buttons) */
+.sl-link-button.primary {
+  background: linear-gradient(135deg, #4b41e1, #645efb);
+  color: #ffffff;
+  border: none;
+  font-weight: 600;
+  box-shadow: 0 6px 20px -6px rgba(75, 65, 225, 0.45);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+.sl-link-button.primary:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 26px -6px rgba(75, 65, 225, 0.55);
+  color: #ffffff;
+}
+
+/* Secondary button — outline */
+.sl-link-button.secondary {
+  border: 1px solid var(--sl-color-hairline);
+  color: var(--sl-color-text);
+  font-weight: 600;
+}
+
+/* ============================================================
+   Code blocks
+   ============================================================ */
+.expressive-code,
+.sl-markdown-content pre {
+  border: 1px solid var(--sl-color-hairline-light);
+  border-radius: 8px;
+}
+
+/* Inline code — subtle indigo tint to match brand */
+.sl-markdown-content :not(pre) > code {
+  background: rgba(75, 65, 225, 0.08);
+  color: #2e26a6;
+  border: 1px solid rgba(75, 65, 225, 0.15);
+  border-radius: 4px;
+  padding: 0.1em 0.35em;
+  font-size: 0.9em;
+}
+
+:root[data-theme='dark'] .sl-markdown-content :not(pre) > code {
+  background: rgba(100, 94, 251, 0.15);
+  color: #b9b3ff;
+  border-color: rgba(100, 94, 251, 0.25);
+}
+
+/* ============================================================
+   Sidebar
+   ============================================================ */
+.sidebar-pane {
+  border-right: 1px solid var(--sl-color-hairline-light);
+}
+
+ul.top-level > li > details > summary,
+ul.top-level > li > a {
+  font-family: 'Manrope', sans-serif;
+  font-weight: 600;
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--sl-color-gray-2);
+}
+
+/* ============================================================
+   Tables
+   ============================================================ */
+.sl-markdown-content table {
+  border: 1px solid var(--sl-color-hairline-light);
+  border-radius: 8px;
+  overflow: hidden;
+}
+.sl-markdown-content th {
+  background: var(--sl-color-gray-7);
+  font-family: 'Manrope', sans-serif;
+  font-weight: 700;
+}
+
+/* ============================================================
+   Custom callout — "Cohort" highlighted block
+   ============================================================ */
+.cohort-callout {
+  background: linear-gradient(135deg, rgba(75, 65, 225, 0.06), rgba(100, 94, 251, 0.08));
+  border: 1px solid rgba(75, 65, 225, 0.2);
+  border-left: 4px solid #4b41e1;
+  border-radius: 8px;
+  padding: 1.25rem 1.5rem;
+  margin: 1.5rem 0;
+}
+
+.cohort-callout strong {
+  color: #2e26a6;
+}
+
+:root[data-theme='dark'] .cohort-callout strong {
+  color: #b9b3ff;
+}

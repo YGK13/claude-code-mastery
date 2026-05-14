@@ -1,0 +1,110 @@
+---
+/**
+ * CohortBanner.astro
+ * Top-of-page banner promoting the ForwardShare "Build With AI" founding cohort.
+ * Appears on every page (overrides Starlight's default Banner component).
+ * Lead-with-cohort positioning — 4 of 8 founding spots remaining, $2,500.
+ */
+---
+
+<aside class="cohort-banner" aria-label="Cohort enrollment">
+  <div class="cohort-banner__inner">
+    <span class="cohort-banner__pill">Founding Cohort</span>
+    <span class="cohort-banner__copy">
+      <strong>4 of 8 spots remaining</strong> · 3-month live program with Yuri · $2,500 (next cohort $4,500)
+    </span>
+    <a
+      class="cohort-banner__cta"
+      href="https://forwardshare.co/executive-ai-cohort-forward-achieve-forward-share-ventures"
+      target="_blank"
+      rel="noopener"
+    >
+      Apply now →
+    </a>
+    <a
+      class="cohort-banner__secondary"
+      href="https://calendly.com/masterthetalk/call-with-yuri-30-min?back=1"
+      target="_blank"
+      rel="noopener"
+    >
+      Book a 15-min vetting call
+    </a>
+  </div>
+</aside>
+
+<style>
+  .cohort-banner {
+    background: linear-gradient(135deg, #000613 0%, #1a1538 60%, #2e26a6 100%);
+    color: #ffffff;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  }
+  .cohort-banner__inner {
+    max-width: 90rem;
+    margin: 0 auto;
+    padding: 0.75rem 1.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.85rem;
+    font-family: 'Inter', system-ui, sans-serif;
+    font-size: 0.9rem;
+  }
+  .cohort-banner__pill {
+    background: #f59e0b;
+    color: #000613;
+    padding: 0.2rem 0.6rem;
+    border-radius: 999px;
+    font-weight: 700;
+    font-size: 0.72rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    font-family: 'Manrope', sans-serif;
+  }
+  .cohort-banner__copy {
+    color: rgba(255, 255, 255, 0.92);
+    flex: 1 1 auto;
+    min-width: 16rem;
+  }
+  .cohort-banner__copy strong {
+    color: #f59e0b;
+    font-weight: 700;
+  }
+  .cohort-banner__cta {
+    background: #ffffff;
+    color: #2e26a6;
+    padding: 0.45rem 1rem;
+    border-radius: 6px;
+    font-weight: 700;
+    text-decoration: none;
+    font-family: 'Manrope', sans-serif;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+    white-space: nowrap;
+  }
+  .cohort-banner__cta:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 20px -4px rgba(0, 0, 0, 0.3);
+    color: #2e26a6;
+  }
+  .cohort-banner__secondary {
+    color: rgba(255, 255, 255, 0.85);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    font-size: 0.85rem;
+    white-space: nowrap;
+  }
+  .cohort-banner__secondary:hover {
+    color: #ffffff;
+  }
+  @media (max-width: 768px) {
+    .cohort-banner__inner {
+      gap: 0.6rem;
+      padding: 0.65rem 1rem;
+    }
+    .cohort-banner__copy {
+      font-size: 0.85rem;
+    }
+    .cohort-banner__secondary {
+      display: none;
+    }
+  }
+</style>
