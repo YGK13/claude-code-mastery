@@ -1,6 +1,6 @@
 /*
  * PortLev Learn — brand stylesheet
- * Brand-matched to portlev.com:
+ * Brand-matched to portlev.com (which is LIGHT primary):
  *   primary: #000613 (deep navy / near-black)
  *   secondary: #4b41e1 (indigo)
  *   secondary-container: #645efb (lighter indigo)
@@ -11,14 +11,24 @@
  *   outline: #74777f (border)
  *   outline-variant: #c4c6cf (light border)
  *
- * Fonts: Manrope (headings) + Inter (body) — loaded via Google Fonts in astro.config.mjs head.
+ * Fonts: Manrope (headings) + Inter (body) — loaded via Google Fonts.
  */
 
 /* ============================================================
-   Starlight light theme override — match portlev.com palette
+   Default to LIGHT mode to match portlev.com (which is light-primary).
+   The system-preference detection script in Starlight runs after this CSS,
+   so we set base-layer defaults that match light mode here.
    ============================================================ */
 :root {
-  --sl-color-accent-low: #e3e0fa;
+  color-scheme: light;
+}
+
+/* ============================================================
+   Light theme — primary brand application
+   ============================================================ */
+:root,
+:root[data-theme='light'] {
+  --sl-color-accent-low: #e9e6fb;
   --sl-color-accent: #4b41e1;
   --sl-color-accent-high: #2e26a6;
 
@@ -28,48 +38,57 @@
   --sl-color-gray-3: #74777f;
   --sl-color-gray-4: #c4c6cf;
   --sl-color-gray-5: #e6e8ea;
-  --sl-color-gray-6: #f2f4f6;
+  --sl-color-gray-6: #eef0f3;
   --sl-color-gray-7: #f7f9fb;
   --sl-color-black: #000613;
 
-  /* Body text */
   --sl-color-text: #191c1e;
   --sl-color-text-accent: #4b41e1;
+  --sl-color-text-invert: #ffffff;
   --sl-color-bg: #f7f9fb;
   --sl-color-bg-nav: #ffffff;
   --sl-color-bg-sidebar: #ffffff;
+  --sl-color-bg-inline-code: rgba(75, 65, 225, 0.08);
 
-  /* Borders */
   --sl-color-hairline-light: #e6e8ea;
   --sl-color-hairline: #c4c6cf;
   --sl-color-hairline-shade: #74777f;
 
-  /* Font stacks */
   --sl-font: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   --sl-font-mono: 'JetBrains Mono', 'Fira Code', Menlo, Monaco, Consolas, monospace;
 }
 
 /* ============================================================
-   Dark theme — keep PortLev's purple accent, dark surface
+   Dark theme — high-contrast version of the brand
+   (User can toggle to dark via the theme switcher in the nav)
    ============================================================ */
 :root[data-theme='dark'] {
+  color-scheme: dark;
+
   --sl-color-accent-low: #1a1538;
-  --sl-color-accent: #645efb;
+  --sl-color-accent: #818cf8;
   --sl-color-accent-high: #b9b3ff;
 
   --sl-color-text: #f7f9fb;
   --sl-color-text-accent: #b9b3ff;
-  --sl-color-bg: #000613;
-  --sl-color-bg-nav: #0a0f1f;
-  --sl-color-bg-sidebar: #0a0f1f;
+  --sl-color-bg: #0a0d1a;
+  --sl-color-bg-nav: #11142a;
+  --sl-color-bg-sidebar: #11142a;
+  --sl-color-bg-inline-code: rgba(129, 140, 248, 0.18);
 
   --sl-color-hairline-light: #1f2433;
-  --sl-color-hairline: #43474e;
+  --sl-color-hairline: #2a3045;
 }
 
 /* ============================================================
-   Headings use Manrope (portlev.com heading font)
+   Typography — Manrope headings, Inter body
    ============================================================ */
+body {
+  font-family: var(--sl-font);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
 .sl-markdown-content h1,
 .sl-markdown-content h2,
 .sl-markdown-content h3,
@@ -78,85 +97,124 @@
 .sl-markdown-content h6,
 .hero h1,
 .hero p,
-.site-title {
+.site-title,
+.sl-link-card .title,
+.card .title {
   font-family: 'Manrope', 'Inter', system-ui, sans-serif;
   font-weight: 700;
   letter-spacing: -0.01em;
 }
 
-.sl-markdown-content h1 { font-weight: 800; letter-spacing: -0.02em; }
+.sl-markdown-content h1 {
+  font-weight: 800;
+  letter-spacing: -0.025em;
+}
 
 /* ============================================================
-   Hero — landing page splash style
+   Hero — landing page splash with portlev.com-style gradient text
    ============================================================ */
 .hero {
-  padding-block: 4rem;
+  padding-block: 4rem 3rem;
 }
 
 .hero h1 {
-  background: linear-gradient(135deg, #4b41e1, #645efb, #818cf8);
+  background: linear-gradient(135deg, #4b41e1, #645efb 50%, #818cf8);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  font-size: clamp(2.5rem, 6vw, 4.5rem);
-  line-height: 1.05;
+  color: transparent;
+  font-size: clamp(2.75rem, 6.5vw, 4.75rem);
+  line-height: 1.04;
+  font-weight: 800;
+  letter-spacing: -0.03em;
 }
 
 .hero .tagline {
   color: var(--sl-color-gray-2);
-  font-size: clamp(1.1rem, 2vw, 1.35rem);
-  max-width: 38ch;
+  font-size: clamp(1.1rem, 1.8vw, 1.3rem);
+  max-width: 42ch;
+  line-height: 1.5;
+  font-weight: 400;
 }
 
-/* Primary button — solid indigo (matches portlev.com CTA buttons) */
+:root[data-theme='dark'] .hero .tagline {
+  color: #c4c6cf;
+}
+
+/* ============================================================
+   Buttons — match portlev.com primary CTA style
+   ============================================================ */
 .sl-link-button.primary {
-  background: linear-gradient(135deg, #4b41e1, #645efb);
-  color: #ffffff;
+  background: linear-gradient(135deg, #4b41e1 0%, #645efb 100%);
+  color: #ffffff !important;
   border: none;
-  font-weight: 600;
-  box-shadow: 0 6px 20px -6px rgba(75, 65, 225, 0.45);
+  font-weight: 700;
+  padding: 0.85rem 1.4rem;
+  border-radius: 12px;
+  font-family: 'Manrope', sans-serif;
+  letter-spacing: -0.01em;
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.18) inset,
+    0 10px 28px -8px rgba(75, 65, 225, 0.55);
   transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
 .sl-link-button.primary:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 10px 26px -6px rgba(75, 65, 225, 0.55);
-  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.2) inset,
+    0 14px 34px -8px rgba(75, 65, 225, 0.65);
+  color: #ffffff !important;
 }
 
-/* Secondary button — outline */
 .sl-link-button.secondary {
-  border: 1px solid var(--sl-color-hairline);
+  border: 1.5px solid var(--sl-color-hairline);
   color: var(--sl-color-text);
   font-weight: 600;
+  border-radius: 12px;
+  padding: 0.85rem 1.4rem;
+  background: var(--sl-color-bg-nav);
+  font-family: 'Manrope', sans-serif;
+  transition: border-color 0.15s ease, background 0.15s ease;
+}
+.sl-link-button.secondary:hover {
+  border-color: #4b41e1;
+  background: var(--sl-color-accent-low);
+}
+
+.sl-link-button.minimal {
+  color: var(--sl-color-text-accent);
+  font-weight: 600;
+  font-family: 'Manrope', sans-serif;
+  padding: 0.85rem 1rem;
 }
 
 /* ============================================================
-   Code blocks
+   Code — soft indigo tint for inline, clean blocks
    ============================================================ */
-.expressive-code,
-.sl-markdown-content pre {
-  border: 1px solid var(--sl-color-hairline-light);
-  border-radius: 8px;
-}
-
-/* Inline code — subtle indigo tint to match brand */
 .sl-markdown-content :not(pre) > code {
-  background: rgba(75, 65, 225, 0.08);
+  background: var(--sl-color-bg-inline-code);
   color: #2e26a6;
-  border: 1px solid rgba(75, 65, 225, 0.15);
-  border-radius: 4px;
-  padding: 0.1em 0.35em;
-  font-size: 0.9em;
+  border: 1px solid rgba(75, 65, 225, 0.18);
+  border-radius: 5px;
+  padding: 0.12em 0.4em;
+  font-size: 0.88em;
+  font-weight: 500;
 }
 
 :root[data-theme='dark'] .sl-markdown-content :not(pre) > code {
-  background: rgba(100, 94, 251, 0.15);
   color: #b9b3ff;
-  border-color: rgba(100, 94, 251, 0.25);
+  border-color: rgba(129, 140, 248, 0.3);
+}
+
+.expressive-code,
+.sl-markdown-content pre {
+  border: 1px solid var(--sl-color-hairline-light);
+  border-radius: 10px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
 }
 
 /* ============================================================
-   Sidebar
+   Sidebar — slightly elevated, clear labels
    ============================================================ */
 .sidebar-pane {
   border-right: 1px solid var(--sl-color-hairline-light);
@@ -165,43 +223,141 @@
 ul.top-level > li > details > summary,
 ul.top-level > li > a {
   font-family: 'Manrope', sans-serif;
-  font-weight: 600;
-  font-size: 0.875rem;
+  font-weight: 700;
+  font-size: 0.78rem;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.06em;
   color: var(--sl-color-gray-2);
 }
 
 /* ============================================================
-   Tables
+   Cards (used in landing page CardGrid)
+   ============================================================ */
+.card {
+  border: 1px solid var(--sl-color-hairline-light);
+  border-radius: 14px;
+  background: var(--sl-color-bg-nav);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03);
+  transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+}
+.card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(75, 65, 225, 0.35);
+  box-shadow: 0 10px 28px -10px rgba(75, 65, 225, 0.25);
+}
+
+.card .icon {
+  color: #4b41e1;
+}
+
+:root[data-theme='dark'] .card .icon {
+  color: #818cf8;
+}
+
+/* ============================================================
+   Link cards (the curriculum module cards)
+   ============================================================ */
+.sl-link-card {
+  border: 1px solid var(--sl-color-hairline-light);
+  border-radius: 12px;
+  background: var(--sl-color-bg-nav);
+  transition: border-color 0.18s ease, box-shadow 0.18s ease, transform 0.18s ease;
+}
+.sl-link-card:hover {
+  border-color: #4b41e1;
+  box-shadow: 0 8px 24px -10px rgba(75, 65, 225, 0.3);
+  transform: translateY(-1px);
+}
+.sl-link-card .title {
+  color: var(--sl-color-text);
+}
+.sl-link-card .description {
+  color: var(--sl-color-gray-2);
+}
+
+/* ============================================================
+   Tables — branded headers, clean rows
    ============================================================ */
 .sl-markdown-content table {
   border: 1px solid var(--sl-color-hairline-light);
-  border-radius: 8px;
+  border-radius: 10px;
   overflow: hidden;
+  border-collapse: separate;
+  border-spacing: 0;
 }
 .sl-markdown-content th {
   background: var(--sl-color-gray-7);
   font-family: 'Manrope', sans-serif;
   font-weight: 700;
+  color: var(--sl-color-text);
+  letter-spacing: -0.005em;
+}
+
+:root[data-theme='dark'] .sl-markdown-content th {
+  background: #1a1f33;
 }
 
 /* ============================================================
-   Custom callout — "Cohort" highlighted block
+   Cohort callout — highlighted block used inside markdown
    ============================================================ */
 .cohort-callout {
-  background: linear-gradient(135deg, rgba(75, 65, 225, 0.06), rgba(100, 94, 251, 0.08));
-  border: 1px solid rgba(75, 65, 225, 0.2);
+  background:
+    linear-gradient(135deg, rgba(75, 65, 225, 0.05), rgba(100, 94, 251, 0.08));
+  border: 1px solid rgba(75, 65, 225, 0.22);
   border-left: 4px solid #4b41e1;
-  border-radius: 8px;
-  padding: 1.25rem 1.5rem;
-  margin: 1.5rem 0;
+  border-radius: 10px;
+  padding: 1.4rem 1.6rem;
+  margin: 1.75rem 0;
+}
+
+:root[data-theme='dark'] .cohort-callout {
+  background:
+    linear-gradient(135deg, rgba(129, 140, 248, 0.08), rgba(129, 140, 248, 0.04));
+  border-color: rgba(129, 140, 248, 0.35);
+  border-left-color: #818cf8;
 }
 
 .cohort-callout strong {
   color: #2e26a6;
+  font-weight: 700;
 }
 
 :root[data-theme='dark'] .cohort-callout strong {
   color: #b9b3ff;
 }
+
+.cohort-callout a {
+  color: #4b41e1;
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-color: rgba(75, 65, 225, 0.4);
+}
+.cohort-callout a:hover {
+  text-decoration-color: #4b41e1;
+}
+
+:root[data-theme='dark'] .cohort-callout a {
+  color: #b9b3ff;
+}
+
+/* ============================================================
+   Header — clean wordmark with subtle hairline
+   ============================================================ */
+.header {
+  background: var(--sl-color-bg-nav);
+  border-bottom: 1px solid var(--sl-color-hairline-light);
+}
+
+.site-title span {
+  font-family: 'Manrope', sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.015em;
+  color: var(--sl-color-text);
+}
+
+/* ============================================================
+   Force initial theme to LIGHT to match portlev.com.
+   This runs before Starlight's theme provider on first load.
+   If user has explicitly toggled to dark before, that preference persists.
+   ============================================================ */

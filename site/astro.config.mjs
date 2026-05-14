@@ -31,6 +31,19 @@ export default defineConfig({
             href: 'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap',
           },
         },
+        // Default to LIGHT theme on first visit (matches portlev.com brand which is light-primary).
+        // Runs BEFORE Starlight's theme detection — if user has previously toggled dark, that persists.
+        {
+          tag: 'script',
+          content: `(function() {
+            try {
+              if (!localStorage.getItem('starlight-theme')) {
+                localStorage.setItem('starlight-theme', 'light');
+                document.documentElement.dataset.theme = 'light';
+              }
+            } catch (e) {}
+          })();`,
+        },
       ],
       social: [
         { icon: 'linkedin', label: 'LinkedIn', href: 'https://linkedin.com/in/yurikruman' },
