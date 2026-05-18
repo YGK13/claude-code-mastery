@@ -15,68 +15,49 @@
  */
 
 /* ============================================================
-   Dark is the standard theme for PortLev Learn. The indigo gradient
-   headings and cohort banner are designed for a dark canvas.
-   ============================================================ */
-:root {
-  color-scheme: dark;
-}
-
-/* ============================================================
-   Light theme — primary brand application
+   PortLev Learn is LOCKED to dark. There is no light theme.
+   Every Starlight color variable is defined here, properly inverted
+   for a dark canvas — full grayscale included, so secondary text,
+   sidebar labels and headers all have real contrast on the dark bg.
+   Applied to :root AND :root[data-theme='dark'] so it wins regardless.
    ============================================================ */
 :root,
+:root[data-theme='dark'],
 :root[data-theme='light'] {
-  --sl-color-accent-low: #e9e6fb;
-  --sl-color-accent: #4b41e1;
-  --sl-color-accent-high: #2e26a6;
+  color-scheme: dark;
 
+  /* Indigo accent ramp */
+  --sl-color-accent-low: #221b4d;
+  --sl-color-accent: #818cf8;
+  --sl-color-accent-high: #c3bdff;
+
+  /* Grayscale — inverted: light values for text, dark values for surfaces */
   --sl-color-white: #ffffff;
-  --sl-color-gray-1: #43474e;
-  --sl-color-gray-2: #5c6168;
-  --sl-color-gray-3: #74777f;
-  --sl-color-gray-4: #c4c6cf;
-  --sl-color-gray-5: #e6e8ea;
-  --sl-color-gray-6: #eef0f3;
-  --sl-color-gray-7: #f7f9fb;
-  --sl-color-black: #000613;
+  --sl-color-gray-1: #eef0f6;   /* brightest text */
+  --sl-color-gray-2: #c5c8d6;   /* secondary text — readable on dark */
+  --sl-color-gray-3: #9aa0b4;   /* muted text */
+  --sl-color-gray-4: #5f6580;   /* faint text / icons */
+  --sl-color-gray-5: #2c3147;   /* strong borders */
+  --sl-color-gray-6: #1a1e30;   /* raised surfaces */
+  --sl-color-gray-7: #12162a;   /* deepest panels */
+  --sl-color-black: #0a0d1a;
 
-  --sl-color-text: #191c1e;
-  --sl-color-text-accent: #4b41e1;
-  --sl-color-text-invert: #ffffff;
-  --sl-color-bg: #f7f9fb;
-  --sl-color-bg-nav: #ffffff;
-  --sl-color-bg-sidebar: #ffffff;
-  --sl-color-bg-inline-code: rgba(75, 65, 225, 0.08);
+  /* Text + surfaces */
+  --sl-color-text: #f3f4f9;
+  --sl-color-text-accent: #c3bdff;
+  --sl-color-text-invert: #0a0d1a;
+  --sl-color-bg: #0a0d1a;          /* page background */
+  --sl-color-bg-nav: #11142a;      /* header + sidebar background */
+  --sl-color-bg-sidebar: #11142a;
+  --sl-color-bg-inline-code: rgba(129, 140, 248, 0.2);
 
-  --sl-color-hairline-light: #e6e8ea;
-  --sl-color-hairline: #c4c6cf;
-  --sl-color-hairline-shade: #74777f;
+  /* Hairlines / borders */
+  --sl-color-hairline-light: #1f2438;
+  --sl-color-hairline: #2c3147;
+  --sl-color-hairline-shade: #161a2c;
 
   --sl-font: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   --sl-font-mono: 'JetBrains Mono', 'Fira Code', Menlo, Monaco, Consolas, monospace;
-}
-
-/* ============================================================
-   Dark theme — high-contrast version of the brand
-   (User can toggle to dark via the theme switcher in the nav)
-   ============================================================ */
-:root[data-theme='dark'] {
-  color-scheme: dark;
-
-  --sl-color-accent-low: #1a1538;
-  --sl-color-accent: #818cf8;
-  --sl-color-accent-high: #b9b3ff;
-
-  --sl-color-text: #f7f9fb;
-  --sl-color-text-accent: #b9b3ff;
-  --sl-color-bg: #0a0d1a;
-  --sl-color-bg-nav: #11142a;
-  --sl-color-bg-sidebar: #11142a;
-  --sl-color-bg-inline-code: rgba(129, 140, 248, 0.18);
-
-  --sl-color-hairline-light: #1f2433;
-  --sl-color-hairline: #2a3045;
 }
 
 /* ============================================================

@@ -31,21 +31,14 @@ export default defineConfig({
             href: 'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap',
           },
         },
-        // Default to DARK theme on first visit. Dark is the standard for PortLev Learn —
-        // the indigo gradient headings and cohort banner are designed for a dark canvas.
-        // Runs BEFORE Starlight's theme detection. If a user explicitly toggles light, that persists.
+        // PortLev Learn is LOCKED to dark. There is no light theme and no toggle.
+        // This script force-sets dark on every load and overwrites any previously
+        // stored preference (some early visitors got 'light' written to localStorage).
         {
           tag: 'script',
           content: `(function() {
-            try {
-              if (!localStorage.getItem('starlight-theme')) {
-                localStorage.setItem('starlight-theme', 'dark');
-              }
-              document.documentElement.dataset.theme =
-                localStorage.getItem('starlight-theme') === 'light' ? 'light' : 'dark';
-            } catch (e) {
-              document.documentElement.dataset.theme = 'dark';
-            }
+            try { localStorage.setItem('starlight-theme', 'dark'); } catch (e) {}
+            document.documentElement.dataset.theme = 'dark';
           })();`,
         },
       ],
@@ -55,6 +48,8 @@ export default defineConfig({
       ],
       components: {
         Banner: './src/components/CohortBanner.astro',
+        // Remove the light/dark/auto theme switcher — the site is locked to dark.
+        ThemeSelect: './src/components/EmptyThemeSelect.astro',
       },
       sidebar: [
         {
