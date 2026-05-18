@@ -31,17 +31,21 @@ export default defineConfig({
             href: 'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap',
           },
         },
-        // Default to LIGHT theme on first visit (matches portlev.com brand which is light-primary).
-        // Runs BEFORE Starlight's theme detection — if user has previously toggled dark, that persists.
+        // Default to DARK theme on first visit. Dark is the standard for PortLev Learn —
+        // the indigo gradient headings and cohort banner are designed for a dark canvas.
+        // Runs BEFORE Starlight's theme detection. If a user explicitly toggles light, that persists.
         {
           tag: 'script',
           content: `(function() {
             try {
               if (!localStorage.getItem('starlight-theme')) {
-                localStorage.setItem('starlight-theme', 'light');
-                document.documentElement.dataset.theme = 'light';
+                localStorage.setItem('starlight-theme', 'dark');
               }
-            } catch (e) {}
+              document.documentElement.dataset.theme =
+                localStorage.getItem('starlight-theme') === 'light' ? 'light' : 'dark';
+            } catch (e) {
+              document.documentElement.dataset.theme = 'dark';
+            }
           })();`,
         },
       ],

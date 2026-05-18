@@ -15,12 +15,11 @@
  */
 
 /* ============================================================
-   Default to LIGHT mode to match portlev.com (which is light-primary).
-   The system-preference detection script in Starlight runs after this CSS,
-   so we set base-layer defaults that match light mode here.
+   Dark is the standard theme for PortLev Learn. The indigo gradient
+   headings and cohort banner are designed for a dark canvas.
    ============================================================ */
 :root {
-  color-scheme: light;
+  color-scheme: dark;
 }
 
 /* ============================================================
@@ -118,7 +117,8 @@ body {
 }
 
 .hero h1 {
-  background: linear-gradient(135deg, #4b41e1, #645efb 50%, #818cf8);
+  /* Dark theme (standard): bright gradient that pops against the dark canvas. */
+  background: linear-gradient(135deg, #a5b4ff, #818cf8 45%, #b9b3ff);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -127,6 +127,14 @@ body {
   line-height: 1.04;
   font-weight: 800;
   letter-spacing: -0.03em;
+}
+
+/* Light theme override: darker gradient stops so the headline stays high-contrast
+   and does not wash out against the light background. */
+:root[data-theme='light'] .hero h1 {
+  background: linear-gradient(135deg, #2e26a6, #4b41e1 50%, #5b51e9);
+  -webkit-background-clip: text;
+  background-clip: text;
 }
 
 .hero .tagline {
