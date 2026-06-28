@@ -1,54 +1,39 @@
 ---
 title: Welcome
-description: Start here. Quick orientation, what to expect, what to install before you begin.
+description: The Chief AI Officer Program — six pillars, a built portfolio, a board-ready narrative. Start with the Readiness Diagnostic.
 ---
 
-This curriculum exists to do one thing: get you from "I keep hearing about AI but I don't actually build anything" to "I shipped two working AI tools into my own practice this quarter."
+This is the Chief AI Officer Program. It exists to do one thing: close the missing 20% between an experienced executive and a board-ready CAIO — fluency, governance and ROI frameworks, the artifacts that prove you can ship, and the narrative that lands the seat.
 
-Not by turning you into a developer. By giving you Claude Code, a clear path and real-world executive examples that map to the work you're already doing.
+If you are an HR, finance, operations, legal or general management leader who has been watching the AI conversation move into the C-suite and wondering whether your seat at that table is being designed without you — the answer is yes, and this program is the response.
 
-## What you'll need
+## Who this is for
 
-Before Module 01, get these set up. The whole stack costs about $20-50/month at executive scale and runs on any modern laptop.
+Two people get the most out of this program.
 
-| Tool | Purpose | Cost |
-|------|---------|------|
-| A laptop (Mac, Windows or Linux) | Where you build | Already have it |
-| Node.js v20+ | JavaScript runtime | Free |
-| Git | Version tracking (lets you undo anything) | Free |
-| VS Code | Editor | Free |
-| Claude Code | The AI coding agent | Free (CLI); usage billed via API |
-| An Anthropic API key | Powers Claude | ~$10-30/month at learning pace |
+The first is the experienced executive pivoting in — the CHRO, CFO, COO or GM with twenty years of operating depth who needs the AI vocabulary, the governance model and the portfolio to make the move credible.
 
-Module 01 walks through installing every one of these step by step. You don't need to set up anything in advance.
+The second is the consultant or adviser — the fractional executive, board director or VC/PE operating partner who is already advising on AI and wants the frameworks and the credential that match the work.
 
-## How to use this curriculum
+If neither of those is you, read [Who this is for](/who-its-for/) before going further.
 
-**If you're working through this solo:** Start at Module 01 and go in order. Each lesson builds on the last. Plan for roughly 20 hours total, plus your own build time on top.
+## The six pillars, at a glance
 
-**If you're in the [founding cohort](https://forwardshare.co/executive-ai-cohort-forward-achieve-forward-share-ventures):** This site is your textbook. You'll work through it between sessions, with Yuri's live workshops, group calls and 1:1 coaching anchoring the structure. Bring questions to the workshops.
+1. **The mandate** — why the role exists, what boards buy, your CAIO positioning
+2. **The landscape** — vendors, capabilities, the AI stack for non-engineers
+3. **Deployment** — RAG, agents, the first internal AI assistant you ship
+4. **Governance** — policy, council charter, risk register, EU AI Act readiness
+5. **Value** — ROI modeling, 12-month adoption roadmap, the CFO case
+6. **The operating model** — 100-day plan, board narrative, org design, first hires
 
-**If you're vetting whether this is for you:** Read [Who this is for](/who-its-for/) and [The cohort](/cohort/), then [book a 15-minute call](https://calendly.com/masterthetalk/call-with-yuri-30-min?back=1) with Yuri.
+Each pillar ends with an artifact. Six pillars, six artifacts, one portfolio.
 
-## What success looks like
+## How to use this site
 
-By the end of this curriculum, you can do all of the following without help:
+Start with the [Readiness Diagnostic](/program/pillar-1-mandate/readiness-diagnostic/). It takes ten minutes and tells you which 20% you are missing. Then work Pillar I — the free foundation is built around it.
 
-- Start a Claude Code session in any folder on your computer and give it a clear brief
-- Build a working web app (HTML or Next.js) from scratch in under an hour
-- Build a Python AI agent that uses tools to take real action
-- Connect Claude to Gmail, Slack, GitHub, Notion or any other tool you already use
-- Configure a project so Claude Code knows your style, your conventions and what it can and cannot do automatically
-- Recover from anything that goes wrong with one git command
+From there, pick your path. The live cohort is the fastest route to the full portfolio and the board simulation. The self-paced certificate launches in 2026. [See pricing](/pricing/) and choose the door.
 
-If you can do those six things, you can build any of the apps on the home page.
+One bridging note: the hands-on Claude Code Build Track lives in the sidebar for executives who want tooling depth alongside the strategic pillars. It is optional and recommended for Pillar III.
 
-## A note on the speed of this field
-
-Claude Code launched in early 2025. The official Anthropic docs change every few weeks. Models get faster, cheaper and more capable on a quarterly cadence. This curriculum is kept current — but when you find something stale, the right move is to ask Claude itself ("what's the current way to do X?") rather than trusting any static guide, including this one.
-
-The fundamentals stay stable. The specifics evolve. That's the trade.
-
-## Ready?
-
-→ [Module 01 — Getting Started](/curriculum/01-getting-started/overview/)
+→ [Take the Readiness Diagnostic](/program/pillar-1-mandate/readiness-diagnostic/)

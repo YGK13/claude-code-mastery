@@ -1,21 +1,16 @@
 ---
 /**
  * CohortBanner.astro
- * Top-of-page banner for the ForwardShare founding cohort.
- *
- * Brand-matched to portlev.com:
- *   - Vibrant indigo gradient (#4b41e1 → #645efb → #818cf8) — same as portlev.com primary CTA
- *   - Amber pill (#f59e0b) as the attention-grabbing accent
- *   - Heavy indigo-colored shadow for the lift effect
- *   - White text with high contrast on the indigo bg — readable in both light AND dark mode
+ * Top-of-page banner for the founding CAIO cohort.
+ * Executive Premium brand: deep ink with oxblood→gold depth, gold pill + CTA.
  */
 ---
 
 <aside class="cohort-banner" aria-label="Cohort enrollment">
   <div class="cohort-banner__inner">
-    <span class="cohort-banner__pill">Founding Cohort · 4 / 8 spots left</span>
+    <span class="cohort-banner__pill">Founding Cohort · Now enrolling</span>
     <span class="cohort-banner__copy">
-      3-month live program with Yuri — <strong>$2,500</strong> (next cohort $4,500)
+      The Chief AI Officer Program — 12-week live cohort with Yuri. Founding price <strong>$2,500</strong> (cohort #2 rises to $4,500).
     </span>
     <a
       class="cohort-banner__cta"
@@ -38,29 +33,22 @@
 
 <style>
   .cohort-banner {
-    /* Vibrant indigo gradient — same family as portlev.com primary CTA buttons.
-       Strong contrast against both light (#f7f9fb) and dark (#000613) page bgs. */
     background:
-      linear-gradient(135deg, #4b41e1 0%, #5b51e9 35%, #645efb 65%, #818cf8 100%);
-    color: #ffffff;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
-    box-shadow:
-      0 1px 0 rgba(255, 255, 255, 0.1) inset,
-      0 8px 24px -10px rgba(75, 65, 225, 0.6);
+      linear-gradient(135deg, #5e1f26 0%, #3a1b22 45%, #11151f 100%);
+    color: #f4f1e9;
+    border-bottom: 1px solid rgba(201, 162, 75, 0.28);
+    box-shadow: 0 1px 0 rgba(201, 162, 75, 0.12) inset;
     position: relative;
     overflow: hidden;
   }
-
-  /* Subtle radial highlight in the upper-left for depth */
   .cohort-banner::before {
     content: '';
     position: absolute;
     inset: 0;
     background:
-      radial-gradient(ellipse 60% 100% at 20% 0%, rgba(255, 255, 255, 0.18), transparent 70%);
+      radial-gradient(ellipse 60% 120% at 12% 0%, rgba(201, 162, 75, 0.16), transparent 70%);
     pointer-events: none;
   }
-
   .cohort-banner__inner {
     position: relative;
     max-width: 90rem;
@@ -73,94 +61,60 @@
     font-family: 'Inter', system-ui, sans-serif;
     font-size: 0.92rem;
   }
-
   .cohort-banner__pill {
-    background: linear-gradient(180deg, #fbbf24, #f59e0b);
-    color: #1c1410;
+    background: linear-gradient(180deg, #e2c079, #c9a24b);
+    color: #1a1306;
     padding: 0.32rem 0.85rem;
     border-radius: 999px;
     font-weight: 700;
-    font-size: 0.72rem;
-    letter-spacing: 0.05em;
+    font-size: 0.7rem;
+    letter-spacing: 0.08em;
     text-transform: uppercase;
-    font-family: 'Manrope', sans-serif;
-    box-shadow: 0 2px 8px -2px rgba(245, 158, 11, 0.5);
+    font-family: 'Inter', sans-serif;
+    box-shadow: 0 2px 8px -2px rgba(201, 162, 75, 0.5);
     white-space: nowrap;
   }
-
   .cohort-banner__copy {
-    color: rgba(255, 255, 255, 0.94);
+    color: rgba(244, 241, 233, 0.94);
     flex: 1 1 auto;
     min-width: 14rem;
     line-height: 1.4;
   }
-
-  .cohort-banner__copy strong {
-    color: #ffffff;
-    font-weight: 700;
-    background: rgba(255, 255, 255, 0.12);
-    padding: 0.05em 0.4em;
-    border-radius: 4px;
-  }
-
+  .cohort-banner__copy strong { color: #e2c079; font-weight: 700; }
   .cohort-banner__cta {
-    background: #ffffff;
-    color: #2e26a6;
+    background: linear-gradient(180deg, #e2c079, #c9a24b);
+    color: #1a1306;
     padding: 0.55rem 1.15rem;
     border-radius: 10px;
     font-weight: 700;
     text-decoration: none;
-    font-family: 'Manrope', sans-serif;
+    font-family: 'Inter', sans-serif;
     font-size: 0.9rem;
     transition: transform 0.15s ease, box-shadow 0.15s ease;
     white-space: nowrap;
-    box-shadow:
-      0 2px 0 rgba(0, 0, 0, 0.06) inset,
-      0 4px 14px -4px rgba(0, 0, 0, 0.25);
+    box-shadow: 0 4px 14px -4px rgba(201, 162, 75, 0.5);
   }
   .cohort-banner__cta:hover {
     transform: translateY(-1px);
-    box-shadow:
-      0 2px 0 rgba(0, 0, 0, 0.06) inset,
-      0 8px 20px -4px rgba(0, 0, 0, 0.35);
-    color: #2e26a6;
+    box-shadow: 0 8px 22px -4px rgba(201, 162, 75, 0.6);
+    color: #1a1306;
   }
-
   .cohort-banner__secondary {
-    color: rgba(255, 255, 255, 0.9);
+    color: rgba(244, 241, 233, 0.9);
     text-decoration: underline;
     text-underline-offset: 3px;
-    text-decoration-color: rgba(255, 255, 255, 0.4);
+    text-decoration-color: rgba(201, 162, 75, 0.5);
     font-size: 0.85rem;
     font-weight: 500;
     white-space: nowrap;
-    transition: text-decoration-color 0.15s ease;
+    transition: text-decoration-color 0.15s ease, color 0.15s ease;
   }
-  .cohort-banner__secondary:hover {
-    color: #ffffff;
-    text-decoration-color: rgba(255, 255, 255, 0.9);
-  }
-
+  .cohort-banner__secondary:hover { color: #e2c079; text-decoration-color: #c9a24b; }
   @media (max-width: 768px) {
-    .cohort-banner__inner {
-      gap: 0.65rem;
-      padding: 0.7rem 1rem;
-    }
-    .cohort-banner__copy {
-      font-size: 0.85rem;
-      width: 100%;
-      order: 2;
-    }
-    .cohort-banner__pill {
-      order: 1;
-    }
-    .cohort-banner__cta {
-      order: 3;
-      flex: 1;
-      text-align: center;
-    }
-    .cohort-banner__secondary {
-      display: none;
-    }
+    .cohort-banner__inner { gap: 0.65rem; padding: 0.7rem 1rem; }
+    .cohort-banner__copy { font-size: 0.85rem; width: 100%; order: 2; }
+    .cohort-banner__pill { order: 1; }
+    .cohort-banner__cta { order: 3; flex: 1; text-align: center; }
+    .cohort-banner__secondary { display: none; }
   }
 </style>

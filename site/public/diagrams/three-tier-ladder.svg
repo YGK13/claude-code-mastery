@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 220" role="img" aria-label="The three-tier learning ladder">
+<style>.bg{fill:#11151f}.box{fill:#11151f;stroke:#c9a24b;stroke-width:1.5}.boxsoft{fill:#0e121b;stroke:#232838;stroke-width:1}.oxbox{fill:#3a1b22;stroke:#8c2f39;stroke-width:1.5}.txt{fill:#f4f1e9;font-family:Georgia,serif;font-weight:600}.txtsm{fill:#c7cbd8;font-family:Inter,sans-serif;font-size:11px}.txtgold{fill:#e2c079;font-family:Georgia,serif;font-weight:600}.label{fill:#c9a24b;font-family:Inter,sans-serif;font-weight:700;font-size:10px;letter-spacing:0.1em}.arrow{stroke:#c9a24b;stroke-width:1.5;fill:none;marker-end:url(#a)}</style><defs><marker id="a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#c9a24b"/></marker></defs>
+<rect width="720" height="220" class="bg"/>
+<text x="20" y="28" class="label">THE LEARNING LADDER</text>
+<rect x="20" y="60" width="210" height="120" rx="10" class="box"/>
+<text x="125" y="92" text-anchor="middle" class="txtgold" font-size="14">Free Foundation</text>
+<text x="125" y="118" text-anchor="middle" class="txtsm">Pillar I + Diagnostic +</text>
+<text x="125" y="136" text-anchor="middle" class="txtsm">first lesson of each pillar</text>
+<text x="125" y="162" text-anchor="middle" class="txt" font-size="12">Free</text>
+<rect x="250" y="60" width="210" height="120" rx="10" class="box"/>
+<text x="355" y="92" text-anchor="middle" class="txtgold" font-size="14">CAIO Certificate</text>
+<text x="355" y="118" text-anchor="middle" class="txtsm">all six pillars,</text>
+<text x="355" y="136" text-anchor="middle" class="txtsm">graded artifacts</text>
+<text x="355" y="162" text-anchor="middle" class="txt" font-size="12">Launching 2026</text>
+<rect x="480" y="60" width="220" height="120" rx="10" class="oxbox"/>
+<text x="590" y="92" text-anchor="middle" class="txtgold" font-size="14">CAIO Cohort</text>
+<text x="590" y="118" text-anchor="middle" class="txtsm">12 weeks live, Yuri 1:1s,</text>
+<text x="590" y="136" text-anchor="middle" class="txtsm">board simulation, portfolio</text>
+<text x="590" y="162" text-anchor="middle" class="txt" font-size="12">$2,500 founding</text>
+<path d="M230 120 L250 120" class="arrow"/>
+<path d="M460 120 L480 120" class="arrow"/>
+<text x="20" y="205" class="txtsm">Free converts to certificate or cohort. Cohort #2 rises to $4,500.</text>
+</svg>

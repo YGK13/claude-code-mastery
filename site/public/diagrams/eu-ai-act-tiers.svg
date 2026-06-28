@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 240" role="img" aria-label="EU AI Act four risk tiers">
+<style>.bg{fill:#11151f}.box{fill:#11151f;stroke:#c9a24b;stroke-width:1.5}.boxsoft{fill:#0e121b;stroke:#232838;stroke-width:1}.oxbox{fill:#3a1b22;stroke:#8c2f39;stroke-width:1.5}.txt{fill:#f4f1e9;font-family:Georgia,serif;font-weight:600}.txtsm{fill:#c7cbd8;font-family:Inter,sans-serif;font-size:11px}.txtgold{fill:#e2c079;font-family:Georgia,serif;font-weight:600}.label{fill:#c9a24b;font-family:Inter,sans-serif;font-weight:700;font-size:10px;letter-spacing:0.1em}.arrow{stroke:#c9a24b;stroke-width:1.5;fill:none;marker-end:url(#a)}</style><defs><marker id="a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#c9a24b"/></marker></defs>
+<rect width="720" height="240" class="bg"/>
+<text x="20" y="28" class="label">EU AI ACT — FOUR RISK TIERS</text>
+<rect x="20" y="60" width="160" height="140" rx="10" class="oxbox"/>
+<text x="100" y="92" text-anchor="middle" class="txtgold" font-size="13">Unacceptable</text>
+<text x="100" y="118" text-anchor="middle" class="txtsm">prohibited uses</text>
+<text x="100" y="138" text-anchor="middle" class="txtsm">(social scoring,</text>
+<text x="100" y="155" text-anchor="middle" class="txtsm">manipulation)</text>
+<text x="100" y="180" text-anchor="middle" class="txtgold" font-size="10">DO NOT DEPLOY</text>
+<rect x="200" y="60" width="160" height="140" rx="10" class="box"/>
+<text x="280" y="92" text-anchor="middle" class="txtgold" font-size="13">High-risk</text>
+<text x="280" y="118" text-anchor="middle" class="txtsm">hiring, credit,</text>
+<text x="280" y="138" text-anchor="middle" class="txtsm">critical infra,</text>
+<text x="280" y="155" text-anchor="middle" class="txtsm">law enforcement</text>
+<text x="280" y="180" text-anchor="middle" class="txtgold" font-size="10">FULL CONFORMITY</text>
+<rect x="380" y="60" width="160" height="140" rx="10" class="box"/>
+<text x="460" y="92" text-anchor="middle" class="txtgold" font-size="13">Limited risk</text>
+<text x="460" y="118" text-anchor="middle" class="txtsm">chatbots,</text>
+<text x="460" y="138" text-anchor="middle" class="txtsm">generative AI,</text>
+<text x="460" y="155" text-anchor="middle" class="txtsm">deepfakes</text>
+<text x="460" y="180" text-anchor="middle" class="txtgold" font-size="10">TRANSPARENCY</text>
+<rect x="560" y="60" width="140" height="140" rx="10" class="box"/>
+<text x="630" y="92" text-anchor="middle" class="txtgold" font-size="13">Minimal</text>
+<text x="630" y="118" text-anchor="middle" class="txtsm">everything else</text>
+<text x="630" y="138" text-anchor="middle" class="txtsm">(most internal</text>
+<text x="630" y="155" text-anchor="middle" class="txtsm">tooling)</text>
+<text x="630" y="180" text-anchor="middle" class="txtgold" font-size="10">NO OBLIGATIONS</text>
+<text x="20" y="225" class="txtsm">Article 4 literacy obligations apply across all tiers from Aug 2026.</text>
+</svg>

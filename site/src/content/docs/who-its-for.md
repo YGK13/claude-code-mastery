@@ -1,39 +1,49 @@
 ---
 title: Who this is for
-description: Honest read on who gets value from this curriculum and who should go elsewhere.
+description: Honest fit and anti-fit for the Chief AI Officer Program. Two personas it is built for. A few it is not.
 ---
+
+The Chief AI Officer Program is narrow on purpose. The cohort is small, the founder coaches it personally and the bar for admission is set by fit, not by tuition. This page is the honest read.
 
 ## This is built for you if
 
-- You're a **C-level executive, VP, founder, partner, principal or senior consultant** with a billable hour rate above $300
-- You have **5-20 hours of repetitive work every week** that you know is automatable but don't have an engineer to delegate it to
-- You've watched ChatGPT and Claude get more capable for two years and you're tired of just *using* AI tools — you want to *build* them
-- You can read code well enough to follow what it does, even if you don't write it from scratch (most executives are at this bar already)
-- You learn best **by shipping**, not by passive video courses
+You are one of two people.
 
-## This is built specifically for these roles
+**The experienced executive pivoting in.** You are a CHRO, CFO, COO, GC, GM or country head with fifteen to thirty years of operating depth. You have run a function, sat in the C-suite, owned a P&L or carried board responsibility. The AI conversation is reshaping your seat or building a new one next to it, and you intend to be in that room. You are already 80% of a CAIO. You need the missing 20%: the technical fluency to defend a build/buy call, the governance model that lets a public-company GC sleep at night, the ROI frameworks a CFO will fund, and the portfolio that proves you can ship.
 
-- **CHROs and VPs of People** — automate ticket routing, comp benchmarking, onboarding, employee FAQ bots
-- **Heads of Sales and Revenue Operations** — pipeline analysis agents, proposal generators, ICP scoring, follow-up sequencing
-- **Founders and CEOs** — investor update generators, market research agents, customer interview synthesis, board prep
-- **Consultants, coaches and fractional executives** — client intake automation, deliverable generators, IP-protecting knowledge bases, scaling your billable practice
-- **Marketing and content leaders** — content production agents, SEO research, brand-voice consistency tools
-- **Legal and compliance professionals** (if cohort #2 expands) — contract review agents, policy generators, regulatory research
+**The consultant, board director or PE/VC operating adviser.** You are a fractional executive, a sitting independent director, an operating partner or a strategy consultant who is already being pulled into AI conversations. You want the frameworks, the artifacts and the credential that match the work you are already doing — so that the next portfolio review, board meeting or client engagement has you running the conversation instead of catching up to it.
+
+If you recognized yourself in one of those two paragraphs, you are in the right room.
 
 ## This is NOT for you if
 
-- You want to become a professional software developer — go to a bootcamp instead
-- You want a passive video course you can watch on a treadmill — this needs hands on keyboard
-- You're not willing to fight through a real installation process and a few terminal commands
-- You expect to ship anything meaningful without putting in 5+ hours per week
-- You want an "AI strategy framework" with no actual building — there are plenty of those for free
+We say no to enough people that it is worth being explicit.
 
-## The honest economic case
+- You are an **entry-level career-changer** looking to break into AI. This program assumes executive operating depth. There are excellent programs for early-career AI roles. This is not one of them.
+- You are an **engineer who wants to become an ML researcher**. The program teaches AI deployment, governance and value — not model architecture. A graduate program in ML is the correct spend.
+- You are looking for a **credential to hang on LinkedIn**. The program does issue a credential, and graduates do get a public portfolio page. But the program is structured around building a defensible portfolio. If the artifact work is not appealing, the credential will not carry you.
 
-If you bill $500/hour and you automate **two hours a week** of repetitive work for yourself, you have recovered the cost of the cohort ($2,500) in five weeks. Everything after that is pure margin for the rest of your career.
+We would rather decline a fit-mismatched applicant than refund one halfway through.
 
-If you build something your team can use, the math compounds. If you build something your clients can use, you've just created a new product line.
+## The career math
 
-The curriculum is free. The cohort is the accelerator that makes you actually finish.
+The CAIO role is real and the comp is established. Public listings and search-firm data put base-plus-bonus comp for Chief AI Officer and equivalent titles at **$350K to $650K+**, with equity on top in venture-backed and public companies. PwC's 2026 jobs barometer shows a **56% wage premium** for AI-skilled roles over their non-AI equivalents in the same function.
 
-→ Next: [The cohort](/cohort/) or [start the free curriculum](/curriculum/01-getting-started/overview/)
+The market is moving fast. The share of organizations naming an AI leader at the C-suite went from 26% to 76% in twenty months (IBM, 2026). The supply of visibly qualified candidates has not kept up. That gap is the window.
+
+The program is priced against that math, not against the cost of a video course.
+
+## What makes you a good fit
+
+A short checklist. If three of these four are true, apply.
+
+- You have **fifteen-plus years of executive or senior-leadership experience** in a function the CAIO role touches — people, finance, operations, legal, strategy, product or general management.
+- You are **moving toward a specific outcome** — a CAIO seat, a board role, an advisory practice, a fractional offer — and you can name it.
+- You can commit **six to ten hours a week** for the cohort window, or steady self-paced time for the certificate.
+- You are willing to **defend your work in front of peers and a sitting board director**. The portfolio only matters if you can stand behind it.
+
+## The first move
+
+Take the [Readiness Diagnostic](/program/pillar-1-mandate/readiness-diagnostic/). Ten minutes. It tells you which of the six pillars is your missing 20% and where to start.
+
+From there, [pricing](/pricing/) lays out the three doors.

@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 360" role="img" aria-label="The agent loop: perceive, reason, act, observe">
+<style>.bg{fill:#11151f}.box{fill:#11151f;stroke:#c9a24b;stroke-width:1.5}.boxsoft{fill:#0e121b;stroke:#232838;stroke-width:1}.oxbox{fill:#3a1b22;stroke:#8c2f39;stroke-width:1.5}.txt{fill:#f4f1e9;font-family:Georgia,serif;font-weight:600}.txtsm{fill:#c7cbd8;font-family:Inter,sans-serif;font-size:11px}.txtgold{fill:#e2c079;font-family:Georgia,serif;font-weight:600}.label{fill:#c9a24b;font-family:Inter,sans-serif;font-weight:700;font-size:10px;letter-spacing:0.1em}.arrow{stroke:#c9a24b;stroke-width:1.5;fill:none;marker-end:url(#a)}</style><defs><marker id="a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#c9a24b"/></marker></defs>
+<rect width="480" height="360" class="bg"/>
+<text x="20" y="28" class="label">THE AGENT LOOP</text>
+<circle cx="240" cy="190" r="38" class="oxbox"/>
+<text x="240" y="195" text-anchor="middle" class="txtgold" font-size="14">Agent</text>
+<rect x="190" y="60" width="100" height="48" rx="10" class="box"/>
+<text x="240" y="90" text-anchor="middle" class="txt" font-size="13">Perceive</text>
+<rect x="340" y="166" width="100" height="48" rx="10" class="box"/>
+<text x="390" y="195" text-anchor="middle" class="txt" font-size="13">Reason</text>
+<rect x="190" y="272" width="100" height="48" rx="10" class="box"/>
+<text x="240" y="302" text-anchor="middle" class="txt" font-size="13">Act</text>
+<rect x="40" y="166" width="100" height="48" rx="10" class="box"/>
+<text x="90" y="195" text-anchor="middle" class="txt" font-size="13">Observe</text>
+<path d="M240 108 C 290 130, 340 140, 358 166" class="arrow"/>
+<path d="M390 214 C 380 250, 320 280, 290 290" class="arrow"/>
+<path d="M190 296 C 140 280, 100 250, 100 214" class="arrow"/>
+<path d="M125 166 C 130 130, 180 110, 200 108" class="arrow"/>
+<text x="20" y="340" class="txtsm">Tools, memory and permissions live at the agent core. The CAIO governs that core.</text>
+</svg>

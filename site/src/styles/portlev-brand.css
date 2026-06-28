@@ -1,250 +1,277 @@
 /*
- * PortLev Learn — brand stylesheet
- * Brand-matched to portlev.com (which is LIGHT primary):
- *   primary: #000613 (deep navy / near-black)
- *   secondary: #4b41e1 (indigo)
- *   secondary-container: #645efb (lighter indigo)
- *   accent: #f59e0b (amber / gold)
- *   surface: #f7f9fb (warm white)
- *   on-surface: #191c1e (body text)
- *   on-surface-variant: #43474e (secondary text)
- *   outline: #74777f (border)
- *   outline-variant: #c4c6cf (light border)
- *
- * Fonts: Manrope (headings) + Inter (body) — loaded via Google Fonts.
+ * PortLev Learn — Executive Premium brand stylesheet (v1.0, 2026-05-21)
+ * Register: Stripe Press / a16z editorial. Serif display (Fraunces) + Inter body.
+ * Signature accent: burnished gold #C9A24B, with oxblood #8C2F39 for depth.
+ * Locked to a warm deep-ink dark canvas. No purple, no neon.
  */
 
-/* ============================================================
-   PortLev Learn is LOCKED to dark. There is no light theme.
-   Every Starlight color variable is defined here, properly inverted
-   for a dark canvas — full grayscale included, so secondary text,
-   sidebar labels and headers all have real contrast on the dark bg.
-   Applied to :root AND :root[data-theme='dark'] so it wins regardless.
-   ============================================================ */
 :root,
 :root[data-theme='dark'],
 :root[data-theme='light'] {
   color-scheme: dark;
 
-  /* Indigo accent ramp */
-  --sl-color-accent-low: #221b4d;
-  --sl-color-accent: #818cf8;
-  --sl-color-accent-high: #c3bdff;
+  /* Gold accent ramp (replaces the old indigo ramp) */
+  --sl-color-accent-low: #2a2412;
+  --sl-color-accent: #c9a24b;
+  --sl-color-accent-high: #e2c079;
 
-  /* Grayscale — inverted: light values for text, dark values for surfaces */
+  /* Grayscale — warm-neutral, light text on deep ink */
   --sl-color-white: #ffffff;
-  --sl-color-gray-1: #eef0f6;   /* brightest text */
-  --sl-color-gray-2: #c5c8d6;   /* secondary text — readable on dark */
-  --sl-color-gray-3: #9aa0b4;   /* muted text */
-  --sl-color-gray-4: #5f6580;   /* faint text / icons */
-  --sl-color-gray-5: #2c3147;   /* strong borders */
-  --sl-color-gray-6: #1a1e30;   /* raised surfaces */
-  --sl-color-gray-7: #12162a;   /* deepest panels */
-  --sl-color-black: #0a0d1a;
+  --sl-color-gray-1: #f4f1e9;   /* brightest / display ivory */
+  --sl-color-gray-2: #c7cbd8;   /* secondary text */
+  --sl-color-gray-3: #a7acbd;   /* muted text */
+  --sl-color-gray-4: #6e7488;   /* faint text / icons */
+  --sl-color-gray-5: #232838;   /* strong borders */
+  --sl-color-gray-6: #11151f;   /* raised surfaces */
+  --sl-color-gray-7: #0e121b;   /* deepest panels */
+  --sl-color-black: #0c0f17;
 
   /* Text + surfaces */
-  --sl-color-text: #f3f4f9;
-  --sl-color-text-accent: #c3bdff;
-  --sl-color-text-invert: #0a0d1a;
-  --sl-color-bg: #0a0d1a;          /* page background */
-  --sl-color-bg-nav: #11142a;      /* header + sidebar background */
-  --sl-color-bg-sidebar: #11142a;
-  --sl-color-bg-inline-code: rgba(129, 140, 248, 0.2);
+  --sl-color-text: #e7e9f0;
+  --sl-color-text-accent: #e2c079;
+  --sl-color-text-invert: #0c0f17;
+  --sl-color-bg: #0c0f17;          /* page background */
+  --sl-color-bg-nav: #11151f;      /* header + sidebar */
+  --sl-color-bg-sidebar: #11151f;
+  --sl-color-bg-inline-code: rgba(201, 162, 75, 0.14);
 
-  /* Hairlines / borders */
-  --sl-color-hairline-light: #1f2438;
-  --sl-color-hairline: #2c3147;
-  --sl-color-hairline-shade: #161a2c;
+  /* Hairlines */
+  --sl-color-hairline-light: #191d2a;
+  --sl-color-hairline: #232838;
+  --sl-color-hairline-shade: #14182300;
+
+  /* Brand custom tokens */
+  --pl-gold: #c9a24b;
+  --pl-gold-bright: #e2c079;
+  --pl-oxblood: #8c2f39;
+  --pl-oxblood-deep: #5e1f26;
+  --pl-ivory: #f4f1e9;
 
   --sl-font: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   --sl-font-mono: 'JetBrains Mono', 'Fira Code', Menlo, Monaco, Consolas, monospace;
+  --pl-serif: 'Fraunces', 'Iowan Old Style', Georgia, 'Times New Roman', serif;
 }
 
 /* ============================================================
-   Typography — Manrope headings, Inter body
+   Typography — Fraunces serif display, Inter body
    ============================================================ */
 body {
   font-family: var(--sl-font);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: var(--sl-color-bg);
+  /* faint warm vignette at top for editorial depth */
+  background-image:
+    radial-gradient(1200px 480px at 50% -10%, rgba(201, 162, 75, 0.05), transparent 70%),
+    radial-gradient(900px 420px at 100% 0%, rgba(140, 47, 57, 0.045), transparent 65%);
+  background-attachment: fixed;
 }
 
 .sl-markdown-content h1,
 .sl-markdown-content h2,
 .sl-markdown-content h3,
 .sl-markdown-content h4,
-.sl-markdown-content h5,
-.sl-markdown-content h6,
 .hero h1,
-.hero p,
-.site-title,
+.site-title span,
 .sl-link-card .title,
 .card .title {
-  font-family: 'Manrope', 'Inter', system-ui, sans-serif;
-  font-weight: 700;
+  font-family: var(--pl-serif);
+  font-weight: 600;
   letter-spacing: -0.01em;
+  font-optical-sizing: auto;
 }
 
 .sl-markdown-content h1 {
-  font-weight: 800;
-  letter-spacing: -0.025em;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  font-size: clamp(2.1rem, 4vw, 3rem);
+  line-height: 1.1;
+}
+.sl-markdown-content h2 {
+  font-size: clamp(1.5rem, 2.6vw, 2rem);
+  line-height: 1.18;
+  margin-top: 2.6rem;
+  padding-top: 1.6rem;
+  border-top: 1px solid var(--sl-color-hairline-light);
+}
+.sl-markdown-content h2::before {
+  /* signature thin gold rule above each H2 */
+  content: "";
+  display: block;
+  width: 38px;
+  height: 2px;
+  background: linear-gradient(90deg, var(--pl-gold), rgba(201,162,75,0));
+  margin-bottom: 1rem;
+  margin-top: -1.6rem;
+}
+.sl-markdown-content h3 {
+  font-size: 1.22rem;
+  color: var(--pl-ivory);
+}
+
+.sl-markdown-content p,
+.sl-markdown-content li {
+  line-height: 1.72;
+}
+.sl-markdown-content {
+  --sl-content-width: 50rem;
 }
 
 /* ============================================================
-   Hero — landing page splash with portlev.com-style gradient text
+   Hero — editorial serif headline with warm gold gradient
    ============================================================ */
 .hero {
-  padding-block: 4rem 3rem;
+  padding-block: 4.5rem 3.25rem;
 }
-
 .hero h1 {
-  /* Dark theme (standard): bright gradient that pops against the dark canvas. */
-  background: linear-gradient(135deg, #a5b4ff, #818cf8 45%, #b9b3ff);
+  font-family: var(--pl-serif);
+  background: linear-gradient(125deg, var(--pl-ivory) 8%, var(--pl-gold-bright) 60%, var(--pl-gold) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
   color: transparent;
-  font-size: clamp(2.75rem, 6.5vw, 4.75rem);
-  line-height: 1.04;
-  font-weight: 800;
-  letter-spacing: -0.03em;
+  font-size: clamp(2.9rem, 6.2vw, 4.9rem);
+  line-height: 1.02;
+  font-weight: 600;
+  letter-spacing: -0.025em;
 }
-
-/* Light theme override: darker gradient stops so the headline stays high-contrast
-   and does not wash out against the light background. */
-:root[data-theme='light'] .hero h1 {
-  background: linear-gradient(135deg, #2e26a6, #4b41e1 50%, #5b51e9);
-  -webkit-background-clip: text;
-  background-clip: text;
-}
-
 .hero .tagline {
   color: var(--sl-color-gray-2);
-  font-size: clamp(1.1rem, 1.8vw, 1.3rem);
-  max-width: 42ch;
-  line-height: 1.5;
+  font-size: clamp(1.12rem, 1.7vw, 1.32rem);
+  max-width: 46ch;
+  line-height: 1.55;
   font-weight: 400;
 }
 
-:root[data-theme='dark'] .hero .tagline {
-  color: #c4c6cf;
-}
-
 /* ============================================================
-   Buttons — match portlev.com primary CTA style
+   Buttons — gold primary, refined outline secondary
    ============================================================ */
 .sl-link-button.primary {
-  background: linear-gradient(135deg, #4b41e1 0%, #645efb 100%);
-  color: #ffffff !important;
+  background: linear-gradient(180deg, var(--pl-gold-bright) 0%, var(--pl-gold) 100%);
+  color: #1a1306 !important;
   border: none;
   font-weight: 700;
-  padding: 0.85rem 1.4rem;
-  border-radius: 12px;
-  font-family: 'Manrope', sans-serif;
-  letter-spacing: -0.01em;
+  padding: 0.9rem 1.5rem;
+  border-radius: 11px;
+  font-family: var(--sl-font);
+  letter-spacing: -0.005em;
   box-shadow:
-    0 1px 0 rgba(255, 255, 255, 0.18) inset,
-    0 10px 28px -8px rgba(75, 65, 225, 0.55);
+    0 1px 0 rgba(255, 255, 255, 0.35) inset,
+    0 12px 30px -10px rgba(201, 162, 75, 0.5);
   transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
 .sl-link-button.primary:hover {
   transform: translateY(-2px);
   box-shadow:
-    0 1px 0 rgba(255, 255, 255, 0.2) inset,
-    0 14px 34px -8px rgba(75, 65, 225, 0.65);
-  color: #ffffff !important;
+    0 1px 0 rgba(255, 255, 255, 0.4) inset,
+    0 18px 40px -10px rgba(201, 162, 75, 0.62);
+  color: #1a1306 !important;
 }
-
 .sl-link-button.secondary {
-  border: 1.5px solid var(--sl-color-hairline);
+  border: 1px solid var(--sl-color-hairline);
   color: var(--sl-color-text);
   font-weight: 600;
-  border-radius: 12px;
-  padding: 0.85rem 1.4rem;
+  border-radius: 11px;
+  padding: 0.9rem 1.5rem;
   background: var(--sl-color-bg-nav);
-  font-family: 'Manrope', sans-serif;
-  transition: border-color 0.15s ease, background 0.15s ease;
+  font-family: var(--sl-font);
+  transition: border-color 0.15s ease, background 0.15s ease, transform 0.15s ease;
 }
 .sl-link-button.secondary:hover {
-  border-color: #4b41e1;
+  border-color: var(--pl-gold);
   background: var(--sl-color-accent-low);
+  transform: translateY(-2px);
 }
-
 .sl-link-button.minimal {
-  color: var(--sl-color-text-accent);
+  color: var(--pl-gold-bright);
   font-weight: 600;
-  font-family: 'Manrope', sans-serif;
-  padding: 0.85rem 1rem;
+  font-family: var(--sl-font);
+  padding: 0.9rem 1rem;
 }
 
 /* ============================================================
-   Code — soft indigo tint for inline, clean blocks
+   Links in prose — gold underline
+   ============================================================ */
+.sl-markdown-content a {
+  color: var(--pl-gold-bright);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-color: rgba(201, 162, 75, 0.4);
+  text-decoration-thickness: 1px;
+}
+.sl-markdown-content a:hover {
+  text-decoration-color: var(--pl-gold);
+}
+
+/* ============================================================
+   Code
    ============================================================ */
 .sl-markdown-content :not(pre) > code {
   background: var(--sl-color-bg-inline-code);
-  color: #2e26a6;
-  border: 1px solid rgba(75, 65, 225, 0.18);
+  color: var(--pl-gold-bright);
+  border: 1px solid rgba(201, 162, 75, 0.25);
   border-radius: 5px;
   padding: 0.12em 0.4em;
-  font-size: 0.88em;
+  font-size: 0.86em;
   font-weight: 500;
 }
-
-:root[data-theme='dark'] .sl-markdown-content :not(pre) > code {
-  color: #b9b3ff;
-  border-color: rgba(129, 140, 248, 0.3);
-}
-
 .expressive-code,
 .sl-markdown-content pre {
-  border: 1px solid var(--sl-color-hairline-light);
+  border: 1px solid var(--sl-color-hairline);
   border-radius: 10px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+  background: var(--sl-color-gray-7) !important;
 }
 
 /* ============================================================
-   Sidebar — slightly elevated, clear labels
+   Sidebar
    ============================================================ */
 .sidebar-pane {
   border-right: 1px solid var(--sl-color-hairline-light);
+  background: var(--sl-color-bg-sidebar);
 }
-
 ul.top-level > li > details > summary,
 ul.top-level > li > a {
-  font-family: 'Manrope', sans-serif;
+  font-family: var(--sl-font);
   font-weight: 700;
-  font-size: 0.78rem;
+  font-size: 0.72rem;
   text-transform: uppercase;
-  letter-spacing: 0.06em;
-  color: var(--sl-color-gray-2);
+  letter-spacing: 0.09em;
+  color: var(--pl-gold);
+}
+.sidebar a[aria-current='page'],
+.sidebar a[aria-current='page']:hover {
+  background: var(--sl-color-accent-low);
+  color: var(--pl-gold-bright);
+  font-weight: 600;
+  border-radius: 6px;
 }
 
 /* ============================================================
-   Cards (used in landing page CardGrid)
+   Cards (CardGrid)
    ============================================================ */
 .card {
   border: 1px solid var(--sl-color-hairline-light);
   border-radius: 14px;
   background: var(--sl-color-bg-nav);
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
   transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
 }
 .card:hover {
-  transform: translateY(-2px);
-  border-color: rgba(75, 65, 225, 0.35);
-  box-shadow: 0 10px 28px -10px rgba(75, 65, 225, 0.25);
+  transform: translateY(-3px);
+  border-color: rgba(201, 162, 75, 0.45);
+  box-shadow: 0 14px 34px -12px rgba(201, 162, 75, 0.22);
 }
-
 .card .icon {
-  color: #4b41e1;
+  color: var(--pl-gold);
+  border: 1px solid rgba(201, 162, 75, 0.3);
+  background: rgba(201, 162, 75, 0.07);
+  border-radius: 9px;
+  padding: 6px;
 }
-
-:root[data-theme='dark'] .card .icon {
-  color: #818cf8;
-}
+.card .title { color: var(--pl-ivory); }
 
 /* ============================================================
-   Link cards (the curriculum module cards)
+   Link cards (curriculum modules)
    ============================================================ */
 .sl-link-card {
   border: 1px solid var(--sl-color-hairline-light);
@@ -253,100 +280,380 @@ ul.top-level > li > a {
   transition: border-color 0.18s ease, box-shadow 0.18s ease, transform 0.18s ease;
 }
 .sl-link-card:hover {
-  border-color: #4b41e1;
-  box-shadow: 0 8px 24px -10px rgba(75, 65, 225, 0.3);
+  border-color: var(--pl-gold);
+  box-shadow: 0 10px 30px -12px rgba(201, 162, 75, 0.28);
   transform: translateY(-1px);
 }
-.sl-link-card .title {
-  color: var(--sl-color-text);
-}
-.sl-link-card .description {
-  color: var(--sl-color-gray-2);
-}
+.sl-link-card .title { color: var(--pl-ivory); }
+.sl-link-card .description { color: var(--sl-color-gray-2); }
 
 /* ============================================================
-   Tables — branded headers, clean rows
+   Tables
    ============================================================ */
 .sl-markdown-content table {
-  border: 1px solid var(--sl-color-hairline-light);
+  border: 1px solid var(--sl-color-hairline);
   border-radius: 10px;
   overflow: hidden;
   border-collapse: separate;
   border-spacing: 0;
+  font-size: 0.95rem;
 }
 .sl-markdown-content th {
   background: var(--sl-color-gray-7);
-  font-family: 'Manrope', sans-serif;
+  font-family: var(--sl-font);
   font-weight: 700;
-  color: var(--sl-color-text);
+  color: var(--pl-ivory);
   letter-spacing: -0.005em;
 }
-
-:root[data-theme='dark'] .sl-markdown-content th {
-  background: #1a1f33;
-}
+.sl-markdown-content td { color: var(--sl-color-gray-2); }
+.sl-markdown-content tr:nth-child(even) td { background: rgba(255,255,255,0.012); }
 
 /* ============================================================
-   Cohort callout — highlighted block used inside markdown
+   Callout — oxblood→gold wash, gold rule (enrollment/CTA blocks)
    ============================================================ */
 .cohort-callout {
   background:
-    linear-gradient(135deg, rgba(75, 65, 225, 0.05), rgba(100, 94, 251, 0.08));
-  border: 1px solid rgba(75, 65, 225, 0.22);
-  border-left: 4px solid #4b41e1;
-  border-radius: 10px;
-  padding: 1.4rem 1.6rem;
-  margin: 1.75rem 0;
+    linear-gradient(135deg, rgba(140, 47, 57, 0.16), rgba(201, 162, 75, 0.08));
+  border: 1px solid rgba(201, 162, 75, 0.28);
+  border-left: 3px solid var(--pl-gold);
+  border-radius: 12px;
+  padding: 1.5rem 1.7rem;
+  margin: 1.9rem 0;
 }
-
-:root[data-theme='dark'] .cohort-callout {
-  background:
-    linear-gradient(135deg, rgba(129, 140, 248, 0.08), rgba(129, 140, 248, 0.04));
-  border-color: rgba(129, 140, 248, 0.35);
-  border-left-color: #818cf8;
-}
-
-.cohort-callout strong {
-  color: #2e26a6;
-  font-weight: 700;
-}
-
-:root[data-theme='dark'] .cohort-callout strong {
-  color: #b9b3ff;
-}
-
+.cohort-callout strong { color: var(--pl-gold-bright); font-weight: 700; }
 .cohort-callout a {
-  color: #4b41e1;
+  color: var(--pl-gold-bright);
   font-weight: 600;
   text-decoration: underline;
   text-underline-offset: 3px;
-  text-decoration-color: rgba(75, 65, 225, 0.4);
+  text-decoration-color: rgba(201, 162, 75, 0.45);
 }
-.cohort-callout a:hover {
-  text-decoration-color: #4b41e1;
+.cohort-callout a:hover { text-decoration-color: var(--pl-gold); }
+
+/* Editorial pull-stat: wrap a number in <span class="pl-stat">76%</span> */
+.pl-stat {
+  font-family: var(--pl-serif);
+  font-weight: 600;
+  color: var(--pl-gold-bright);
+  font-size: 1.15em;
+  letter-spacing: -0.01em;
 }
 
-:root[data-theme='dark'] .cohort-callout a {
-  color: #b9b3ff;
+/* Lede paragraph (first paragraph after an H1/intro) */
+.sl-markdown-content > p.pl-lede {
+  font-size: 1.18rem;
+  line-height: 1.6;
+  color: var(--sl-color-gray-1);
+  font-weight: 400;
 }
 
 /* ============================================================
-   Header — clean wordmark with subtle hairline
+   Header
    ============================================================ */
 .header {
-  background: var(--sl-color-bg-nav);
+  background: rgba(17, 21, 31, 0.85);
+  backdrop-filter: saturate(140%) blur(8px);
   border-bottom: 1px solid var(--sl-color-hairline-light);
 }
-
 .site-title span {
-  font-family: 'Manrope', sans-serif;
+  font-family: var(--pl-serif);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--pl-ivory);
+}
+.site-title img { border-radius: 6px; }
+
+/* Social icons → gold on hover */
+.social-icons a:hover { color: var(--pl-gold); }
+
+/* ============================================================
+   Content element kit — Stake / Exercise / Artifact / Check / Video
+   Used in lesson markdown via <div class="pl-...">
+   ============================================================ */
+.sl-markdown-content .pl-stake {
+  background: linear-gradient(135deg, rgba(140, 47, 57, 0.16), rgba(201, 162, 75, 0.08));
+  border-left: 3px solid var(--pl-gold);
+  border-radius: 12px;
+  padding: 1.4rem 1.6rem;
+  margin: 1rem 0 2rem;
+  color: var(--sl-color-gray-1);
+  font-size: 1.06rem;
+  line-height: 1.6;
+}
+.sl-markdown-content .pl-stake strong { color: var(--pl-gold-bright); font-weight: 700; }
+
+.sl-markdown-content .pl-exercise {
+  background: var(--sl-color-bg-nav);
+  border: 1px solid var(--sl-color-hairline);
+  border-top: 2px solid var(--pl-gold);
+  border-radius: 10px;
+  padding: 1.2rem 1.5rem;
+  margin: 2rem 0;
+}
+.sl-markdown-content .pl-exercise strong { color: var(--pl-gold-bright); }
+.sl-markdown-content .pl-exercise::before {
+  content: "EXERCISE";
+  display: block;
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  color: var(--pl-gold);
   font-weight: 700;
-  letter-spacing: -0.015em;
-  color: var(--sl-color-text);
+  margin-bottom: 0.5rem;
+}
+
+.sl-markdown-content .pl-artifact {
+  background: linear-gradient(180deg, rgba(201, 162, 75, 0.08), rgba(201, 162, 75, 0.03));
+  border: 1px solid rgba(201, 162, 75, 0.32);
+  border-radius: 10px;
+  padding: 1.2rem 1.5rem;
+  margin: 2rem 0;
+}
+.sl-markdown-content .pl-artifact strong { color: var(--pl-gold-bright); }
+.sl-markdown-content .pl-artifact::before {
+  content: "YOUR ARTIFACT";
+  display: block;
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  color: var(--pl-gold);
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.sl-markdown-content .pl-check {
+  background: var(--sl-color-bg-nav);
+  border: 1px solid var(--sl-color-hairline-light);
+  border-radius: 10px;
+  padding: 0.4rem 1.2rem;
+  margin: 2rem 0;
+}
+.sl-markdown-content .pl-check[open] { padding: 1rem 1.2rem; }
+.sl-markdown-content .pl-check summary {
+  cursor: pointer;
+  font-weight: 600;
+  color: var(--pl-gold);
+  font-size: 0.78rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.6rem 0;
+  list-style: none;
+}
+.sl-markdown-content .pl-check summary::-webkit-details-marker { display: none; }
+.sl-markdown-content .pl-check summary::before { content: "▸ "; color: var(--pl-gold); }
+.sl-markdown-content .pl-check[open] summary::before { content: "▾ "; }
+
+.sl-markdown-content .pl-video {
+  margin: 2rem 0;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid var(--sl-color-hairline);
+  background: var(--sl-color-gray-7);
+}
+.sl-markdown-content .pl-video iframe {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  display: block;
+  border: 0;
+}
+.sl-markdown-content .pl-video-note {
+  font-size: 0.88rem;
+  color: var(--sl-color-gray-3);
+  padding: 0.7rem 1rem;
+  margin: 0;
+  border-top: 1px solid var(--sl-color-hairline-light);
+  background: var(--sl-color-bg-nav);
 }
 
 /* ============================================================
-   Force initial theme to LIGHT to match portlev.com.
-   This runs before Starlight's theme provider on first load.
-   If user has explicitly toggled to dark before, that preference persists.
+   CAIO Readiness Diagnostic — interactive scoring widget
    ============================================================ */
+.pl-diagnostic { margin: 2rem 0 3rem; }
+.pl-diagnostic .pl-d-intro {
+  background: linear-gradient(135deg, rgba(140, 47, 57, 0.18), rgba(201, 162, 75, 0.08));
+  border: 1px solid rgba(201, 162, 75, 0.28);
+  border-left: 3px solid var(--pl-gold);
+  border-radius: 12px;
+  padding: 1.4rem 1.6rem;
+  margin-bottom: 1.5rem;
+  color: var(--sl-color-gray-1);
+}
+.pl-diagnostic .pl-d-section {
+  font-family: var(--pl-serif);
+  font-size: 1.4rem;
+  color: var(--pl-ivory);
+  margin: 2rem 0 0.4rem;
+  padding-top: 1.2rem;
+  border-top: 1px solid var(--sl-color-hairline-light);
+}
+.pl-diagnostic .pl-d-section::before {
+  content: "";
+  display: block;
+  width: 38px; height: 2px;
+  background: linear-gradient(90deg, var(--pl-gold), rgba(201,162,75,0));
+  margin-bottom: 0.6rem;
+}
+.pl-diagnostic .pl-d-section-help {
+  color: var(--sl-color-gray-3);
+  font-size: 0.92rem;
+  margin: 0 0 1.2rem;
+}
+.pl-diagnostic .pl-d-row {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 0.6rem 1.2rem;
+  align-items: center;
+  padding: 0.85rem 0;
+  border-bottom: 1px solid var(--sl-color-hairline-light);
+}
+.pl-diagnostic .pl-d-q {
+  color: var(--sl-color-text);
+  font-size: 0.97rem;
+}
+.pl-diagnostic .pl-d-q .pl-d-q-num {
+  color: var(--pl-gold);
+  font-weight: 600;
+  margin-right: 0.5em;
+  font-family: var(--pl-serif);
+}
+.pl-diagnostic .pl-d-q .pl-d-q-desc {
+  display: block;
+  color: var(--sl-color-gray-3);
+  font-size: 0.85rem;
+  margin-top: 0.2rem;
+}
+.pl-diagnostic .pl-d-scale {
+  display: inline-flex;
+  gap: 6px;
+}
+.pl-diagnostic .pl-d-scale button {
+  width: 34px; height: 34px;
+  border-radius: 8px;
+  border: 1px solid var(--sl-color-hairline);
+  background: var(--sl-color-bg-nav);
+  color: var(--sl-color-gray-2);
+  font-weight: 600;
+  font-family: var(--sl-font);
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+.pl-diagnostic .pl-d-scale button:hover { border-color: var(--pl-gold); color: var(--pl-gold-bright); }
+.pl-diagnostic .pl-d-scale button[aria-pressed="true"] {
+  background: linear-gradient(180deg, var(--pl-gold-bright), var(--pl-gold));
+  color: #1a1306;
+  border-color: var(--pl-gold);
+  box-shadow: 0 4px 12px -4px rgba(201,162,75,0.45);
+}
+.pl-diagnostic .pl-d-submit {
+  margin-top: 1.5rem;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.pl-diagnostic .pl-d-submit button {
+  background: linear-gradient(180deg, var(--pl-gold-bright), var(--pl-gold));
+  color: #1a1306;
+  border: none;
+  font-weight: 700;
+  padding: 0.9rem 1.6rem;
+  border-radius: 11px;
+  font-family: var(--sl-font);
+  cursor: pointer;
+  box-shadow: 0 12px 28px -10px rgba(201, 162, 75, 0.5);
+  transition: transform 0.15s ease;
+}
+.pl-diagnostic .pl-d-submit button:hover { transform: translateY(-2px); }
+.pl-diagnostic .pl-d-submit .pl-d-progress { color: var(--sl-color-gray-3); font-size: 0.88rem; }
+.pl-diagnostic .pl-d-result {
+  margin-top: 2rem;
+  padding: 1.8rem 2rem;
+  background: linear-gradient(180deg, rgba(201, 162, 75, 0.08), rgba(140, 47, 57, 0.05));
+  border: 1px solid rgba(201, 162, 75, 0.32);
+  border-radius: 14px;
+  display: none;
+}
+.pl-diagnostic .pl-d-result.show { display: block; }
+.pl-diagnostic .pl-d-result h3 {
+  font-family: var(--pl-serif);
+  color: var(--pl-ivory);
+  margin: 0 0 0.4rem;
+  font-size: 1.5rem;
+}
+.pl-diagnostic .pl-d-scores {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 14px;
+  margin: 1.2rem 0 1.5rem;
+}
+.pl-diagnostic .pl-d-score {
+  background: var(--sl-color-bg-nav);
+  border: 1px solid var(--sl-color-hairline);
+  border-radius: 10px;
+  padding: 0.9rem 1rem;
+}
+.pl-diagnostic .pl-d-score-label {
+  color: var(--sl-color-gray-3);
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 0.2rem;
+}
+.pl-diagnostic .pl-d-score-value {
+  color: var(--pl-gold-bright);
+  font-family: var(--pl-serif);
+  font-size: 2rem;
+  font-weight: 600;
+  line-height: 1;
+}
+.pl-diagnostic .pl-d-result p { color: var(--sl-color-gray-1); line-height: 1.6; }
+.pl-diagnostic .pl-d-result .pl-d-gap-list { color: var(--sl-color-gray-2); margin: 0.4rem 0 1rem; padding-left: 1.2rem; }
+.pl-diagnostic .pl-d-result .pl-d-gap-list li { margin: 0.3rem 0; }
+.pl-diagnostic .pl-d-cta {
+  display: inline-block;
+  margin-top: 0.6rem;
+  background: linear-gradient(180deg, var(--pl-gold-bright), var(--pl-gold));
+  color: #1a1306 !important;
+  font-weight: 700;
+  padding: 0.85rem 1.4rem;
+  border-radius: 11px;
+  text-decoration: none;
+}
+
+
+/* Inline lesson diagrams (SVG/IMG) */
+.sl-markdown-content .pl-diagram {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 2rem 0;
+  border-radius: 12px;
+  border: 1px solid var(--sl-color-hairline-light);
+  background: #11151f;
+}
+
+/* Waitlist email signup forms */
+.sl-markdown-content .pl-waitlist {
+  display: flex; gap: 10px; align-items: center; flex-wrap: wrap;
+  margin: 1.5rem 0 0.5rem;
+}
+.sl-markdown-content .pl-waitlist input[type=email] {
+  flex: 1 1 240px; min-width: 0;
+  padding: 0.85rem 1rem; border-radius: 11px;
+  border: 1px solid var(--sl-color-hairline);
+  background: var(--sl-color-bg-nav); color: var(--sl-color-text);
+  font: inherit; font-size: 0.95rem;
+}
+.sl-markdown-content .pl-waitlist input[type=email]:focus {
+  outline: none; border-color: var(--pl-gold);
+  box-shadow: 0 0 0 3px rgba(201,162,75,0.18);
+}
+.sl-markdown-content .pl-waitlist button {
+  background: linear-gradient(180deg, var(--pl-gold-bright), var(--pl-gold));
+  color: #1a1306; border: none; font-weight: 700;
+  padding: 0.85rem 1.4rem; border-radius: 11px; cursor: pointer;
+  box-shadow: 0 10px 24px -10px rgba(201,162,75,0.5);
+  font-family: var(--sl-font);
+}
+.sl-markdown-content .pl-waitlist button:hover { transform: translateY(-1px); }
+.sl-markdown-content .pl-waitlist-note {
+  font-size: 0.86rem; color: var(--sl-color-gray-3); margin: 0.3rem 0 1.4rem;
+}

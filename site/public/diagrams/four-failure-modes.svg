@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 360" role="img" aria-label="The four failure modes of enterprise AI">
+<style>.bg{fill:#11151f}.box{fill:#11151f;stroke:#c9a24b;stroke-width:1.5}.boxsoft{fill:#0e121b;stroke:#232838;stroke-width:1}.oxbox{fill:#3a1b22;stroke:#8c2f39;stroke-width:1.5}.txt{fill:#f4f1e9;font-family:Georgia,serif;font-weight:600}.txtsm{fill:#c7cbd8;font-family:Inter,sans-serif;font-size:11px}.txtgold{fill:#e2c079;font-family:Georgia,serif;font-weight:600}.label{fill:#c9a24b;font-family:Inter,sans-serif;font-weight:700;font-size:10px;letter-spacing:0.1em}.arrow{stroke:#c9a24b;stroke-width:1.5;fill:none;marker-end:url(#a)}</style><defs><marker id="a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#c9a24b"/></marker></defs>
+<rect width="720" height="360" class="bg"/>
+<text x="20" y="28" class="label">THE FOUR FAILURE MODES — 95% OF AI INITIATIVES</text>
+<rect x="60" y="60" width="290" height="120" rx="10" class="box"/>
+<text x="80" y="92" class="txtgold" font-size="14">Unfunded mandate</text>
+<text x="80" y="115" class="txtsm">CEO says "do AI" with no budget,</text>
+<text x="80" y="132" class="txtsm">no team, no authority. Theater.</text>
+<rect x="370" y="60" width="290" height="120" rx="10" class="box"/>
+<text x="390" y="92" class="txtgold" font-size="14">Vanity pilot</text>
+<text x="390" y="115" class="txtsm">A demo that wows the board and</text>
+<text x="390" y="132" class="txtsm">never reaches a real workflow.</text>
+<rect x="60" y="200" width="290" height="120" rx="10" class="box"/>
+<text x="80" y="232" class="txtgold" font-size="14">No adoption</text>
+<text x="80" y="255" class="txtsm">Real tool shipped; humans don't</text>
+<text x="80" y="272" class="txtsm">use it. The 25% / 86% gap.</text>
+<rect x="370" y="200" width="290" height="120" rx="10" class="box"/>
+<text x="390" y="232" class="txtgold" font-size="14">No measurement</text>
+<text x="390" y="255" class="txtsm">No baseline, no ROI, no signal</text>
+<text x="390" y="272" class="txtsm">to invest more. Quietly killed.</text>
+<text x="20" y="350" class="txtsm">Every failure is organizational, not technical. Each pillar of the program closes one.</text>
+</svg>

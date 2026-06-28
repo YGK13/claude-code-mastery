@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 260" role="img" aria-label="The first 100 days as Chief AI Officer">
+<style>.bg{fill:#11151f}.box{fill:#11151f;stroke:#c9a24b;stroke-width:1.5}.boxsoft{fill:#0e121b;stroke:#232838;stroke-width:1}.oxbox{fill:#3a1b22;stroke:#8c2f39;stroke-width:1.5}.txt{fill:#f4f1e9;font-family:Georgia,serif;font-weight:600}.txtsm{fill:#c7cbd8;font-family:Inter,sans-serif;font-size:11px}.txtgold{fill:#e2c079;font-family:Georgia,serif;font-weight:600}.label{fill:#c9a24b;font-family:Inter,sans-serif;font-weight:700;font-size:10px;letter-spacing:0.1em}.arrow{stroke:#c9a24b;stroke-width:1.5;fill:none;marker-end:url(#a)}</style><defs><marker id="a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#c9a24b"/></marker></defs>
+<rect width="720" height="260" class="bg"/>
+<text x="20" y="28" class="label">THE FIRST 100 DAYS</text>
+<line x1="40" y1="135" x2="680" y2="135" stroke="#c9a24b" stroke-width="2"/>
+<circle cx="40" cy="135" r="6" fill="#c9a24b"/>
+<circle cx="253" cy="135" r="6" fill="#c9a24b"/>
+<circle cx="467" cy="135" r="6" fill="#c9a24b"/>
+<circle cx="680" cy="135" r="6" fill="#c9a24b"/>
+<text x="40" y="125" text-anchor="middle" class="txtsm">Day 1</text>
+<text x="253" y="125" text-anchor="middle" class="txtsm">Day 30</text>
+<text x="467" y="125" text-anchor="middle" class="txtsm">Day 60</text>
+<text x="680" y="125" text-anchor="middle" class="txtsm">Day 100</text>
+<rect x="50" y="155" width="190" height="80" rx="8" class="box"/>
+<text x="65" y="178" class="txtgold" font-size="13">Days 1-30 — Listen</text>
+<text x="65" y="198" class="txtsm">Listen tour · gap audit ·</text>
+<text x="65" y="215" class="txtsm">governance committee stood up</text>
+<rect x="260" y="155" width="200" height="80" rx="8" class="box"/>
+<text x="275" y="178" class="txtgold" font-size="13">Days 31-60 — Frame</text>
+<text x="275" y="198" class="txtsm">Operating model published ·</text>
+<text x="275" y="215" class="txtsm">portfolio · first proof case</text>
+<rect x="480" y="155" width="200" height="80" rx="8" class="oxbox"/>
+<text x="495" y="178" class="txtgold" font-size="13">Days 61-100 — Prove</text>
+<text x="495" y="198" class="txtsm">First board update with metrics ·</text>
+<text x="495" y="215" class="txtsm">hires · year-one budget defended</text>
+<text x="20" y="65" class="txtsm">The opening 100 days that decide the next 1,000. Three phases.</text>
+</svg>

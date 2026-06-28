@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 220" role="img" aria-label="RAG flow: query, retrieve, ground, generate">
+<style>.bg{fill:#11151f}.box{fill:#11151f;stroke:#c9a24b;stroke-width:1.5}.boxsoft{fill:#0e121b;stroke:#232838;stroke-width:1}.oxbox{fill:#3a1b22;stroke:#8c2f39;stroke-width:1.5}.txt{fill:#f4f1e9;font-family:Georgia,serif;font-weight:600}.txtsm{fill:#c7cbd8;font-family:Inter,sans-serif;font-size:11px}.txtgold{fill:#e2c079;font-family:Georgia,serif;font-weight:600}.label{fill:#c9a24b;font-family:Inter,sans-serif;font-weight:700;font-size:10px;letter-spacing:0.1em}.arrow{stroke:#c9a24b;stroke-width:1.5;fill:none;marker-end:url(#a)}</style><defs><marker id="a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#c9a24b"/></marker></defs>
+<rect width="720" height="220" class="bg"/>
+<text x="20" y="28" class="label">RETRIEVAL-AUGMENTED GENERATION (RAG)</text>
+<rect x="20" y="80" width="120" height="60" rx="10" class="box"/>
+<text x="80" y="105" text-anchor="middle" class="txt" font-size="13">User query</text>
+<text x="80" y="125" text-anchor="middle" class="txtsm">a real question</text>
+<rect x="170" y="80" width="140" height="60" rx="10" class="box"/>
+<text x="240" y="105" text-anchor="middle" class="txt" font-size="13">Retrieve</text>
+<text x="240" y="125" text-anchor="middle" class="txtsm">vector store of your docs</text>
+<rect x="340" y="80" width="140" height="60" rx="10" class="box"/>
+<text x="410" y="105" text-anchor="middle" class="txt" font-size="13">Ground</text>
+<text x="410" y="125" text-anchor="middle" class="txtsm">stuff context into prompt</text>
+<rect x="510" y="80" width="140" height="60" rx="10" class="oxbox"/>
+<text x="580" y="105" text-anchor="middle" class="txtgold" font-size="13">Generate</text>
+<text x="580" y="125" text-anchor="middle" class="txtsm">model answers, with citations</text>
+<path d="M140 110 L170 110" class="arrow"/>
+<path d="M310 110 L340 110" class="arrow"/>
+<path d="M480 110 L510 110" class="arrow"/>
+<rect x="170" y="160" width="310" height="36" rx="8" fill="#0e121b" stroke="#232838"/>
+<text x="325" y="183" text-anchor="middle" class="txtsm">Your company's knowledge — without retraining the model.</text>
+<line x1="20" y1="200" x2="60" y2="200" stroke="#c9a24b" stroke-width="2"/>
+</svg>
