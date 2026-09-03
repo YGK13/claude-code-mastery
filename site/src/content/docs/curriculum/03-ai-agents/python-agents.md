@@ -1,9 +1,8 @@
 ---
-title: Python Agents
-description: Part of 03-ai-agents in the PortLev Learn Claude Code curriculum.
+# generated from modules/03-ai-agents/python-agents.md by site/scripts/sync-content.mjs
+title: "Python Agents"
+description: "This lesson walks through building AI agents in Python using the Anthropic SDK. By the end you'll have a working agent that can reason and take actions."
 ---
-
-# Python Agents
 
 This lesson walks through building AI agents in Python using the Anthropic SDK. By the end you'll have a working agent that can reason and take actions.
 

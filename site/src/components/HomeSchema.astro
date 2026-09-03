@@ -1,0 +1,74 @@
+---
+/**
+ * JSON-LD for the landing page: Course (with a free online CourseInstance and
+ * syllabus), FAQPage (from the same FAQS array the visible accordion renders)
+ * and BreadcrumbList. Organization, Person and WebSite live in the global head
+ * (astro.config.mjs) and are referenced here by @id.
+ */
+import { SITE, MODULES, FAQS, TOTAL_HOURS } from '../lib-site';
+
+const course = {
+  '@type': 'Course',
+  '@id': `${SITE.url}/#course`,
+  name: SITE.name,
+  description: SITE.description,
+  url: SITE.url,
+  image: `${SITE.url}/og-image.png`,
+  inLanguage: 'en',
+  isAccessibleForFree: true,
+  educationalLevel: 'Beginner to intermediate',
+  teaches: [
+    'Installing and configuring Claude Code',
+    'Writing a CLAUDE.md file and managing permissions',
+    'Building standalone HTML and Next.js web apps with an AI coding agent',
+    'Building Python AI agents with tool use on the Claude API',
+    'Automating work with hooks, multi-agent coordination and CI/CD',
+    'Installing and building Model Context Protocol (MCP) servers',
+    'Skills, slash commands and context management for production use',
+  ],
+  audience: { '@type': 'Audience', audienceType: 'Executives, operators, consultants and software developers learning agentic coding' },
+  provider: { '@id': 'https://portlev.com/#organization' },
+  author: { '@id': 'https://yurikruman.com/#person' },
+  instructor: { '@id': 'https://yurikruman.com/#person' },
+  publisher: { '@id': 'https://portlev.com/#organization' },
+  license: 'https://opensource.org/license/mit',
+  dateModified: SITE.lastUpdated,
+  offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD', category: 'Free', availability: 'https://schema.org/InStock', url: SITE.url },
+  hasCourseInstance: {
+    '@type': 'CourseInstance',
+    courseMode: 'Online',
+    courseWorkload: `PT${TOTAL_HOURS}H`,
+    courseSchedule: { '@type': 'Schedule', repeatFrequency: 'Self-paced' },
+    instructor: { '@id': 'https://yurikruman.com/#person' },
+  },
+  syllabusSections: MODULES.map((m, i) => ({
+    '@type': 'Syllabus',
+    position: i + 1,
+    name: `Module ${m.n}: ${m.title}`,
+    description: m.summary,
+    url: `${SITE.url}/curriculum/${m.slug}/overview/`,
+    timeRequired: `PT${m.hours}H`,
+  })),
+};
+
+const faq = {
+  '@type': 'FAQPage',
+  '@id': `${SITE.url}/#faq`,
+  mainEntity: FAQS.map((f) => ({
+    '@type': 'Question',
+    name: f.q,
+    acceptedAnswer: { '@type': 'Answer', text: f.a },
+  })),
+};
+
+const breadcrumb = {
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'PortLev', item: 'https://portlev.com' },
+    { '@type': 'ListItem', position: 2, name: SITE.name, item: SITE.url },
+  ],
+};
+
+const graph = { '@context': 'https://schema.org', '@graph': [course, faq, breadcrumb] };
+---
+<script type="application/ld+json" set:html={JSON.stringify(graph)} />

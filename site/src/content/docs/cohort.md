@@ -1,93 +1,66 @@
 ---
-title: The Cohort
-description: Build With AI — the 3-month founding cohort with Yuri Kruman and ForwardShare Partners. $2,500. 4 of 8 spots remaining.
+title: Guided programs
+description: The free curriculum is enough to start. PortLev Academy programs, including the 12-week Executive AI Cohort with live workshops and 1:1 coaching, are how you finish.
 ---
 
-import { Card, CardGrid } from '@astrojs/starlight/components';
-
-# Build With AI: Founding Cohort
-
-Learn to build real AI-powered products in just three months through hands-on design, expert mentorship and a tight-knit peer community.
+Everything on this site is free and self-paced. Some people want a deadline, a room and someone to review what they built. That is what the guided programs at [PortLev Academy](https://learn.portlev.com/programs) are for.
 
 <div class="cohort-callout">
-**$2,500 for the founding cohort.** Pricing nearly doubles for cohort #2 ($4,500). Only **4 of 8 spots remain.** [Apply now →](https://forwardshare.co/executive-ai-cohort-forward-achieve-forward-share-ventures)
+**Executive AI Cohort.** 12 weeks, three live workshops, three small-group sessions, three 1:1 coaching calls with Yuri and a peer advisory board. You leave with at least two fully built, deployed apps. Current pricing, dates and the application form are on the [cohort page at PortLev Academy](https://learn.portlev.com/cohort).
 </div>
 
 ## What you get
 
-<CardGrid>
-  <Card title="Live deliverables" icon="rocket">
-    Launch working web apps by the program's end. Not slideware. Not a certificate. Actual deployed products you and your team can use.
-  </Card>
-  <Card title="1:1 mentorship with Yuri" icon="comment">
-    Three 60-minute private coaching sessions. Direct strategic and technical advisory tailored to whatever you're building.
-  </Card>
-  <Card title="Peer network" icon="forward-slash">
-    Founding cohort of senior operators shaping AI-driven innovation together. The peer advisory board often outlasts the program.
-  </Card>
-  <Card title="Yuri's AI playbooks" icon="open-book">
-    Templates, prompt libraries and architectures Yuri uses with paying clients. Cohort members get the operating manuals, not just the theory.
-  </Card>
-</CardGrid>
+| | Free curriculum | Executive AI Cohort |
+|---|---|---|
+| The six-module curriculum | Full access | Full access |
+| Pace | Self-directed | 12 weeks, structured |
+| Live workshops | No | Three, 90 minutes each |
+| Small-group sessions | No | Three, 60 minutes each |
+| 1:1 coaching with Yuri | No | Three, 60 minutes each |
+| Peer advisory board | No | Yes |
+| Working apps shipped | What you build alone | Two or more, deployed, reviewed live |
+| Instructor playbooks | No | Templates, prompt libraries, architectures |
 
 ## Program structure
 
-12 weeks total. ~20-25 hours of structured time, plus your own build hours on top.
+About 20 to 25 hours of structured time across the 12 weeks, plus your own build hours.
 
 | Cadence | What happens |
 |---------|-------------|
-| **3 monthly 90-minute workshops** | Live group instruction on the month's core build. Hands-on, with screens shared, real code, real questions. |
-| **3 monthly 60-minute sessions** | Smaller-group office hours. Bring what you're stuck on. |
-| **3 monthly 1:1 coaching sessions** | Private 60-minute calls with Yuri. Strategy, technical review, business application — whatever you need. |
+| **Three monthly 90-minute workshops** | Live group instruction on the month's core build. Screens shared, real code, real questions. |
+| **Three monthly 60-minute sessions** | Smaller-group office hours. Bring what you are stuck on. |
+| **Three monthly 1:1 coaching sessions** | Private 60-minute calls with Yuri. Strategy, technical review, business application. |
 | **Peer advisory board** | Self-scheduled sessions with your cohort peers. Yuri seeds the format, the group runs it. |
-| **Pre-program + between-session assignments** | Real builds, not exercises. You arrive at each workshop with something to show. |
-
-## What you'll walk away with
-
-By the end of three months, at minimum:
-
-- **Two fully built, deployed apps** you can use in your work or side business
-- **A working command of Claude Code** for everything from web apps to AI agents
-- **A peer network of senior operators** building in parallel
-- **Yuri's templates, prompts and architecture playbooks** to keep using after the cohort ends
-- **The confidence to build anything else you want to build** — this is the moat
+| **Between-session assignments** | Real builds, not exercises. You arrive at each workshop with something to show. |
 
 ## The honest comparison
 
-What you're getting for $2,500 versus the realistic alternatives:
+| Option | Live expert | Peer cohort | Accountability | Built by an operator |
+|---|---|---|---|---|
+| **Executive AI Cohort (PortLev Academy)** | Yes, direct | Yes, small group | Yes | Yes |
+| Coursera executive certificate | No | No | No | No |
+| Udemy AI for business | No | No | No | No |
+| University executive education | Partial | Yes | Some | No |
+| 1:1 executive coach | Yes | No | Some | Rarely |
+| Hire an AI consultant | Yes | No | No | Rarely |
 
-| Option | Cost | Live Expert | Peer Cohort | Accountability | AI-Specific | Built by an Operator |
-|---|---|---|---|---|---|---|
-| **ForwardShare Founding Cohort** | $2,500 once | Yes — direct | Yes — small group | Yes | Yes — current 2026 | Yes |
-| Coursera Executive Certificate | $400-800/yr | No | No | No | Partial, dated | No |
-| Udemy AI for Business | $15-25 once | No | No | No | Surface level | No |
-| LinkedIn Learning | $40/mo | No | No | No | Generic | No |
-| 1:1 Executive Coach | $500-1,000/hr | Yes | No | Some | Rarely | Rarely |
-| University Executive Ed | $5,000-25,000 | Partial | Yes | Some | 12-18mo behind | No |
-| Hire an AI consultant | $250-500/hr | Yes | No | No | Yes | Rarely |
+The only options with both live expert access and a peer cohort are 1:1 coaching and university programs. The cohort gives you both, on this curriculum, with the person who wrote it.
 
-The only options with **both** live expert access **and** a peer cohort are 1:1 coaching ($500+/hour) and university programs ($5K-$25K). This cohort is $2,500 for the full 3-month program.
+## Who is running this
 
-## Who's running this
+**Yuri Kruman**, verifiable in three minutes:
 
-**Yuri Kruman** — verifiable in 3 minutes:
-
-- 3x Chief Human Resources Officer (50 to 50,000-employee companies)
-- AI model trainer under paid contract at **Meta, Microsoft and OpenAI** (not a course badge — actual training work)
+- Three-time Chief Human Resources Officer (50 to 50,000-employee companies)
+- AI trainer under paid contract for Meta, Microsoft and OpenAI programs
 - 2,300+ executives coached over 15 years
-- Top 5 Global HR Thought Leader (Thinkers360, independently ranked)
+- Top 5 Global HR Thought Leader (Thinkers360)
 - Forbes, Fast Company and NBC contributor
-- JD, Cardozo School of Law; BA Anthropology and Neuroscience, University of Pennsylvania
-- [LinkedIn](https://linkedin.com/in/yurikruman): 33,000+ followers, full career history, public recommendations
+- JD, Cardozo School of Law; BA, University of Pennsylvania
+- [LinkedIn](https://www.linkedin.com/in/yurikruman/): full career history and public recommendations
 
-None of that is a sales pitch. It's all checkable in 3 minutes.
+## Talk first, decide second
 
-## Vet first, decide second
+If you want to talk before committing, [book a 15-minute call with Yuri](https://calendly.com/masterthetalk/call-with-yuri-30-min?back=1). No pitch. If the cohort is not right for you, Yuri will say so.
 
-If you want to talk before committing, [book a 15-minute call with Yuri](https://calendly.com/masterthetalk/call-with-yuri-30-min?back=1). No pitch. You ask whatever you need to feel confident. If after 15 minutes the cohort isn't right for you, Yuri will tell you honestly.
-
-## Apply
-
-[**Apply to the founding cohort →**](https://forwardshare.co/executive-ai-cohort-forward-achieve-forward-share-ventures)
-
-4 of 8 spots remain.
+→ [See all programs at PortLev Academy](https://learn.portlev.com/programs)

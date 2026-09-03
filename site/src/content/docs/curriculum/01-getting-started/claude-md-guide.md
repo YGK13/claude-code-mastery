@@ -1,9 +1,8 @@
 ---
-title: Claude Md Guide
-description: Part of 01-getting-started in the PortLev Learn Claude Code curriculum.
+# generated from modules/01-getting-started/claude-md-guide.md by site/scripts/sync-content.mjs
+title: "The CLAUDE.md File"
+description: "CLAUDE.md is a configuration file you place at the root of any project."
 ---
-
-# The CLAUDE.md File
 
 `CLAUDE.md` is a configuration file you place at the root of any project. It tells Claude Code how to behave in that specific project — your coding style, project structure, which commands to run automatically and which need confirmation, and any context Claude needs to understand what you're building.
 

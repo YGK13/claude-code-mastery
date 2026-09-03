@@ -35,4 +35,4 @@ For executives this means: every tool you already use can become something Claud
 
 ## After this module
 
-→ [Module 06 — Advanced Patterns](/curriculum/06-advanced/coming-soon/)
+→ [Module 06 — Advanced Patterns](/curriculum/06-advanced-patterns/overview/)

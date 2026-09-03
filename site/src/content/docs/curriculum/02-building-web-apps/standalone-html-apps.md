@@ -1,9 +1,8 @@
 ---
-title: Standalone Html Apps
-description: Part of 02-building-web-apps in the PortLev Learn Claude Code curriculum.
+# generated from modules/02-building-web-apps/standalone-html-apps.md by site/scripts/sync-content.mjs
+title: "Standalone HTML Apps"
+description: "A standalone HTML app is a single .html file that contains everything: HTML structure, CSS styles, JavaScript logic and React components — all in one…"
 ---
-
-# Standalone HTML Apps
 
 A standalone HTML app is a single `.html` file that contains everything: HTML structure, CSS styles, JavaScript logic and React components — all in one file, with React loaded from a CDN.
 

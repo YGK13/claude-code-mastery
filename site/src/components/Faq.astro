@@ -1,0 +1,11 @@
+---
+import { FAQS } from '../lib-site';
+---
+<div class="ccm-faq" id="faq">
+  {FAQS.map((f, i) => (
+    <details class="ccm-faq__item" data-reveal open={i === 0}>
+      <summary class="ccm-faq__q"><h3>{f.q}</h3><span class="ccm-faq__icon" aria-hidden="true"></span></summary>
+      <p class="ccm-faq__a">{f.a}</p>
+    </details>
+  ))}
+</div>

@@ -1,9 +1,8 @@
 ---
-title: React Patterns
-description: Part of 02-building-web-apps in the PortLev Learn Claude Code curriculum.
+# generated from modules/02-building-web-apps/react-patterns.md by site/scripts/sync-content.mjs
+title: "React Patterns"
+description: "These are the React patterns Claude Code handles best. Reference them in your prompts to get clean, maintainable component code without having to specify…"
 ---
-
-# React Patterns
 
 These are the React patterns Claude Code handles best. Reference them in your prompts to get clean, maintainable component code without having to specify low-level implementation details.
 

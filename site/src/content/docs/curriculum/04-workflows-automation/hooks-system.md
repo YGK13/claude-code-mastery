@@ -1,9 +1,8 @@
 ---
-title: Hooks System
-description: Part of 04-workflows-automation in the PortLev Learn Claude Code curriculum.
+# generated from modules/04-workflows-automation/hooks-system.md by site/scripts/sync-content.mjs
+title: "The Hooks System"
+description: "Hooks let you run a command automatically every time Claude Code does something specific: writes a file, finishes a task, runs a shell command."
 ---
-
-# The Hooks System
 
 Hooks let you run a command automatically every time Claude Code does something specific: writes a file, finishes a task, runs a shell command. They're how you build small workflows around Claude without thinking about it.
 

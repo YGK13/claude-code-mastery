@@ -1,9 +1,8 @@
 ---
-title: Installation
-description: Part of 01-getting-started in the PortLev Learn Claude Code curriculum.
+# generated from modules/01-getting-started/installation.md by site/scripts/sync-content.mjs
+title: "Installation"
+description: "Claude Code runs as a CLI tool on top of Node.js. Here's the complete setup for every platform."
 ---
-
-# Installation
 
 Claude Code runs as a CLI tool on top of Node.js. Here's the complete setup for every platform.
 

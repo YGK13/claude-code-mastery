@@ -1,9 +1,8 @@
 ---
-title: Cicd Integration
-description: Part of 04-workflows-automation in the PortLev Learn Claude Code curriculum.
+# generated from modules/04-workflows-automation/cicd-integration.md by site/scripts/sync-content.mjs
+title: "CI/CD Integration"
+description: "Claude Code can run in GitHub Actions, giving you an AI code reviewer, automated documentation updater and quality gate that runs on every pull request."
 ---
-
-# CI/CD Integration
 
 Claude Code can run in GitHub Actions, giving you an AI code reviewer, automated documentation updater and quality gate that runs on every pull request.
 

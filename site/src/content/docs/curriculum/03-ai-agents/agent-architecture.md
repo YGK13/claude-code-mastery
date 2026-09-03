@@ -1,9 +1,8 @@
 ---
-title: Agent Architecture
-description: Part of 03-ai-agents in the PortLev Learn Claude Code curriculum.
+# generated from modules/03-ai-agents/agent-architecture.md by site/scripts/sync-content.mjs
+title: "Agent Architecture"
+description: "Knowing how to write a single agent is one thing. Knowing how to structure reliable, maintainable agent systems is another."
 ---
-
-# Agent Architecture
 
 Knowing how to write a single agent is one thing. Knowing how to structure reliable, maintainable agent systems is another. This lesson covers the architectural patterns that separate production agents from prototype agents.
 

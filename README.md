@@ -49,6 +49,14 @@ By the end of this curriculum you will have built:
 
 ---
 
+## The website
+
+The curriculum is published at **https://claude-code-mastery-self.vercel.app** (Astro + Starlight, source in [`/site`](./site)). The site mirrors `modules/` and `reference/`: run `npm run sync` inside `site/` to create pages for new lessons, and see [`site/README.md`](./site/README.md) for the build. It ships `llms.txt`, `sitemap.xml`, `robots.txt`, Course and FAQ structured data and a dark-only PortLev theme.
+
+Audit and go-to-market notes live in [`docs/`](./docs).
+
+---
+
 ## How to Use This Repo with Google Code Wiki
 
 This repo is designed to be used alongside [Google's Code Wiki](https://codewiki.google/github.com/YGK13/claude-code-mastery) for an interactive, AI-powered documentation experience.
@@ -107,11 +115,14 @@ That's it. Claude Code will create, edit and run code directly in your project.
 
 ## The Instructor
 
-**Yuri Kruman** has trained AI use at Meta, Microsoft and OpenAI. He builds production AI agents, automation systems and web apps using Claude Code daily. This curriculum reflects real production patterns — not academic exercises.
+**Yuri Kruman** has trained AI use at Meta, Microsoft and OpenAI. They build production AI agents, automation systems and web apps using Claude Code daily. This curriculum reflects real production patterns — not academic exercises.
 
-- [LinkedIn](https://linkedin.com/in/yurikruman)
-- [Website](https://portlev.com)
-- [BookToCourse.AI](https://booktocourse.ai)
+- [yurikruman.com](https://yurikruman.com)
+- [LinkedIn](https://www.linkedin.com/in/yurikruman/)
+- [PortLev](https://portlev.com) · [PortLev Academy](https://learn.portlev.com) · [BookToCourse.AI](https://booktocourse.ai)
+- [The Leverage Brief](https://leveragebrief.beehiiv.com) newsletter, where new modules are announced first
+
+Claude Code Mastery is independent and not affiliated with Anthropic. Claude and Claude Code are trademarks of Anthropic, PBC.
 
 ---
 

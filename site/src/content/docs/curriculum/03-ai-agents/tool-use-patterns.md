@@ -1,9 +1,8 @@
 ---
-title: Tool Use Patterns
-description: Part of 03-ai-agents in the PortLev Learn Claude Code curriculum.
+# generated from modules/03-ai-agents/tool-use-patterns.md by site/scripts/sync-content.mjs
+title: "Tool Use Patterns"
+description: "Tool use is the mechanism that transforms Claude from a chatbot into an agent that can act. This lesson covers the patterns you'll use in every real agent."
 ---
-
-# Tool Use Patterns
 
 Tool use is the mechanism that transforms Claude from a chatbot into an agent that can act. This lesson covers the patterns you'll use in every real agent.
 

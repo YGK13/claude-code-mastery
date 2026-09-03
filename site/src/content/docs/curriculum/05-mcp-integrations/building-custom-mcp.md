@@ -1,9 +1,8 @@
 ---
-title: Building Custom Mcp
-description: Part of 05-mcp-integrations in the PortLev Learn Claude Code curriculum.
+# generated from modules/05-mcp-integrations/building-custom-mcp.md by site/scripts/sync-content.mjs
+title: "Building Custom MCP Servers"
+description: "Building your own MCP server lets you expose any data source, internal API or business logic to Claude Code."
 ---
-
-# Building Custom MCP Servers
 
 Building your own MCP server lets you expose any data source, internal API or business logic to Claude Code. This is where Claude starts to feel like a colleague who has access to all your systems.
 

@@ -1,9 +1,8 @@
 ---
-title: First Session
-description: Part of 01-getting-started in the PortLev Learn Claude Code curriculum.
+# generated from modules/01-getting-started/first-session.md by site/scripts/sync-content.mjs
+title: "Your First Session"
+description: "This lesson walks through a complete Claude Code session from start to finish so you know exactly what to expect."
 ---
-
-# Your First Session
 
 This lesson walks through a complete Claude Code session from start to finish so you know exactly what to expect.
 

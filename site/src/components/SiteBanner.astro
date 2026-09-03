@@ -1,0 +1,149 @@
+---
+/**
+ * SiteBanner.astro
+ * Replaces Starlight's Banner slot. Renders:
+ *   1. A slim proof strip at the top of every page (free, open source, size of the course).
+ *   2. On the landing page only: a mobile sticky CTA that stays out of the way on desktop.
+ *   3. A tiny reveal-on-scroll helper for [data-reveal] blocks (respects reduced motion).
+ */
+const isHome = Astro.url.pathname === '/' || Astro.url.pathname === '';
+---
+
+<aside class="ccm-strip" aria-label="About this curriculum">
+  <div class="ccm-strip__inner">
+    <span class="ccm-strip__pill">Free and open source</span>
+    <span class="ccm-strip__copy">6 modules, 19 lessons, about 20 hours. No signup, no paywall.</span>
+    <a class="ccm-strip__link" href="https://github.com/YGK13/claude-code-mastery" rel="noopener" target="_blank">Star on GitHub</a>
+    <a class="ccm-strip__link ccm-strip__link--muted" href="https://leveragebrief.beehiiv.com/subscribe" rel="noopener" target="_blank">Get The Leverage Brief</a>
+  </div>
+</aside>
+
+{isHome && (
+  <div class="ccm-sticky" role="complementary" aria-label="Start the curriculum">
+    <a class="ccm-sticky__cta" href="/curriculum/01-getting-started/overview/">Start Module 01, free</a>
+    <a class="ccm-sticky__alt" href="#faq">FAQ</a>
+  </div>
+)}
+
+<script>
+  const els = document.querySelectorAll('[data-reveal]');
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (reduce || !('IntersectionObserver' in window)) {
+    els.forEach((el) => el.classList.add('is-visible'));
+  } else {
+    const io = new IntersectionObserver(
+      (entries) => {
+        for (const e of entries) {
+          if (e.isIntersecting) {
+            e.target.classList.add('is-visible');
+            io.unobserve(e.target);
+          }
+        }
+      },
+      { rootMargin: '0px 0px -8% 0px', threshold: 0.08 }
+    );
+    els.forEach((el) => io.observe(el));
+  }
+</script>
+
+<style>
+  .ccm-strip {
+    background: linear-gradient(135deg, #4b41e1 0%, #5b51e9 35%, #645efb 65%, #818cf8 100%);
+    color: #fff;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1) inset, 0 8px 24px -10px rgba(75, 65, 225, 0.6);
+    position: relative;
+    overflow: hidden;
+  }
+  .ccm-strip::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse 60% 100% at 20% 0%, rgba(255, 255, 255, 0.18), transparent 70%);
+    pointer-events: none;
+  }
+  .ccm-strip__inner {
+    position: relative;
+    max-width: 90rem;
+    margin: 0 auto;
+    padding: 0.6rem 1.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.75rem 1rem;
+    font-family: 'Inter', system-ui, sans-serif;
+    font-size: 0.88rem;
+  }
+  .ccm-strip__pill {
+    background: linear-gradient(180deg, #fbbf24, #f59e0b);
+    color: #1c1410;
+    padding: 0.28rem 0.8rem;
+    border-radius: 999px;
+    font-weight: 700;
+    font-size: 0.7rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    font-family: 'Manrope', 'Inter', sans-serif;
+    white-space: nowrap;
+  }
+  .ccm-strip__copy {
+    color: rgba(255, 255, 255, 0.94);
+    flex: 1 1 auto;
+    min-width: 12rem;
+  }
+  .ccm-strip__link {
+    color: #fff;
+    background: rgba(255, 255, 255, 0.14);
+    border: 1px solid rgba(255, 255, 255, 0.28);
+    padding: 0.38rem 0.85rem;
+    border-radius: 999px;
+    font-weight: 600;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: background 0.15s ease, transform 0.15s ease;
+  }
+  .ccm-strip__link:hover { background: rgba(255, 255, 255, 0.24); transform: translateY(-1px); }
+  .ccm-strip__link:focus-visible { outline: 2px solid #fff; outline-offset: 2px; }
+  .ccm-strip__link--muted { background: transparent; }
+
+  .ccm-sticky { display: none; }
+
+  @media (max-width: 768px) {
+    .ccm-strip__inner { padding: 0.55rem 1rem; gap: 0.5rem; }
+    .ccm-strip__copy { font-size: 0.8rem; width: 100%; order: 2; }
+    .ccm-strip__link--muted { display: none; }
+    .ccm-sticky {
+      position: fixed;
+      left: 0; right: 0; bottom: 0;
+      z-index: 50;
+      display: flex;
+      gap: 0.5rem;
+      align-items: center;
+      padding: 0.6rem 0.9rem calc(0.6rem + env(safe-area-inset-bottom));
+      background: rgba(10, 13, 26, 0.92);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border-top: 1px solid #2c3147;
+      box-shadow: 0 -10px 30px -12px rgba(0, 0, 0, 0.6);
+    }
+    .ccm-sticky__cta {
+      flex: 1;
+      text-align: center;
+      background: linear-gradient(135deg, #4b41e1 0%, #645efb 100%);
+      color: #fff;
+      padding: 0.8rem 1rem;
+      border-radius: 12px;
+      font-family: 'Manrope', 'Inter', sans-serif;
+      font-weight: 700;
+      text-decoration: none;
+      box-shadow: 0 10px 28px -8px rgba(75, 65, 225, 0.55);
+    }
+    .ccm-sticky__alt {
+      color: #c3bdff;
+      font-weight: 600;
+      text-decoration: none;
+      padding: 0.8rem 0.75rem;
+    }
+    :global(body:has(.ccm-sticky)) { padding-bottom: 4.5rem; }
+  }
+</style>

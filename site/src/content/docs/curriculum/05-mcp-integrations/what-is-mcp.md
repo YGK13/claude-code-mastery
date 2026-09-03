@@ -1,9 +1,8 @@
 ---
-title: What Is Mcp
-description: Part of 05-mcp-integrations in the PortLev Learn Claude Code curriculum.
+# generated from modules/05-mcp-integrations/what-is-mcp.md by site/scripts/sync-content.mjs
+title: "What Is MCP?"
+description: "MCP (Model Context Protocol) is the standard that lets Claude connect to external systems."
 ---
-
-# What Is MCP?
 
 MCP (Model Context Protocol) is the standard that lets Claude connect to external systems. It defines how AI models and tools communicate — what format requests take, how results are returned and how capabilities are declared.
 

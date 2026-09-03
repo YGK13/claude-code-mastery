@@ -1,0 +1,154 @@
+---
+/**
+ * SiteFooter.astro
+ * Wraps Starlight's default footer (edit link, last updated, prev/next) and adds
+ * the PortLev strip: newsletter capture, sister products, entity line and trademark note.
+ */
+import Default from '@astrojs/starlight/components/Footer.astro';
+
+const sisters = [
+  ['portlev.com', 'https://portlev.com', 'PortLev'],
+  ['yurikruman.com', 'https://yurikruman.com', 'Yuri Kruman'],
+  ['learn.portlev.com', 'https://learn.portlev.com', 'PortLev Academy'],
+  ['apps.portlev.com', 'https://apps.portlev.com', 'PortLev Labs'],
+  ['booktocourse.ai', 'https://booktocourse.ai', 'BookToCourse.AI'],
+  ['aiwagegap.com', 'https://aiwagegap.com', 'AI Wage Gap'],
+  ['aibuildgap.com', 'https://aibuildgap.com', 'AI Build Gap'],
+  ['careerbeastmode.com', 'https://careerbeastmode.com', 'Career Beast Mode'],
+  ['aihrpilot.com', 'https://aihrpilot.com', 'AI HR Pilot'],
+  ['duedrill.com', 'https://duedrill.com', 'DueDrill'],
+  ['chairaise.com', 'https://chairaise.com', 'ChaiRaise'],
+  ['commanderinchief.ai', 'https://commanderinchief.ai', 'Commander-in-Chief AI'],
+  ['i9drill.com', 'https://i9drill.com', 'I9Drill'],
+  ['hrtalentsys.com', 'https://hrtalentsys.com', 'HR Talent Sys'],
+];
+const year = new Date().getFullYear();
+---
+
+<Default><slot /></Default>
+
+<footer class="ccm-footer" aria-label="Site footer">
+  <div class="ccm-footer__cta">
+    <div>
+      <p class="ccm-footer__kicker">One actionable AI idea every Monday</p>
+      <p class="ccm-footer__title">The Leverage Brief</p>
+      <p class="ccm-footer__copy">New modules, builds and Claude Code patterns land in the newsletter first. Free.</p>
+    </div>
+    <a class="ccm-footer__button" href="https://leveragebrief.beehiiv.com/subscribe" rel="noopener" target="_blank">Subscribe free</a>
+  </div>
+
+  <div class="ccm-footer__grid">
+    <div>
+      <p class="ccm-footer__h">Claude Code Mastery</p>
+      <ul>
+        <li><a href="/welcome/">Welcome and setup</a></li>
+        <li><a href="/curriculum/01-getting-started/overview/">Module 01: Getting Started</a></li>
+        <li><a href="/reference/commands-cheatsheet/">Commands cheatsheet</a></li>
+        <li><a href="/reference/troubleshooting/">Troubleshooting</a></li>
+        <li><a href="/cohort/">Guided programs</a></li>
+        <li><a href="/llms.txt">llms.txt</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="ccm-footer__h">Source</p>
+      <ul>
+        <li><a href="https://github.com/YGK13/claude-code-mastery" rel="noopener" target="_blank">GitHub repository (MIT)</a></li>
+        <li><a href="https://github.com/YGK13/claude-code-mastery/tree/master/templates" rel="noopener" target="_blank">Templates</a></li>
+        <li><a href="https://github.com/YGK13/claude-code-mastery/tree/master/examples" rel="noopener" target="_blank">Runnable examples</a></li>
+        <li><a href="https://github.com/YGK13/claude-code-mastery/issues" rel="noopener" target="_blank">Report an issue</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="ccm-footer__h">Instructor</p>
+      <ul>
+        <li><a href="https://yurikruman.com" rel="noopener" target="_blank">Yuri Kruman</a></li>
+        <li><a href="https://www.linkedin.com/in/yurikruman/" rel="noopener me" target="_blank">LinkedIn</a></li>
+        <li><a href="https://www.youtube.com/@yurikruman" rel="noopener me" target="_blank">YouTube</a></li>
+        <li><a href="https://learn.portlev.com/programs" rel="noopener" target="_blank">Programs at PortLev Academy</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="ccm-footer__portlev">
+    <p class="ccm-footer__h">A PortLev build</p>
+    <p class="ccm-footer__copy">Built and maintained by <a href="https://portlev.com" rel="noopener" target="_blank">Portfolio Leverage Company</a>, the studio of <a href="https://yurikruman.com" rel="noopener" target="_blank">Yuri Kruman</a>. Sister products:</p>
+    <ul class="ccm-footer__sisters">
+      {sisters.map(([host, href, name]) => (
+        <li><a href={href} rel="noopener" target="_blank" title={name}>{host}</a></li>
+      ))}
+    </ul>
+    <p class="ccm-footer__legal">
+      Claude Code Mastery is independent and not affiliated with or endorsed by Anthropic. Claude and Claude Code are trademarks of Anthropic, PBC.
+      Curriculum content is MIT licensed. Copyright {year} Portfolio Leverage Company.
+    </p>
+  </div>
+</footer>
+
+<style>
+  .ccm-footer {
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--sl-color-hairline-light);
+    font-family: 'Inter', system-ui, sans-serif;
+    font-size: 0.9rem;
+    color: var(--sl-color-gray-2);
+  }
+  .ccm-footer a { color: var(--sl-color-gray-1); text-decoration: none; }
+  .ccm-footer a:hover { color: var(--sl-color-text-accent); text-decoration: underline; text-underline-offset: 3px; }
+  .ccm-footer a:focus-visible { outline: 2px solid var(--sl-color-accent); outline-offset: 2px; border-radius: 4px; }
+  .ccm-footer ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.4rem; }
+  .ccm-footer p { margin: 0; }
+  .ccm-footer__h {
+    font-family: 'Manrope', 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 0.74rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--sl-color-gray-3);
+    margin-bottom: 0.6rem !important;
+  }
+  .ccm-footer__cta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem 2rem;
+    padding: 1.4rem 1.6rem;
+    border-radius: 14px;
+    background: linear-gradient(135deg, rgba(129, 140, 248, 0.1), rgba(129, 140, 248, 0.03));
+    border: 1px solid rgba(129, 140, 248, 0.3);
+    margin-bottom: 2rem;
+  }
+  .ccm-footer__kicker { color: #fbbf24; font-weight: 600; font-size: 0.78rem; letter-spacing: 0.04em; text-transform: uppercase; }
+  .ccm-footer__title { font-family: 'Manrope', sans-serif; font-weight: 800; font-size: 1.35rem; color: var(--sl-color-white); margin-top: 0.15rem !important; }
+  .ccm-footer__copy { color: var(--sl-color-gray-2); margin-top: 0.3rem !important; max-width: 52ch; }
+  .ccm-footer__button {
+    background: linear-gradient(135deg, #4b41e1 0%, #645efb 100%);
+    color: #fff !important;
+    padding: 0.8rem 1.3rem;
+    border-radius: 12px;
+    font-family: 'Manrope', sans-serif;
+    font-weight: 700;
+    white-space: nowrap;
+    box-shadow: 0 10px 28px -8px rgba(75, 65, 225, 0.55);
+    transition: transform 0.15s ease;
+  }
+  .ccm-footer__button:hover { transform: translateY(-2px); text-decoration: none !important; }
+  .ccm-footer__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+    gap: 1.5rem 2rem;
+    padding-bottom: 1.75rem;
+    border-bottom: 1px solid var(--sl-color-hairline-light);
+  }
+  .ccm-footer__portlev { padding-top: 1.5rem; }
+  .ccm-footer__sisters {
+    display: flex !important;
+    flex-wrap: wrap;
+    gap: 0.4rem 0.9rem !important;
+    margin-top: 0.7rem !important;
+    font-size: 0.82rem;
+  }
+  .ccm-footer__sisters a { color: var(--sl-color-gray-3); }
+  .ccm-footer__legal { margin-top: 1.25rem !important; font-size: 0.78rem; color: var(--sl-color-gray-3); max-width: 80ch; line-height: 1.55; }
+</style>

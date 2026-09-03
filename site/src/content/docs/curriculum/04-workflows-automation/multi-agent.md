@@ -1,9 +1,8 @@
 ---
-title: Multi Agent
-description: Part of 04-workflows-automation in the PortLev Learn Claude Code curriculum.
+# generated from modules/04-workflows-automation/multi-agent.md by site/scripts/sync-content.mjs
+title: "Multi-Agent Coordination"
+description: "Claude Code can spawn multiple agent instances and coordinate them. This is how you scale beyond what a single context window can handle."
 ---
-
-# Multi-Agent Coordination
 
 Claude Code can spawn multiple agent instances and coordinate them. This is how you scale beyond what a single context window can handle.
 

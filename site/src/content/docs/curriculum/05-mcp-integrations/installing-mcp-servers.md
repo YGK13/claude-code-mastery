@@ -1,9 +1,8 @@
 ---
-title: Installing Mcp Servers
-description: Part of 05-mcp-integrations in the PortLev Learn Claude Code curriculum.
+# generated from modules/05-mcp-integrations/installing-mcp-servers.md by site/scripts/sync-content.mjs
+title: "Installing MCP Servers"
+description: "How to install and configure the most useful MCP servers for Claude Code (GitHub, filesystem, Slack, Google Drive, databases) and register them in claude.json."
 ---
-
-# Installing MCP Servers
 
 ---
 

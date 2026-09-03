@@ -1,0 +1,30 @@
+---
+import { MODULES, REFERENCE, TOTAL_HOURS, TOTAL_LESSONS } from '../lib-site';
+---
+<div class="ccm-map" id="curriculum">
+  <ol class="ccm-map__list">
+    {MODULES.map((m) => (
+      <li class="ccm-map__module" data-reveal>
+        <div class="ccm-map__head">
+          <span class="ccm-map__n">{m.n}</span>
+          <div>
+            <h3 class="ccm-map__title"><a href={`/curriculum/${m.slug}/overview/`}>{m.title}</a></h3>
+            <p class="ccm-map__meta">{m.hours} h · {m.lessons.length} lessons · {m.audience}</p>
+          </div>
+        </div>
+        <p class="ccm-map__summary">{m.summary}</p>
+        <ul class="ccm-map__lessons">
+          {m.lessons.map((l) => (
+            <li><a href={`/curriculum/${m.slug}/${l.slug}/`}>{l.title}</a></li>
+          ))}
+        </ul>
+      </li>
+    ))}
+  </ol>
+  <p class="ccm-map__foot" data-reveal>
+    <strong>{MODULES.length} modules, {TOTAL_LESSONS} lessons, about {TOTAL_HOURS} hours.</strong> Plus {REFERENCE.length} reference guides:
+    {REFERENCE.map((r, i) => (
+      <span><a href={`/reference/${r.slug}/`}>{r.title}</a>{i < REFERENCE.length - 1 ? ', ' : '.'}</span>
+    ))}
+  </p>
+</div>

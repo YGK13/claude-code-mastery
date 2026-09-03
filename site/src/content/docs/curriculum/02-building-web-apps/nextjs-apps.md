@@ -1,9 +1,8 @@
 ---
-title: Nextjs Apps
-description: Part of 02-building-web-apps in the PortLev Learn Claude Code curriculum.
+# generated from modules/02-building-web-apps/nextjs-apps.md by site/scripts/sync-content.mjs
+title: "Next.js Apps"
+description: "Next.js is the standard for building production web apps with Claude Code."
 ---
-
-# Next.js Apps
 
 Next.js is the standard for building production web apps with Claude Code. It gives you server-side rendering, API routes, file-based routing, TypeScript, Tailwind CSS and a one-command deploy to Vercel.
 

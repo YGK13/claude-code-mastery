@@ -1,6 +1,6 @@
 ---
-title: Welcome
-description: Start here. Quick orientation, what to expect, what to install before you begin.
+title: Welcome and setup
+description: Start here. What Claude Code Mastery is, what to install before Module 01, how executives and developers should sequence the six modules.
 ---
 
 This curriculum exists to do one thing: get you from "I keep hearing about AI but I don't actually build anything" to "I shipped two working AI tools into my own practice this quarter."
@@ -26,9 +26,11 @@ Module 01 walks through installing every one of these step by step. You don't ne
 
 **If you're working through this solo:** Start at Module 01 and go in order. Each lesson builds on the last. Plan for roughly 20 hours total, plus your own build time on top.
 
-**If you're in the [founding cohort](https://forwardshare.co/executive-ai-cohort-forward-achieve-forward-share-ventures):** This site is your textbook. You'll work through it between sessions, with Yuri's live workshops, group calls and 1:1 coaching anchoring the structure. Bring questions to the workshops.
+**If you're a developer:** Skim Module 01 for the CLAUDE.md and permissions lessons, then start at [Module 03](/curriculum/03-ai-agents/overview/) or [Module 05](/curriculum/05-mcp-integrations/overview/). Modules 04 and 06 are where the production patterns live.
 
-**If you're vetting whether this is for you:** Read [Who this is for](/who-its-for/) and [The cohort](/cohort/), then [book a 15-minute call](https://calendly.com/masterthetalk/call-with-yuri-30-min?back=1) with Yuri.
+**If you're in a [PortLev Academy program](https://learn.portlev.com/programs):** This site is your textbook. You'll work through it between sessions, with Yuri's live workshops, group calls and 1:1 coaching anchoring the structure. Bring questions to the workshops.
+
+**If you're vetting whether this is for you:** Read [Who this is for](/who-its-for/) and [Guided programs](/cohort/), then [book a 15-minute call](https://calendly.com/masterthetalk/call-with-yuri-30-min?back=1) with Yuri.
 
 ## What success looks like
 

@@ -1,127 +1,201 @@
 ---
-title: Build with AI
-description: The free foundational curriculum for executives, operators and consultants learning to ship real AI products with Claude Code. By Yuri Kruman.
+title: Learn Claude Code and ship real AI tools
+description: Free, open-source Claude Code curriculum. Six modules, 19 lessons, about 20 hours. For executives, operators and builders learning agentic coding. By Yuri Kruman.
 template: splash
+editUrl: false
+head:
+  - tag: meta
+    attrs: { property: 'og:type', content: 'website' }
+  - tag: meta
+    attrs: { property: 'og:title', content: 'Claude Code Mastery: learn agentic coding, ship real AI tools' }
+  - tag: meta
+    attrs: { name: 'twitter:title', content: 'Claude Code Mastery: learn agentic coding, ship real AI tools' }
 hero:
+  title: Learn Claude Code. Ship real AI tools.
   tagline: |
-    A free curriculum for executives, operators and consultants who want to ship real AI products this quarter, without hiring engineers.
+    A free, open-source six-module curriculum on agentic coding for executives, operators and builders. Install on day one, deploy a working app in your first two hours, finish with agents, automations and MCP servers you actually use.
   actions:
-    - text: Apply to the founding cohort
-      link: https://forwardshare.co/executive-ai-cohort-forward-achieve-forward-share-ventures
+    - text: Start Module 01, free
+      link: /curriculum/01-getting-started/overview/
       icon: right-arrow
       variant: primary
-    - text: Start the free curriculum
-      link: /welcome/
+    - text: See the curriculum map
+      link: '#curriculum'
       icon: document
       variant: secondary
-    - text: Book a 15-min vetting call
-      link: https://calendly.com/masterthetalk/call-with-yuri-30-min?back=1
-      icon: external
+    - text: Star on GitHub
+      link: https://github.com/YGK13/claude-code-mastery
+      icon: github
       variant: minimal
 ---
 
-import { Card, CardGrid, LinkCard } from '@astrojs/starlight/components';
+import CurriculumMap from '../../components/CurriculumMap.astro';
+import Faq from '../../components/Faq.astro';
+import HomeSchema from '../../components/HomeSchema.astro';
 
-## Who this is for
+<HomeSchema />
 
-This is not "Claude Code 101" for developers. There are a thousand free guides on YouTube already.
+<ul class="ccm-proof" aria-label="Curriculum at a glance">
+  <li><strong>6</strong><span>modules, sequenced project-first</span></li>
+  <li><strong>19</strong><span>lessons plus 4 reference guides</span></li>
+  <li><strong>~20 h</strong><span>structured material, self-paced</span></li>
+  <li><strong>$0</strong><span>MIT licensed, no signup, no paywall</span></li>
+  <li><strong>3x CHRO</strong><span>instructor; AI trainer for Meta, Microsoft and OpenAI programs</span></li>
+</ul>
 
-This is for **executives, founders, consultants, coaches and operators** who bill $300-1,000+ an hour, who can't stop work to spend six months learning to code, and who keep watching engineers automate things you've been doing manually for years.
+<section class="ccm-section" data-reveal>
+  <span class="ccm-kicker">What this is</span>
+  <h2>A working path through Claude Code, not a link dump</h2>
+  <p class="ccm-definition"><strong>Claude Code Mastery</strong> is a free curriculum for learning Claude Code, the terminal-based agentic coding tool from Anthropic that reads, writes and runs code in your project when you describe what you want. Six modules take you from installation to shipped web apps, Python AI agents, hook-driven automations and your own MCP server. Written by Yuri Kruman, published by PortLev, updated September 2026. Independent of Anthropic.</p>
+</section>
 
-You don't need to become a developer. You need to ship two or three working AI tools into your own practice in the next 90 days.
+<section class="ccm-section" data-reveal>
+  <span class="ccm-kicker">Who it is for</span>
+  <h2>Two audiences, one curriculum, two entry points</h2>
+  <p class="ccm-lede">Executives who need working tools without a dev team, and builders who want to stop typing boilerplate. The lessons are the same; the order and the examples differ.</p>
+  <div class="ccm-split">
+    <article>
+      <h3>Executives, operators and consultants</h3>
+      <p>You bill by the hour, you can read code well enough to follow it and you have 5 to 20 hours a week of repetitive work you would delegate if you had an engineer.</p>
+      <ul>
+        <li>Module 01 assumes zero terminal experience and goes slowly</li>
+        <li>Examples: KPI dashboard, billable-hours tracker, client intake bot, board-prep research agent</li>
+        <li>Every module ends with something deployed you can show on Monday</li>
+      </ul>
+      <a class="ccm-path-link" href="/curriculum/01-getting-started/overview/">Start at Module 01 →</a>
+    </article>
+    <article>
+      <h3>Builders and developers</h3>
+      <p>You already ship software and want the patterns that make an agentic workflow reliable: CLAUDE.md conventions, hooks, permissions, multi-agent orchestration and MCP.</p>
+      <ul>
+        <li>Skim Module 01 for CLAUDE.md and permissions, then jump ahead</li>
+        <li>Module 03 builds tool-using agents on the Claude API in Python</li>
+        <li>Modules 04 to 06 cover hooks, CI/CD, custom MCP servers, skills and context management</li>
+      </ul>
+      <a class="ccm-path-link" href="/curriculum/03-ai-agents/overview/">Start at Module 03 →</a>
+    </article>
+  </div>
+</section>
 
-<div class="cohort-callout">
-**The paid 3-month cohort is live.** 4 of 8 founding-cohort spots remain at $2,500 (cohort #2 will be $4,500). 12 weeks, three monthly workshops, three 1:1 coaching sessions with Yuri, a small peer advisory board. You walk out with at least two fully built and deployed apps.
+<section class="ccm-section" data-reveal>
+  <span class="ccm-kicker">Start here</span>
+  <h2>Your first two hours</h2>
+  <p class="ccm-lede">Module 01 is deliberately short. By the end of it you have a working install, one real prompt shipped and a single-file app open in your browser.</p>
+  <ol class="ccm-steps">
+    <li>
+      <h3>Install and authenticate</h3>
+      <p>Node.js 20+, then <code>npm install -g @anthropic-ai/claude-code</code> and an API key or Claude subscription. Mac, Windows and Linux, step by step. <a href="/curriculum/01-getting-started/installation/">Installation →</a></p>
+    </li>
+    <li>
+      <h3>Ship one thing in 60 seconds</h3>
+      <p>Open a folder, type <code>claude</code>, paste the weekly-status prompt from the lesson. A copy-paste-ready Monday status generator appears in your browser. <a href="/curriculum/01-getting-started/first-session/">Your first session →</a></p>
+    </li>
+    <li>
+      <h3>Set the rules, then pick your track</h3>
+      <p>Write a CLAUDE.md so the agent follows your conventions, lock down permissions, then go to Module 02 (web apps) or Module 03 (agents). <a href="/curriculum/01-getting-started/claude-md-guide/">The CLAUDE.md file →</a></p>
+    </li>
+  </ol>
+</section>
 
-[Apply now →](https://forwardshare.co/executive-ai-cohort-forward-achieve-forward-share-ventures)
-</div>
+<section class="ccm-section">
+  <span class="ccm-kicker">Curriculum map</span>
+  <h2>Six modules, in order</h2>
+  <p class="ccm-lede">Each module mirrors a folder in the <a href="https://github.com/YGK13/claude-code-mastery/tree/master/modules">GitHub repository</a>, so you can read it here or clone it and let Claude Code read it with you.</p>
+  <CurriculumMap />
+</section>
 
-## What you'll build
+<section class="ccm-section" data-reveal>
+  <span class="ccm-kicker">Outcomes</span>
+  <h2>What you will have built</h2>
+  <ul class="ccm-outcomes">
+    <li><strong>A standalone HTML app</strong>React from a CDN, no build tools. Open the file and it runs. Module 02.</li>
+    <li><strong>A Next.js app on Vercel</strong>Full-stack, deployed to a public URL, ready for auth and a database. Module 02.</li>
+    <li><strong>A Python AI agent</strong>Claude as the reasoning engine, your functions as tools. Module 03.</li>
+    <li><strong>An automated workflow</strong>Hooks that fire on file writes and commits, agents that run in parallel, CI in GitHub Actions. Module 04.</li>
+    <li><strong>A custom MCP server</strong>Your own data exposed to Claude in any session. Module 05.</li>
+    <li><strong>A production-ready AI feature</strong>Skills, context management and a full engineering workflow. Module 06.</li>
+  </ul>
+</section>
 
-These are not toy projects. Every example in this curriculum maps to something you can actually deploy in your work.
+<section class="ccm-section" data-reveal>
+  <span class="ccm-kicker">Compared</span>
+  <h2>How this differs from the alternatives</h2>
+  <div class="ccm-compare">
+    <table>
+      <thead>
+        <tr><th>Option</th><th>Sequenced path</th><th>Non-engineer friendly</th><th>Deployable projects</th><th>Templates included</th><th>Cost</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Official Claude Code docs</td><td>Reference, not a path</td><td>Assumes a developer</td><td>No</td><td>No</td><td>Free</td></tr>
+        <tr><td>YouTube tutorials</td><td>Fragmented</td><td>Varies</td><td>Sometimes</td><td>Rarely</td><td>Free</td></tr>
+        <tr class="is-this"><td>Claude Code Mastery</td><td>Six modules, 19 lessons</td><td>Yes, Module 01 starts at zero</td><td>Six, one per module</td><td>CLAUDE.md, hooks, agents, HTML, Next.js</td><td>Free, MIT</td></tr>
+        <tr><td>PortLev Academy programs</td><td>This curriculum plus live cadence</td><td>Yes</td><td>Two or more, with feedback</td><td>Yes, plus instructor playbooks</td><td>Paid, see programs page</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
 
-<CardGrid>
-  <Card title="Client intake automation" icon="email">
-    A chatbot that handles incoming leads, qualifies them against your ICP and schedules to your calendar. The work you were doing manually at 11pm.
-  </Card>
-  <Card title="KPI dashboard for your team" icon="bars">
-    Pulls from your existing tools (Salesforce, BambooHR, Asana, Notion) and surfaces only the numbers that matter. No more weekly spreadsheet manual roll-ups.
-  </Card>
-  <Card title="Market research agent" icon="magnifier">
-    Multi-source competitive intel that produces in 4 minutes what you used to pay analysts $5K a month to deliver. Yours, branded, on-demand.
-  </Card>
-  <Card title="Contract or proposal review agent" icon="document">
-    Flags risk language, suggests revisions, compares against your style guide. Built once, used on every doc you touch.
-  </Card>
-  <Card title="Personal CRM" icon="rocket">
-    The relationship manager you never had. Follow-ups, intros, birthdays, deal stages. Pulls from Gmail, LinkedIn, your calendar.
-  </Card>
-  <Card title="Internal knowledge base bot" icon="information">
-    Trained on your company handbook, SOPs and Notion. Answers your team's repetitive questions so you stop being the help desk.
-  </Card>
-</CardGrid>
+<section class="ccm-section" data-reveal>
+  <span class="ccm-kicker">Pricing</span>
+  <h2>Free to learn. Paid if you want a cohort behind you.</h2>
+  <div class="ccm-pricing">
+    <article class="is-featured">
+      <h3>Self-paced curriculum</h3>
+      <p class="ccm-price">$0 <small>forever, MIT licensed</small></p>
+      <ul>
+        <li>All six modules, 19 lessons and 4 reference guides</li>
+        <li>Templates and runnable examples on GitHub</li>
+        <li>No signup, no paywall, fork it for your team</li>
+        <li>New modules announced in The Leverage Brief</li>
+      </ul>
+      <a class="ccm-btn" href="/curriculum/01-getting-started/overview/">Start Module 01</a>
+    </article>
+    <article>
+      <h3>Guided programs at PortLev Academy</h3>
+      <p class="ccm-price">Paid <small>pricing and dates on the programs page</small></p>
+      <ul>
+        <li>Executive AI Cohort: 12 weeks, live workshops, group sessions and 1:1 coaching with Yuri</li>
+        <li>Two or more deployed apps by the end, reviewed live</li>
+        <li>Peer advisory board of senior operators</li>
+        <li>Instructor templates, prompt libraries and architectures</li>
+      </ul>
+      <a class="ccm-btn ccm-btn--ghost" href="https://learn.portlev.com/programs" rel="noopener">See programs at learn.portlev.com</a>
+    </article>
+  </div>
+</section>
 
-## The 6-module curriculum
+<section class="ccm-section" data-reveal>
+  <span class="ccm-kicker">Instructor</span>
+  <h2>Who is behind this</h2>
+  <div class="ccm-instructor">
+    <div class="ccm-instructor__mark" aria-hidden="true">YK</div>
+    <div>
+      <h3>Yuri Kruman</h3>
+      <p>Three-time Chief Human Resources Officer at companies from 50 to 50,000 people. AI trainer under contract for Meta, Microsoft and OpenAI programs. 2,300+ executives coached over 15 years. Founder of Portfolio Leverage Company (PortLev) and BookToCourse.AI, author of The Leverage Brief. Builds production AI agents, automations and web apps with Claude Code every day; this curriculum is the working notes.</p>
+      <ul>
+        <li><a href="https://yurikruman.com" rel="noopener">yurikruman.com</a></li>
+        <li><a href="https://www.linkedin.com/in/yurikruman/" rel="noopener me">LinkedIn</a></li>
+        <li><a href="https://www.youtube.com/@yurikruman" rel="noopener me">YouTube</a></li>
+        <li><a href="https://portlev.com" rel="noopener">PortLev</a></li>
+        <li><a href="https://leveragebrief.beehiiv.com" rel="noopener">The Leverage Brief</a></li>
+      </ul>
+    </div>
+  </div>
+</section>
 
-Six modules. Roughly 20 hours of structured material plus your own build time. Free, public, no signup required.
+<section class="ccm-section">
+  <span class="ccm-kicker">FAQ</span>
+  <h2>Questions people ask before starting</h2>
+  <Faq />
+</section>
 
-<LinkCard
-  title="Module 01 — Getting Started"
-  description="Install Claude Code, run your first session, configure CLAUDE.md, understand permissions and safety."
-  href="/curriculum/01-getting-started/overview/"
-/>
-
-<LinkCard
-  title="Module 02 — Building Web Apps"
-  description="Standalone HTML apps with React from a CDN, full-stack Next.js apps on Vercel, the React patterns that actually matter."
-  href="/curriculum/02-building-web-apps/overview/"
-/>
-
-<LinkCard
-  title="Module 03 — AI Agents"
-  description="Build Python agents that reason and act. Tool use, system prompts, multi-step workflows, agent architecture."
-  href="/curriculum/03-ai-agents/overview/"
-/>
-
-<LinkCard
-  title="Module 04 — Workflows & Automation"
-  description="Hooks, multi-agent coordination, GitHub Actions integration. Automation that runs while you sleep."
-  href="/curriculum/04-workflows-automation/overview/"
-/>
-
-<LinkCard
-  title="Module 05 — MCP Integrations"
-  description="Model Context Protocol — how to plug Claude into Gmail, Slack, GitHub, Notion and any other tool you already use."
-  href="/curriculum/05-mcp-integrations/overview/"
-/>
-
-<LinkCard
-  title="Module 06 — Advanced Patterns"
-  description="Skills, slash commands, gstack workflow, context management, production patterns."
-  href="/curriculum/06-advanced/coming-soon/"
-/>
-
-## Who's behind this
-
-**Yuri Kruman** — 3x Chief Human Resources Officer (50 to 50,000 employee companies). AI model trainer under contract at Meta, Microsoft and OpenAI. 2,300+ executives coached over 15 years. Top 5 Global HR Thought Leader (Thinkers360). Forbes, Fast Company and NBC contributor. JD, Cardozo School of Law. 33,000+ LinkedIn followers.
-
-This curriculum is the open foundation. The [3-month founding cohort](https://forwardshare.co/executive-ai-cohort-forward-achieve-forward-share-ventures) is where you actually ship: live coaching, peer accountability and a finished portfolio of working AI products by the end.
-
-## Free vs. cohort — what's the difference?
-
-| | Free curriculum | Founding cohort ($2,500) |
-|---|---|---|
-| The 6-module curriculum | ✓ Full access | ✓ Full access |
-| Pace | Self-directed | 12 weeks, structured |
-| Live workshops | — | 3 × 90-min |
-| Group sessions | — | 3 × 60-min |
-| 1:1 coaching with Yuri | — | 3 × 60-min |
-| Peer advisory board | — | ✓ |
-| Working apps shipped | What you build alone | 2+ deployed, with feedback |
-| Cohort #2 price | — | Increases to $4,500 |
-
-The free curriculum is enough to start. The cohort is how you finish.
-
-<div class="cohort-callout">
-**Vetting call available this week.** If you want to talk with Yuri before committing, [book a 15-minute call](https://calendly.com/masterthetalk/call-with-yuri-30-min?back=1). No pitch. You ask, he answers. If it's not a fit, he'll tell you honestly.
+<div class="ccm-band" data-reveal>
+  <div>
+    <h2>Two hours from now you will have shipped something.</h2>
+    <p>Module 01 ends with a working app in your browser. Start there, or get one new Claude Code pattern every Monday in The Leverage Brief.</p>
+  </div>
+  <div class="ccm-band__actions">
+    <a class="ccm-btn" href="/curriculum/01-getting-started/overview/">Start Module 01</a>
+    <a class="ccm-btn ccm-btn--ghost" href="https://leveragebrief.beehiiv.com/subscribe" rel="noopener">Subscribe free</a>
+  </div>
 </div>

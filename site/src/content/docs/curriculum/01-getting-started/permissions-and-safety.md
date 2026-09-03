@@ -1,9 +1,8 @@
 ---
-title: Permissions And Safety
-description: Part of 01-getting-started in the PortLev Learn Claude Code curriculum.
+# generated from modules/01-getting-started/permissions-and-safety.md by site/scripts/sync-content.mjs
+title: "Permissions and Safety"
+description: "What Claude Code can do on your machine, what it asks permission for, how to allow or deny commands in settings.json and how to work safely with git."
 ---
-
-# Permissions and Safety
 
 Claude Code can read files, write files, run commands and browse the web. Understanding how it decides what to do — and how you control that — keeps you in charge of your own codebase.
 
