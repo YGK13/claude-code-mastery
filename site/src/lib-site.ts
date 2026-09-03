@@ -33,7 +33,7 @@ export const SITE = {
   newsletter: 'https://leveragebrief.beehiiv.com/subscribe',
   academy: 'https://learn.portlev.com/programs',
   cohort: 'https://learn.portlev.com/cohort',
-  lastUpdated: '2026-09-02',
+  lastUpdated: '2026-09-03',
 };
 
 export interface Lesson { slug: string; title: string }

@@ -1,6 +1,6 @@
 ---
 title: Guided programs
-description: The free curriculum is enough to start. PortLev Academy programs, including the 12-week Executive AI Cohort with live workshops and 1:1 coaching, are how you finish.
+description: The free curriculum is enough to start. The 12-week Executive AI Cohort at PortLev Academy adds live workshops, group sessions and 1:1 coaching.
 ---
 
 Everything on this site is free and self-paced. Some people want a deadline, a room and someone to review what they built. That is what the guided programs at [PortLev Academy](https://learn.portlev.com/programs) are for.
