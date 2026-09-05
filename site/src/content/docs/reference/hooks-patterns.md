@@ -1,7 +1,7 @@
 ---
 # generated from reference/hooks-patterns.md by site/scripts/sync-content.mjs
 title: "Hooks Patterns Reference"
-description: "Copy-paste hook configurations for Claude Code: settings.json structure, PreToolUse and PostToolUse patterns, notifications, git checkpoints and formatters."
+description: "Copy-paste hook configurations for Claude Code: settings.json structure, PreToolUse and PostToolUse patterns, notifications and git checkpoints."
 ---
 All hooks go in `.claude/settings.json` (project) or `~/.claude/settings.json` (global).
 

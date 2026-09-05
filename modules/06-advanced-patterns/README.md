@@ -1,6 +1,6 @@
-# Module 06 — Advanced Patterns
+# Module 06 - Advanced Patterns
 
-**Time estimate:** 4 hours  
+**Time estimate:** 4 hours
 **Prerequisite:** Modules 01–05
 
 ---
@@ -13,9 +13,9 @@ You know how to build apps, agents, workflows and MCP integrations. This module 
 
 ## Lessons
 
-1. [Skills and Slash Commands](./skills-slash-commands.md) — Create reusable slash commands that package complex multi-step workflows
-2. [Context Management](./context-management.md) — Keep Claude focused, avoid context overflow and manage long sessions
-3. [The gstack Workflow](./gstack-workflow.md) — A complete engineering workflow using specialized agents from idea to deployment
+1. [Skills and Slash Commands](./skills-slash-commands.md) - Create reusable slash commands that package complex multi-step workflows
+2. [Context Management](./context-management.md) - Keep Claude focused, avoid context overflow and manage long sessions
+3. [The gstack Workflow](./gstack-workflow.md) - A complete engineering workflow using specialized agents from idea to deployment
 
 ---
 
@@ -41,10 +41,10 @@ This module is about moving from intermediate to expert.
 
 At the end of this module, create a custom slash command that encodes the most repetitive part of your own work. Examples:
 
-- `/new-feature` — creates branch, scaffolds component, writes test skeleton, updates CLAUDE.md
-- `/deploy-check` — runs tests, checks for console.logs, validates env vars, then deploys
-- `/standup` — reads recent git commits and drafts a standup message
-- `/code-review` — reviews staged changes for bugs, security issues and style violations
+- `/new-feature` - creates branch, scaffolds component, writes test skeleton, updates CLAUDE.md
+- `/deploy-check` - runs tests, checks for console.logs, validates env vars, then deploys
+- `/standup` - reads recent git commits and drafts a standup message
+- `/code-review` - reviews staged changes for bugs, security issues and style violations
 
 ---
 

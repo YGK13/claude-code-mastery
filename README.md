@@ -1,4 +1,4 @@
-# Claude Code Mastery — Complete Teaching Curriculum
+# Claude Code Mastery - Complete Teaching Curriculum
 
 > **Taught by Yuri Kruman** | 3x CHRO | AI Trainer (Meta, Microsoft, OpenAI) | Founder, BookToCourse.AI
 
@@ -6,7 +6,7 @@
 
 ## What This Is
 
-This is a complete, practical curriculum for learning to use **Claude Code** to build web apps, AI agents and automated workflows from scratch — even if you've never built software before.
+This is a complete, practical curriculum for learning to use **Claude Code** to build web apps, AI agents and automated workflows from scratch - even if you've never built software before.
 
 Every module is grounded in real projects. No toy examples. No theory without application.
 
@@ -38,12 +38,12 @@ By the end of this curriculum you will have built:
 
 | Module | Topic | Time Estimate |
 |--------|-------|---------------|
-| [01 — Getting Started](./modules/01-getting-started/README.md) | Install, configure and run your first session | 2 hours |
-| [02 — Building Web Apps](./modules/02-building-web-apps/README.md) | HTML apps, Next.js, React patterns | 4 hours |
-| [03 — AI Agents](./modules/03-ai-agents/README.md) | Python agents, tool use, Claude API | 4 hours |
-| [04 — Workflows & Automation](./modules/04-workflows-automation/README.md) | Hooks, multi-agent, CI/CD | 3 hours |
-| [05 — MCP Integrations](./modules/05-mcp-integrations/README.md) | Installing and building MCP servers | 3 hours |
-| [06 — Advanced Patterns](./modules/06-advanced-patterns/README.md) | Skills, orchestration, production | 4 hours |
+| [01 - Getting Started](./modules/01-getting-started/README.md) | Install, configure and run your first session | 2 hours |
+| [02 - Building Web Apps](./modules/02-building-web-apps/README.md) | HTML apps, Next.js, React patterns | 4 hours |
+| [03 - AI Agents](./modules/03-ai-agents/README.md) | Python agents, tool use, Claude API | 4 hours |
+| [04 - Workflows & Automation](./modules/04-workflows-automation/README.md) | Hooks, multi-agent, CI/CD | 3 hours |
+| [05 - MCP Integrations](./modules/05-mcp-integrations/README.md) | Installing and building MCP servers | 3 hours |
+| [06 - Advanced Patterns](./modules/06-advanced-patterns/README.md) | Skills, orchestration, production | 4 hours |
 
 **Total: ~20 hours of structured learning with hands-on builds**
 
@@ -107,15 +107,15 @@ That's it. Claude Code will create, edit and run code directly in your project.
 
 ## Templates and Examples
 
-- [`/templates`](./templates) — Starter templates for every project type
-- [`/examples`](./examples) — Complete, runnable code examples you can use immediately
-- [`/reference`](./reference) — Quick-reference cheatsheets for commands, hooks and MCP
+- [`/templates`](./templates) - Starter templates for every project type
+- [`/examples`](./examples) - Complete, runnable code examples you can use immediately
+- [`/reference`](./reference) - Quick-reference cheatsheets for commands, hooks and MCP
 
 ---
 
 ## The Instructor
 
-**Yuri Kruman** has trained AI use at Meta, Microsoft and OpenAI. They build production AI agents, automation systems and web apps using Claude Code daily. This curriculum reflects real production patterns — not academic exercises.
+**Yuri Kruman** has trained AI use at Meta, Microsoft and OpenAI. They build production AI agents, automation systems and web apps using Claude Code daily. This curriculum reflects real production patterns - not academic exercises.
 
 - [yurikruman.com](https://yurikruman.com)
 - [LinkedIn](https://www.linkedin.com/in/yurikruman/)
@@ -128,4 +128,4 @@ Claude Code Mastery is independent and not affiliated with Anthropic. Claude and
 
 ## License
 
-MIT — fork it, remix it, build with it. Credit appreciated.
+MIT - fork it, remix it, build with it. Credit appreciated.

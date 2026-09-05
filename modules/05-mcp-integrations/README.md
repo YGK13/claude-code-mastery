@@ -1,7 +1,7 @@
-# Module 05 — MCP Integrations
+# Module 05 - MCP Integrations
 
-**Time estimate:** 3 hours  
-**Prerequisite:** [Module 01 — Getting Started](../01-getting-started/README.md)
+**Time estimate:** 3 hours
+**Prerequisite:** [Module 01 - Getting Started](../01-getting-started/README.md)
 
 ---
 
@@ -9,15 +9,15 @@
 
 MCP (Model Context Protocol) is an open standard that lets Claude connect to external tools, data sources and services. Where tools in Python agents are functions you write, MCP servers are standalone programs that expose capabilities Claude can use in any session.
 
-Think of MCP servers as plugins for Claude Code. Install one, and Claude gains access to Gmail, Google Drive, Slack, Notion, GitHub, your database — anything with an MCP server.
+Think of MCP servers as plugins for Claude Code. Install one, and Claude gains access to Gmail, Google Drive, Slack, Notion, GitHub, your database - anything with an MCP server.
 
 ---
 
 ## Lessons
 
-1. [What Is MCP](./what-is-mcp.md) — How the protocol works and why it matters
-2. [Installing MCP Servers](./installing-mcp-servers.md) — The most useful MCP servers and how to set them up
-3. [Building Custom MCP](./building-custom-mcp.md) — Write your own MCP server to expose your own data
+1. [What Is MCP](./what-is-mcp.md) - How the protocol works and why it matters
+2. [Installing MCP Servers](./installing-mcp-servers.md) - The most useful MCP servers and how to set them up
+3. [Building Custom MCP](./building-custom-mcp.md) - Write your own MCP server to expose your own data
 
 ---
 
@@ -45,12 +45,12 @@ npm install -g @modelcontextprotocol/server-github
 
 Now in any Claude Code session:
 ```
-> Create a GitHub issue for the bug we just fixed. Title: "Fix null pointer in 
+> Create a GitHub issue for the bug we just fixed. Title: "Fix null pointer in
   auth middleware". Body: describe what was broken and what the fix was.
   Add labels: bug, fixed.
 ```
 
-Claude Code reads your current working directory (to understand the fix) and creates the GitHub issue — all in one prompt.
+Claude Code reads your current working directory (to understand the fix) and creates the GitHub issue - all in one prompt.
 
 ---
 
@@ -66,4 +66,4 @@ After this module, connect Claude Code to at least two MCP servers and complete 
 
 ## Next Module
 
-[Module 06 — Advanced Patterns](../06-advanced-patterns/README.md)
+[Module 06 - Advanced Patterns](../06-advanced-patterns/README.md)

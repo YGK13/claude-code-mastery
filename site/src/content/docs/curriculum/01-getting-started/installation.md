@@ -8,7 +8,7 @@ Claude Code runs as a CLI tool on top of Node.js. Here's the complete setup for 
 
 ---
 
-## Step 1 — Install Node.js
+## Step 1 - Install Node.js
 
 Claude Code requires Node.js v18 or higher. Use v20 LTS or v22 for best results.
 
@@ -34,7 +34,7 @@ npm --version    # should print 10.x.x or higher
 
 ---
 
-## Step 2 — Install Claude Code
+## Step 2 - Install Claude Code
 
 ```bash
 npm install -g @anthropic-ai/claude-code
@@ -49,19 +49,19 @@ You should see a version number like `1.x.x`.
 
 ---
 
-## Step 3 — Get an Anthropic API Key
+## Step 3 - Get an Anthropic API Key
 
 1. Go to [console.anthropic.com](https://console.anthropic.com)
 2. Sign up or log in
 3. Click **API Keys** in the left sidebar
 4. Click **Create Key**
-5. Copy the key — it starts with `sk-ant-`
+5. Copy the key - it starts with `sk-ant-`
 
 **Important:** You only see the key once. Save it somewhere safe.
 
 ---
 
-## Step 4 — Set the API Key
+## Step 4 - Set the API Key
 
 **Mac / Linux (add to shell profile so it persists):**
 ```bash
@@ -89,7 +89,7 @@ export ANTHROPIC_API_KEY=sk-ant-YOUR-KEY-HERE
 
 ---
 
-## Step 5 — Verify Everything Works
+## Step 5 - Verify Everything Works
 
 ```bash
 claude --version           # shows version number
@@ -112,14 +112,14 @@ Claude Code integrates with VS Code so you can trigger sessions from the editor.
 
 1. Open VS Code
 2. Open the Command Palette (`Ctrl+Shift+P` / `Cmd+Shift+P`)
-3. Type "Claude Code" — install the extension if prompted
+3. Type "Claude Code" - install the extension if prompted
 4. Use `Ctrl+Shift+C` (`Cmd+Shift+C` on Mac) to open a Claude Code session in the terminal
 
 ---
 
 ## Pricing Note
 
-Claude Code uses your Anthropic API key and bills per token. For typical learning sessions (one new app per session, moderate complexity), expect $0.10–$1.00 per session. Claude Sonnet is the default model — more affordable than Claude Opus while still highly capable.
+Claude Code uses your Anthropic API key and bills per token. For typical learning sessions (one new app per session, moderate complexity), expect $0.10–$1.00 per session. Claude Sonnet is the default model - more affordable than Claude Opus while still highly capable.
 
 Set a spending limit in the Anthropic console under **Billing** to avoid surprises.
 
@@ -148,4 +148,4 @@ Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
 
 ---
 
-Next: [Your First Session](./first-session.md)
+Next: [Your First Session](/curriculum/01-getting-started/first-session/)

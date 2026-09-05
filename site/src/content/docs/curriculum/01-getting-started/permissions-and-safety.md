@@ -4,7 +4,7 @@ title: "Permissions and Safety"
 description: "What Claude Code can do on your machine, what it asks permission for, how to allow or deny commands in settings.json and how to work safely with git."
 ---
 
-Claude Code can read files, write files, run commands and browse the web. Understanding how it decides what to do — and how you control that — keeps you in charge of your own codebase.
+Claude Code can read files, write files, run commands and browse the web. Understanding how it decides what to do - and how you control that - keeps you in charge of your own codebase.
 
 ---
 
@@ -52,10 +52,10 @@ Allow? [y/n/always/never]
 ```
 
 Your options:
-- **y** — allow this one time
-- **n** — deny this one time
-- **always** — add to auto-approve list for this session
-- **never** — block this command for this session
+- **y** - allow this one time
+- **n** - deny this one time
+- **always** - add to auto-approve list for this session
+- **never** - block this command for this session
 
 ---
 
@@ -147,11 +147,11 @@ Some things are architecturally impossible regardless of permissions:
 Claude Code is a tool that executes code on your machine. The same caution you'd apply to any automated script applies here:
 
 - Don't run `claude` as root or with sudo
-- Keep your `ANTHROPIC_API_KEY` secret — it's your billing credential
+- Keep your `ANTHROPIC_API_KEY` secret - it's your billing credential
 - Review unfamiliar commands before approving them
 - Use the `deny` list for destructive operations on important projects
 
-Claude Code will tell you what it's doing before it does it. That transparency is your main safety mechanism — use it.
+Claude Code will tell you what it's doing before it does it. That transparency is your main safety mechanism - use it.
 
 ---
 
@@ -185,4 +185,4 @@ This is another reason to use git from day one in every project: it's your undo 
 
 ---
 
-Next module: [Building Web Apps](../02-building-web-apps/README.md)
+Next module: [Building Web Apps](/curriculum/02-building-web-apps/overview/)

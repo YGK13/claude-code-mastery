@@ -8,7 +8,7 @@ Hooks let you run a command automatically every time Claude Code does something 
 
 **Why this matters for non-engineers:** when you're learning, hooks are how you turn "Claude shipped some code" into "Claude shipped some code AND a Slack message went to my phone AND a git checkpoint was created AND the local dev server restarted." The complexity stays invisible. You just write the work.
 
-For developers, hooks also do linters, formatters and tests automatically — those examples are below too.
+For developers, hooks also do linters, formatters and tests automatically - those examples are below too.
 
 ---
 
@@ -223,7 +223,7 @@ Hooks in the array run in order, one after another.
 > Add hooks to .claude/settings.json for this project:
   1. After every Write: run npm run lint -- --fix on the written file
   2. After every Write to a *.test.ts file: run the test with npm test
-  3. Before any Bash command matching "git push*": run npm run build and 
+  3. Before any Bash command matching "git push*": run npm run build and
      abort if the build fails (exit code 1)
   4. When the session stops: echo "Session complete at $(date)" >> .claude/session-log.txt
 ```
@@ -236,11 +236,11 @@ Claude Code will write the correct settings.json structure for all four hooks.
 
 If a hook isn't firing, check:
 
-1. JSON syntax in `settings.json` — a single missing comma breaks everything
-2. The matcher string — `"Write"` not `"write"` (case sensitive)
+1. JSON syntax in `settings.json` - a single missing comma breaks everything
+2. The matcher string - `"Write"` not `"write"` (case sensitive)
 3. Run the command manually in your terminal to make sure it works independently
 4. Check `~/.claude/logs/` for hook execution logs
 
 ---
 
-Next: [Multi-Agent Coordination](./multi-agent.md)
+Next: [Multi-Agent Coordination](/curriculum/04-workflows-automation/multi-agent/)

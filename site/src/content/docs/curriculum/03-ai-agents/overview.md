@@ -1,10 +1,10 @@
 ---
-title: Module 03 — AI Agents
+title: Module 03 - AI Agents
 description: Build Python AI agents that reason and take action. Tool use, system prompts, multi-step workflows, production-grade architecture.
 ---
 
-**Time estimate:** 4 hours total  
-**Prerequisite:** [Module 01 — Getting Started](/curriculum/01-getting-started/overview/)
+**Time estimate:** 4 hours total
+**Prerequisite:** [Module 01 - Getting Started](/curriculum/01-getting-started/overview/)
 
 ## What you'll be able to do after Module 03
 
@@ -25,18 +25,18 @@ Most "AI products" in the market right now are agents wrapped in a UI. After Mod
 
 Three agent builds, executive-flavored:
 
-1. **The prospect research agent** — give it a name and company, it pulls news, funding, LinkedIn profile, recent press, and produces a one-page intel brief in 30 seconds
-2. **The meeting prep agent** — takes a calendar invite + attendee names + your CRM history, and produces a one-page "what you need to know before this meeting" doc
-3. **The HR ticket triage agent** (or your function's equivalent) — reads incoming emails, classifies them, routes to the right person and drafts the first-pass response
+1. **The prospect research agent** - give it a name and company, it pulls news, funding, LinkedIn profile, recent press, and produces a one-page intel brief in 30 seconds
+2. **The meeting prep agent** - takes a calendar invite + attendee names + your CRM history, and produces a one-page "what you need to know before this meeting" doc
+3. **The HR ticket triage agent** (or your function's equivalent) - reads incoming emails, classifies them, routes to the right person and drafts the first-pass response
 
 You'll build all three. Same architecture, different tools. Once you've shipped one agent, you can ship any agent.
 
 ## Lessons in this module
 
-1. [Python agents](/curriculum/03-ai-agents/python-agents/) — The Anthropic SDK, the agent loop, your first working agent
-2. [Tool use patterns](/curriculum/03-ai-agents/tool-use-patterns/) — Defining tools, handling results, chaining actions
-3. [Agent architecture](/curriculum/03-ai-agents/agent-architecture/) — Production patterns: state, retries, observability, multi-agent
+1. [Python agents](/curriculum/03-ai-agents/python-agents/) - The Anthropic SDK, the agent loop, your first working agent
+2. [Tool use patterns](/curriculum/03-ai-agents/tool-use-patterns/) - Defining tools, handling results, chaining actions
+3. [Agent architecture](/curriculum/03-ai-agents/agent-architecture/) - Production patterns: state, retries, observability, multi-agent
 
 ## After this module
 
-→ [Module 04 — Workflows & Automation](/curriculum/04-workflows-automation/overview/)
+→ [Module 04 - Workflows & Automation](/curriculum/04-workflows-automation/overview/)

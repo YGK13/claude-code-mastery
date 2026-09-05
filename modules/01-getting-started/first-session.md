@@ -30,7 +30,7 @@ Working directory: /path/to/hello-world
 Type this and press Enter:
 
 ```
-> Create an HTML file called index.html that says "Hello, World!" with a button that 
+> Create an HTML file called index.html that says "Hello, World!" with a button that
   changes the text color each time it's clicked. Use vanilla JavaScript.
 ```
 
@@ -39,7 +39,7 @@ Claude Code will:
 2. Create `index.html` with the full code
 3. Tell you what it did
 
-Open `index.html` in your browser — it should work immediately.
+Open `index.html` in your browser - it should work immediately.
 
 ---
 
@@ -51,7 +51,7 @@ Claude Code is an **agentic coding tool**, not a chatbot. Key differences:
 |---------|------------|
 | Gives you code to copy | Writes code directly into your files |
 | Requires you to run commands | Runs commands itself (with permission) |
-| Stateless — forgets context | Reads your whole codebase before responding |
+| Stateless - forgets context | Reads your whole codebase before responding |
 | You manage files | It manages files |
 
 When you open a session, Claude Code reads your directory. It knows every file, every function, every dependency. When you ask it to "add a search bar," it finds the right component and edits the right file. You don't need to tell it where.
@@ -60,7 +60,7 @@ When you open a session, Claude Code reads your directory. It knows every file, 
 
 ## Key Commands to Know
 
-These are built-in commands, not prompts — prefix them with `/`:
+These are built-in commands, not prompts - prefix them with `/`:
 
 | Command | What it does |
 |---------|-------------|
@@ -84,7 +84,7 @@ The quality of your output is directly proportional to the specificity of your p
 
 **Strong prompt:**
 ```
-> Add a login page with an email + password form. Use the same Tailwind CSS 
+> Add a login page with an email + password form. Use the same Tailwind CSS
   classes as the existing components in /components/. Validate the email format
   on the client side. On submit, POST to /api/auth/login. Show a loading spinner
   while the request is in flight and display errors inline below each field.
@@ -104,8 +104,8 @@ You don't need to know HOW to implement any of this. You just need to know WHAT 
 Staying in the same session:
 
 ```
-> Add a dark mode toggle button to the top-right corner that switches between 
-  light and dark backgrounds. Save the preference in localStorage so it persists 
+> Add a dark mode toggle button to the top-right corner that switches between
+  light and dark backgrounds. Save the preference in localStorage so it persists
   across page reloads.
 ```
 
@@ -132,8 +132,8 @@ Claude Code reads the codebase and gives you a clear explanation. No code is cha
 Claude Code is not perfect. When something doesn't work:
 
 ```
-> That didn't work — the button is not visible on mobile. 
-  The viewport is 375px wide. Fix the CSS so it's visible and tappable 
+> That didn't work - the button is not visible on mobile.
+  The viewport is 375px wide. Fix the CSS so it's visible and tappable
   on screens under 600px wide.
 ```
 
@@ -143,7 +143,7 @@ Be specific about what's wrong and what you see. "It doesn't work" is much less 
 
 ## Session Continuity
 
-Within a session, Claude Code remembers everything. Across sessions, it re-reads your files fresh — but it doesn't remember your conversation history.
+Within a session, Claude Code remembers everything. Across sessions, it re-reads your files fresh - but it doesn't remember your conversation history.
 
 This means:
 - A `CLAUDE.md` file in your project is how you give Claude Code persistent instructions (covered in the next lesson)
@@ -157,7 +157,7 @@ Before moving on, complete these three prompts in a fresh project:
 
 1. `> Create a single HTML file with a calculator that handles +, -, * and /`
 2. `> Add a history list below the calculator that shows the last 10 calculations`
-3. `> Make the calculator keyboard-accessible — all operations should work with keyboard keys`
+3. `> Make the calculator keyboard-accessible - all operations should work with keyboard keys`
 
 Each prompt should take about 30 seconds for Claude Code to complete.
 

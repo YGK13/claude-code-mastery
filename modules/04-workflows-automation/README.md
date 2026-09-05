@@ -1,21 +1,21 @@
-# Module 04 — Workflows and Automation
+# Module 04 - Workflows and Automation
 
-**Time estimate:** 3 hours  
-**Prerequisite:** [Module 01 — Getting Started](../01-getting-started/README.md)
+**Time estimate:** 3 hours
+**Prerequisite:** [Module 01 - Getting Started](../01-getting-started/README.md)
 
 ---
 
 ## What This Module Covers
 
-Claude Code becomes genuinely powerful when you automate it — running automatically when files change, before commits, after builds or on a schedule. This module covers the mechanisms that make that happen.
+Claude Code becomes genuinely powerful when you automate it - running automatically when files change, before commits, after builds or on a schedule. This module covers the mechanisms that make that happen.
 
 ---
 
 ## Lessons
 
-1. [The Hooks System](./hooks-system.md) — Trigger shell commands automatically based on Claude Code events
-2. [Multi-Agent Coordination](./multi-agent.md) — Spawn and coordinate multiple Claude Code agents in parallel
-3. [CI/CD Integration](./cicd-integration.md) — Use Claude Code in GitHub Actions and deployment pipelines
+1. [The Hooks System](./hooks-system.md) - Trigger shell commands automatically based on Claude Code events
+2. [Multi-Agent Coordination](./multi-agent.md) - Spawn and coordinate multiple Claude Code agents in parallel
+3. [CI/CD Integration](./cicd-integration.md) - Use Claude Code in GitHub Actions and deployment pipelines
 
 ---
 
@@ -75,4 +75,4 @@ After completing this module, set up a full automation pipeline for any project:
 
 ## Next Module
 
-[Module 05 — MCP Integrations](../05-mcp-integrations/README.md)
+[Module 05 - MCP Integrations](../05-mcp-integrations/README.md)

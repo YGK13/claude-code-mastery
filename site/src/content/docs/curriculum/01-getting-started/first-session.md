@@ -34,10 +34,10 @@ Working directory: /path/to/hello-world
 Type this and press Enter:
 
 ```
-> Create a single HTML file called weekly-status.html. It's a personal weekly 
-  status report generator. Inputs: a list of accomplishments (one per line), a 
-  list of blockers (one per line) and a list of next-week priorities. Output: 
-  a formatted, copy-paste-ready Monday-morning status email I can send to my 
+> Create a single HTML file called weekly-status.html. It's a personal weekly
+  status report generator. Inputs: a list of accomplishments (one per line), a
+  list of blockers (one per line) and a list of next-week priorities. Output:
+  a formatted, copy-paste-ready Monday-morning status email I can send to my
   boss or team. Include a "Copy to clipboard" button.
 ```
 
@@ -60,7 +60,7 @@ Claude Code is an **agentic coding tool**, not a chatbot. Key differences:
 |---------|------------|
 | Gives you code to copy | Writes code directly into your files |
 | Requires you to run commands | Runs commands itself (with permission) |
-| Stateless — forgets context | Reads your whole codebase before responding |
+| Stateless - forgets context | Reads your whole codebase before responding |
 | You manage files | It manages files |
 
 When you open a session, Claude Code reads your directory. It knows every file, every function, every dependency. When you ask it to "add a search bar," it finds the right component and edits the right file. You don't need to tell it where.
@@ -69,7 +69,7 @@ When you open a session, Claude Code reads your directory. It knows every file, 
 
 ## Key Commands to Know
 
-These are built-in commands, not prompts — prefix them with `/`:
+These are built-in commands, not prompts - prefix them with `/`:
 
 | Command | What it does |
 |---------|-------------|
@@ -94,10 +94,10 @@ The quality of your output is directly proportional to the specificity of your p
 **Strong prompt:**
 ```
 > Build a single HTML file called contacts.html. It's a lightweight personal CRM.
-  Each contact has: name, company, role, email, last-touched date, next-followup 
-  date, priority (high/medium/low) and a notes field. Display contacts as cards 
-  sorted by next-followup date (overdue items shown in red at top). 
-  Add filters by priority and a search box. Persist everything in localStorage. 
+  Each contact has: name, company, role, email, last-touched date, next-followup
+  date, priority (high/medium/low) and a notes field. Display contacts as cards
+  sorted by next-followup date (overdue items shown in red at top).
+  Add filters by priority and a search box. Persist everything in localStorage.
   Add an "Export CSV" button. No login, no server, just one file I can email myself.
 ```
 
@@ -116,13 +116,13 @@ You don't need to know HOW to implement any of this. You just need to know WHAT 
 Staying in the same session (your `weekly-status.html` is still open in Claude's context):
 
 ```
-> Add a "tone" dropdown at the top with three options: "Professional" (default), 
-  "Casual" and "Concise." The Generate button uses the selected tone to format 
-  the output differently — formal sentences for Professional, contractions and 
+> Add a "tone" dropdown at the top with three options: "Professional" (default),
+  "Casual" and "Concise." The Generate button uses the selected tone to format
+  the output differently - formal sentences for Professional, contractions and
   warmth for Casual, bullet-only for Concise. Default stays Professional.
 ```
 
-Claude Code knows your existing file. It will add the dropdown and the tone logic correctly without breaking what's already there. You don't need to point it to anything — it already read the file when you started the session.
+Claude Code knows your existing file. It will add the dropdown and the tone logic correctly without breaking what's already there. You don't need to point it to anything - it already read the file when you started the session.
 
 This is the fundamental superpower: **iterate in plain English, get back working software.**
 
@@ -134,11 +134,11 @@ Sometimes you want to understand a file (yours or someone else's) without changi
 
 ```
 > Explain in plain English what this app does and who would use it
-> Walk me through the data model — what does each field represent?
+> Walk me through the data model - what does each field represent?
 > What changes if I want to add a "tags" feature to each contact?
 ```
 
-Claude Code reads the file (or whole folder) and explains. No code is touched. This is genuinely useful for understanding any codebase someone hands you — a vendor's proposal, an inherited tool, an open-source project you're evaluating.
+Claude Code reads the file (or whole folder) and explains. No code is touched. This is genuinely useful for understanding any codebase someone hands you - a vendor's proposal, an inherited tool, an open-source project you're evaluating.
 
 ---
 
@@ -148,7 +148,7 @@ Claude Code is not perfect. When something doesn't work:
 
 ```
 > That didn't work. When I click Generate with only one accomplishment in the list,
-  the output shows "undefined" instead of skipping the blockers section. 
+  the output shows "undefined" instead of skipping the blockers section.
   The blockers section should only render if at least one blocker is entered.
 ```
 
@@ -158,7 +158,7 @@ Be specific about what's wrong and what you see. "It doesn't work" is much less 
 
 ## Session Continuity
 
-Within a session, Claude Code remembers everything. Across sessions, it re-reads your files fresh — but it doesn't remember your conversation history.
+Within a session, Claude Code remembers everything. Across sessions, it re-reads your files fresh - but it doesn't remember your conversation history.
 
 This means:
 - A `CLAUDE.md` file in your project is how you give Claude Code persistent instructions (covered in the next lesson)
@@ -170,14 +170,14 @@ This means:
 
 Before moving on, complete these three prompts in a fresh project. Each one should produce a working executive-grade tool you can use the same day:
 
-1. **Meeting prep card** — `> Create a single HTML file called meeting-prep.html. Input fields: meeting title, attendees (one per line), meeting goal and any context I paste in. Output: a one-page printable brief with: "What I want to walk out with," "Likely objections," "Three key questions to ask" and "Decisions needed." Use a clean print-ready layout.`
+1. **Meeting prep card** - `> Create a single HTML file called meeting-prep.html. Input fields: meeting title, attendees (one per line), meeting goal and any context I paste in. Output: a one-page printable brief with: "What I want to walk out with," "Likely objections," "Three key questions to ask" and "Decisions needed." Use a clean print-ready layout.`
 
-2. **Decision matrix** — `> Build decision-matrix.html. Lets me add options (rows) and criteria (columns), score each cell 1-10 with weighted criteria, and shows the weighted total per option with a ranked recommendation at the top. Persist in localStorage.`
+2. **Decision matrix** - `> Build decision-matrix.html. Lets me add options (rows) and criteria (columns), score each cell 1-10 with weighted criteria, and shows the weighted total per option with a ranked recommendation at the top. Persist in localStorage.`
 
-3. **One-on-one tracker** — `> Build 1on1-tracker.html. For each direct report: their name, the date of our last 1:1, talking points for next 1:1 (notes I add throughout the week), what they're blocked on, what they need from me. Show all reports as cards, sorted by "next 1:1 overdue." Persist in localStorage.`
+3. **One-on-one tracker** - `> Build 1on1-tracker.html. For each direct report: their name, the date of our last 1:1, talking points for next 1:1 (notes I add throughout the week), what they're blocked on, what they need from me. Show all reports as cards, sorted by "next 1:1 overdue." Persist in localStorage.`
 
 Each prompt should take Claude Code about 30-60 seconds. You'll have three working tools by the end of this lesson.
 
 ---
 
-Next: [The CLAUDE.md File](./claude-md-guide.md)
+Next: [The CLAUDE.md File](/curriculum/01-getting-started/claude-md-guide/)

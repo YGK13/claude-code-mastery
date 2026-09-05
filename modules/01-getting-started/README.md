@@ -1,7 +1,7 @@
-# Module 01 — Getting Started with Claude Code
+# Module 01 - Getting Started with Claude Code
 
-**Time estimate:** 2 hours  
-**Prerequisite:** None — start here
+**Time estimate:** 2 hours
+**Prerequisite:** None - start here
 
 ---
 
@@ -17,10 +17,10 @@
 
 ## Lessons
 
-1. [Installation](./installation.md) — Install Node, Claude Code and set your API key
-2. [Your First Session](./first-session.md) — Start Claude Code, run your first prompt, understand what happens
-3. [The CLAUDE.md File](./claude-md-guide.md) — Configure project-level behavior, style rules and permissions
-4. [Permissions and Safety](./permissions-and-safety.md) — Understand what Claude Code can and cannot do, and how to control it
+1. [Installation](./installation.md) - Install Node, Claude Code and set your API key
+2. [Your First Session](./first-session.md) - Start Claude Code, run your first prompt, understand what happens
+3. [The CLAUDE.md File](./claude-md-guide.md) - Configure project-level behavior, style rules and permissions
+4. [Permissions and Safety](./permissions-and-safety.md) - Understand what Claude Code can and cannot do, and how to control it
 
 ---
 
@@ -44,10 +44,10 @@ claude
 # 4. Open index.html in a browser. It should work immediately.
 ```
 
-If your app opens and works — you've completed Module 01.
+If your app opens and works - you've completed Module 01.
 
 ---
 
 ## Next Module
 
-[Module 02 — Building Web Apps](../02-building-web-apps/README.md)
+[Module 02 - Building Web Apps](../02-building-web-apps/README.md)

@@ -45,7 +45,7 @@ Use background processes to run agents in parallel:
 
 ```bash
 #!/bin/bash
-# parallel_review.sh — Run three review agents simultaneously
+# parallel_review.sh - Run three review agents simultaneously
 
 echo "Starting parallel review..."
 
@@ -73,7 +73,7 @@ cat /tmp/a11y-review.txt >> review-report.md
 echo "Review complete. Results in review-report.md"
 ```
 
-Three reviews running simultaneously — takes the same time as one.
+Three reviews running simultaneously - takes the same time as one.
 
 ---
 
@@ -82,7 +82,7 @@ Three reviews running simultaneously — takes the same time as one.
 A Python script that manages agent workers:
 
 ```python
-"""orchestrator.py — Spawns Claude Code subagents for each task."""
+"""orchestrator.py - Spawns Claude Code subagents for each task."""
 import subprocess
 import concurrent.futures
 import sys
@@ -139,10 +139,10 @@ if __name__ == "__main__":
             "output": "docs/api.md"
         }
     ]
-    
+
     print(f"Running {len(tasks)} agents in parallel...")
     results = orchestrate(tasks)
-    
+
     success_count = sum(1 for r in results.values() if r["success"])
     print(f"\nDone: {success_count}/{len(tasks)} succeeded")
 ```
@@ -195,7 +195,7 @@ echo "All agents complete."
 ## Prompting Claude Code to Build an Orchestration System
 
 ```
-> Build a Python script called orchestrate.py that runs multiple Claude Code 
+> Build a Python script called orchestrate.py that runs multiple Claude Code
   agents in parallel for a code quality pipeline.
 
   The pipeline has 4 stages that run in this order:
@@ -212,4 +212,4 @@ echo "All agents complete."
 
 ---
 
-Next: [CI/CD Integration](./cicd-integration.md)
+Next: [CI/CD Integration](/curriculum/04-workflows-automation/cicd-integration/)

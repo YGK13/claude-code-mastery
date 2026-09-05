@@ -80,7 +80,7 @@ Now type `/commit` whenever you want a well-structured commit message. Claude Co
 
 ## More Useful Skill Examples
 
-### `/new-component` — Scaffold a new React component
+### `/new-component` - Scaffold a new React component
 
 ```markdown
 # new-component
@@ -104,7 +104,7 @@ Creates a new React component following project conventions.
 - Basic test: renders without crashing + key interactions
 ```
 
-### `/security-check` — OWASP security review
+### `/security-check` - OWASP security review
 
 ```markdown
 # security-check
@@ -125,7 +125,7 @@ Reviews the codebase for OWASP Top 10 vulnerabilities.
 Security findings in a table: | Severity | Location | Issue | Recommendation |
 ```
 
-### `/standup` — Draft a daily standup from git history
+### `/standup` - Draft a daily standup from git history
 
 ```markdown
 # standup
@@ -150,20 +150,20 @@ Generates a daily standup message from recent git activity.
 For skills that encode team process, store them in `.claude/skills/` in the repo root. Anyone who clones the repo gets the skills automatically.
 
 Good candidates for team skills:
-- `/new-feature` — creates the branch, PR template and initial files according to team conventions
-- `/release` — runs the team's specific release checklist
-- `/db-migration` — scaffolds a new Drizzle migration with the correct format
-- `/e2e-test` — creates a Playwright test file following team conventions
+- `/new-feature` - creates the branch, PR template and initial files according to team conventions
+- `/release` - runs the team's specific release checklist
+- `/db-migration` - scaffolds a new Drizzle migration with the correct format
+- `/e2e-test` - creates a Playwright test file following team conventions
 
 ---
 
 ## Skill Best Practices
 
-1. **Be explicit about output format** — if you want a table, say "format as a markdown table"
-2. **Include confirmation steps for destructive actions** — "ask for confirmation before running git push"
-3. **Reference existing code** — "read the most recently modified file to match the style"
-4. **Include edge case handling** — "if there are no staged changes, tell the user and stop"
-5. **Keep each skill focused** — one skill, one job. Don't build a 20-step mega-skill.
+1. **Be explicit about output format** - if you want a table, say "format as a markdown table"
+2. **Include confirmation steps for destructive actions** - "ask for confirmation before running git push"
+3. **Reference existing code** - "read the most recently modified file to match the style"
+4. **Include edge case handling** - "if there are no staged changes, tell the user and stop"
+5. **Keep each skill focused** - one skill, one job. Don't build a 20-step mega-skill.
 
 ---
 

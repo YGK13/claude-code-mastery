@@ -105,7 +105,7 @@ def example_tool(input_param: str, optional_param: int = 10) -> str:
 def execute_tool(name: str, inputs: dict[str, Any]) -> str:
     """
     Routes tool calls to the correct implementation.
-    Never raises — returns error strings so Claude can handle them gracefully.
+    Never raises - returns error strings so Claude can handle them gracefully.
     """
     logger.info(f"Tool call: {name} | inputs: {json.dumps(inputs)}")
     start = time.time()

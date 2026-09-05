@@ -1,7 +1,7 @@
 ---
 # generated from modules/05-mcp-integrations/installing-mcp-servers.md by site/scripts/sync-content.mjs
 title: "Installing MCP Servers"
-description: "How to install and configure the most useful MCP servers for Claude Code (GitHub, filesystem, Slack, Google Drive, databases) and register them in claude.json."
+description: "How to install and configure the most useful MCP servers for Claude Code - GitHub, filesystem, Slack, Google Drive and databases - and register them."
 ---
 
 ---
@@ -14,7 +14,7 @@ claude mcp add <server-name>
 ```
 Claude Code walks you through the setup interactively and writes the config for you.
 
-**Method 2: Manual config** — edit `~/.claude/claude.json` directly.
+**Method 2: Manual config** - edit `~/.claude/claude.json` directly.
 
 ---
 
@@ -70,7 +70,7 @@ What it can do: create issues and PRs, review code, search repos, manage branche
 
 Example usage:
 ```
-> Create a GitHub issue: "Fix login redirect bug" — body should explain
+> Create a GitHub issue: "Fix login redirect bug" - body should explain
   that users are redirected to /home instead of their intended URL after login.
   Add labels: bug, auth.
 ```
@@ -97,7 +97,7 @@ What it can do: read and write files OUTSIDE your current working directory (Cla
 }
 ```
 
-The path arguments specify which directories are accessible. Be conservative — only open what you need.
+The path arguments specify which directories are accessible. Be conservative - only open what you need.
 
 ---
 
@@ -126,7 +126,7 @@ What it can do: read and write Notion pages and databases, query database entrie
 
 Example usage:
 ```
-> Read my "Project Status" Notion database and create a weekly summary email 
+> Read my "Project Status" Notion database and create a weekly summary email
   of all tasks that are marked "In Progress" or "Blocked".
 ```
 
@@ -201,4 +201,4 @@ This lists all connected MCP servers and their available tools.
 
 ---
 
-Next: [Building Custom MCP](./building-custom-mcp.md)
+Next: [Building Custom MCP](/curriculum/05-mcp-integrations/building-custom-mcp/)

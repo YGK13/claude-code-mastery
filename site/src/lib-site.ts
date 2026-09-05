@@ -146,7 +146,7 @@ export const FAQS: { q: string; a: string }[] = [
   },
   {
     q: 'Who is Yuri Kruman?',
-    a: 'Yuri Kruman is a three-time Chief Human Resources Officer, has trained AI systems under contract for Meta, Microsoft and OpenAI programs and founded PortLev and BookToCourse.AI. They build production AI agents, automations and web apps with Claude Code daily and write The Leverage Brief newsletter.',
+    a: 'Yuri Kruman is a three-time Chief Human Resources Officer, has trained AI systems under contract for Meta, Microsoft and OpenAI programs and founded PortLev and BookToCourse.AI. Yuri builds production AI agents, automations and web apps with Claude Code daily and writes The Leverage Brief newsletter.',
   },
   {
     q: 'Can I use this to train my team?',

@@ -1,5 +1,5 @@
 """
-simple-agent.py — A complete, runnable Claude agent example.
+simple-agent.py - A complete, runnable Claude agent example.
 
 This agent can answer factual questions and do math.
 Run it: python simple-agent.py "What is 2 to the power of 32?"
@@ -116,7 +116,7 @@ def run_agent(question: str) -> str:
         )
 
         if response.stop_reason == "tool_use":
-            # Claude wants to call a tool — add its response to history
+            # Claude wants to call a tool - add its response to history
             messages.append({"role": "assistant", "content": response.content})
 
             # Execute each tool call and collect results
@@ -135,7 +135,7 @@ def run_agent(question: str) -> str:
             messages.append({"role": "user", "content": tool_results})
 
         else:
-            # Claude is done — extract the final text
+            # Claude is done - extract the final text
             for block in response.content:
                 if hasattr(block, "text"):
                     return block.text

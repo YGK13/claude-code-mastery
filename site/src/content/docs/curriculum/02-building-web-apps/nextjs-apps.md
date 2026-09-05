@@ -19,9 +19,9 @@ cd my-app
 
 # Add a CLAUDE.md
 claude
-> Create a CLAUDE.md for this project. It uses Next.js 15 App Router, TypeScript, 
+> Create a CLAUDE.md for this project. It uses Next.js 15 App Router, TypeScript,
   Tailwind CSS. The /app directory has pages, /components has shared components,
-  /lib has utilities. Add permissions: allow npm run dev and npm run build without 
+  /lib has utilities. Add permissions: allow npm run dev and npm run build without
   asking. Require confirmation for git commit, git push and npm install.
 ```
 
@@ -68,10 +68,10 @@ Then prompt Claude Code:
 ```
 > Add a Neon PostgreSQL database to this project using Drizzle ORM.
   Create /lib/db.ts for the database client and /lib/schema.ts for the schema.
-  The database needs a 'contacts' table with: id (uuid primary key), 
-  name (text, not null), email (text, unique, not null), 
+  The database needs a 'contacts' table with: id (uuid primary key),
+  name (text, not null), email (text, unique, not null),
   created_at (timestamp, default now).
-  Add a /api/contacts route that handles GET (list all contacts) and 
+  Add a /api/contacts route that handles GET (list all contacts) and
   POST (create a contact). Validate input with Zod before writing to the DB.
   Store the DATABASE_URL in .env.local.
 ```
@@ -86,7 +86,7 @@ The fastest path is Clerk (handles sign-in, sign-up, user management):
 
 ```
 > Add Clerk authentication to this app.
-  - Protect all /dashboard/* routes — redirect to /sign-in if not authenticated
+  - Protect all /dashboard/* routes - redirect to /sign-in if not authenticated
   - Add sign-in and sign-up pages at /sign-in and /sign-up using Clerk's prebuilt components
   - Show the user's name in the navbar with a sign-out button
   - Add the NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY and CLERK_SECRET_KEY to .env.local
@@ -123,17 +123,17 @@ For any feature that needs a UI and a backend:
 
 **Step 1:** Define the data
 ```
-> Add a schema for a 'projects' table: id, name, description, status 
+> Add a schema for a 'projects' table: id, name, description, status
   (active/archived), created_at, user_id (foreign key to users)
 ```
 
 **Step 2:** Create the API
 ```
 > Add CRUD API routes for projects at /api/projects:
-  GET /api/projects — list all projects for the current user
-  POST /api/projects — create a new project
-  PATCH /api/projects/[id] — update a project
-  DELETE /api/projects/[id] — delete a project
+  GET /api/projects - list all projects for the current user
+  POST /api/projects - create a new project
+  PATCH /api/projects/[id] - update a project
+  DELETE /api/projects/[id] - delete a project
   All routes require authentication (Clerk). Validate with Zod.
 ```
 
@@ -155,11 +155,11 @@ Breaking it into three prompts (data, API, UI) produces cleaner, more reliable c
 
 **Mistake:** Asking for client-side data fetching when server components would be better
 ```
-# Bad — fetches client-side unnecessarily
+# Bad - fetches client-side unnecessarily
 > Add a dashboard page that fetches user data
 
-# Better — tells Claude where to fetch
-> Add a /dashboard page as a Server Component that fetches user data 
+# Better - tells Claude where to fetch
+> Add a /dashboard page as a Server Component that fetches user data
   directly from the database (no API round-trip needed)
 ```
 
@@ -198,4 +198,4 @@ Write one prompt per step. The entire app should take 15–20 minutes end-to-end
 
 ---
 
-Next: [React Patterns](./react-patterns.md)
+Next: [React Patterns](/curriculum/02-building-web-apps/react-patterns/)

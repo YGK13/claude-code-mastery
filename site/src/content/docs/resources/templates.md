@@ -1,6 +1,6 @@
 ---
 title: Templates
-description: Copy-paste starter templates — CLAUDE.md files, Python agent skeletons, HTML app boilerplates, Next.js project starters.
+description: Copy-paste starter templates - CLAUDE.md files, Python agent skeletons, HTML app boilerplates, Next.js project starters.
 ---
 
 These are starter files you copy into your own project on day one. Each one represents a hundred hours of iteration distilled into something you can use immediately.
@@ -10,7 +10,7 @@ These are starter files you copy into your own project on day one. Each one repr
 The single most leveraged file in any Claude Code project. Tells Claude your conventions, what it can run automatically, and what it must ask permission for.
 
 ```markdown
-# CLAUDE.md — [Project Name]
+# CLAUDE.md - [Project Name]
 
 ## Project Overview
 [2-3 sentences: what this is, who it's for, what it does]
@@ -82,7 +82,7 @@ Save as `index.html`, open in browser. That's it.
 The minimum viable agent with tool use, from Module 03:
 
 ```python
-"""agent.py — Bare-bones Claude agent with tools."""
+"""agent.py - Bare-bones Claude agent with tools."""
 import anthropic
 
 client = anthropic.Anthropic()

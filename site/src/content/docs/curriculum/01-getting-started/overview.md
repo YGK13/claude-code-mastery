@@ -1,10 +1,10 @@
 ---
-title: Module 01 — Getting Started
+title: Module 01 - Getting Started
 description: Install Claude Code, run your first session, configure CLAUDE.md, understand permissions and safety.
 ---
 
-**Time estimate:** 2 hours total  
-**Prerequisite:** None — start here
+**Time estimate:** 2 hours total
+**Prerequisite:** None - start here
 
 ## What you'll be able to do after Module 01
 
@@ -31,11 +31,11 @@ That's the dial you're calibrating in this module: how to translate "thing I nee
 
 ## Lessons in this module
 
-1. [Installation](/curriculum/01-getting-started/installation/) — Get Node.js, Claude Code and your API key working
-2. [Your first session](/curriculum/01-getting-started/first-session/) — Start Claude Code, run your first prompt, understand what happens
-3. [The CLAUDE.md file](/curriculum/01-getting-started/claude-md-guide/) — Persistent project-level configuration
-4. [Permissions and safety](/curriculum/01-getting-started/permissions-and-safety/) — What Claude can do, what it can't, and how to control it
+1. [Installation](/curriculum/01-getting-started/installation/) - Get Node.js, Claude Code and your API key working
+2. [Your first session](/curriculum/01-getting-started/first-session/) - Start Claude Code, run your first prompt, understand what happens
+3. [The CLAUDE.md file](/curriculum/01-getting-started/claude-md-guide/) - Persistent project-level configuration
+4. [Permissions and safety](/curriculum/01-getting-started/permissions-and-safety/) - What Claude can do, what it can't, and how to control it
 
 ## After this module
 
-→ [Module 02 — Building Web Apps](/curriculum/02-building-web-apps/overview/)
+→ [Module 02 - Building Web Apps](/curriculum/02-building-web-apps/overview/)

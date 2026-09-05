@@ -1,6 +1,6 @@
 # Standalone HTML Apps
 
-A standalone HTML app is a single `.html` file that contains everything: HTML structure, CSS styles, JavaScript logic and React components — all in one file, with React loaded from a CDN.
+A standalone HTML app is a single `.html` file that contains everything: HTML structure, CSS styles, JavaScript logic and React components - all in one file, with React loaded from a CDN.
 
 Open the file in a browser. That's it. No install, no build step, no server.
 
@@ -30,11 +30,11 @@ Every standalone app starts with this pattern:
   <div id="root"></div>
   <script type="text/babel">
     // React components and app logic here
-    
+
     function App() {
       return <div>Hello, World!</div>;
     }
-    
+
     ReactDOM.createRoot(document.getElementById('root')).render(<App />);
   </script>
 </body>
@@ -64,7 +64,7 @@ Always tell Claude Code the app is a standalone HTML file with React via CDN. Ot
 For standalone apps, localStorage is your database. Tell Claude Code to use it:
 
 ```
-> Persist all data in localStorage under the key '[app-name]-data' so it 
+> Persist all data in localStorage under the key '[app-name]-data' so it
   survives page refreshes. Load from localStorage on mount, save on every change.
 ```
 
@@ -97,7 +97,7 @@ For data visualization in standalone apps, tell Claude Code to use Chart.js from
 
 Or for pure CSS/SVG charts (no extra library):
 ```
-> Draw the chart using SVG elements — no chart library needed.
+> Draw the chart using SVG elements - no chart library needed.
   Show bars as <rect> elements with proportional heights.
 ```
 
@@ -175,7 +175,7 @@ my-tools/
 You can prompt Claude Code to create the index:
 ```
 > Create an index.html that serves as a homepage for my tools collection.
-  It should list all the .html files in this folder with their names and 
+  It should list all the .html files in this folder with their names and
   brief descriptions. Style it as a clean card grid.
 ```
 

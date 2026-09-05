@@ -19,7 +19,7 @@ echo 'export PATH="$(npm config get prefix)/bin:$PATH"' >> ~/.zshrc
 source ~/.zshrc
 ```
 
-On Windows, npm's global bin is usually `%APPDATA%\npm` — add that to your system PATH.
+On Windows, npm's global bin is usually `%APPDATA%\npm` - add that to your system PATH.
 
 ### "Invalid API key" error
 
@@ -44,9 +44,9 @@ python3 -m pip install anthropic
 
 This means you've hit context limits. Strategies:
 
-1. Add the forgotten context to `CLAUDE.md` — it's re-read every session
+1. Add the forgotten context to `CLAUDE.md` - it's re-read every session
 2. Use `/clear` to start a fresh context window for a new subtask
-3. Start a new session — `claude` — for unrelated tasks
+3. Start a new session - `claude` - for unrelated tasks
 4. Use `--auto-compact` flag for long sessions
 
 ### Claude is editing the wrong file
@@ -57,7 +57,7 @@ Two causes:
 
 Fix:
 ```
-> Edit ONLY the file at src/components/Sidebar.tsx — not any other file.
+> Edit ONLY the file at src/components/Sidebar.tsx - not any other file.
   Add a search bar at the top of the sidebar.
 ```
 
@@ -75,7 +75,7 @@ The command isn't in your `allow` list. Add it to `.claude/settings.json`:
 }
 ```
 
-Or type `always` when the permission prompt appears — it adds it for the current session.
+Or type `always` when the permission prompt appears - it adds it for the current session.
 
 ### Claude stopped mid-task and isn't continuing
 
@@ -98,7 +98,7 @@ If it seems confused about where it was:
 Tell it explicitly:
 ```
 > The TypeScript build is failing. Run `npm run build` and fix all type errors.
-  Do not use `any` types as a fix — use proper types or `unknown`.
+  Do not use `any` types as a fix - use proper types or `unknown`.
 ```
 
 ### Claude keeps adding `console.log` statements
@@ -106,7 +106,7 @@ Tell it explicitly:
 Add to `CLAUDE.md`:
 ```markdown
 ## Code Standards
-- No console.log in production code — use proper error handling and logging
+- No console.log in production code - use proper error handling and logging
 ```
 
 Or add the blocking hook from the hooks reference.
@@ -132,7 +132,7 @@ Make them explicit in `CLAUDE.md`. "Use descriptive names" is not actionable. Th
 
 1. Check the server is installed: `npx -y @modelcontextprotocol/server-github --version`
 2. Verify the config path is correct in `~/.claude/claude.json`
-3. Restart Claude Code — MCP servers connect at session start
+3. Restart Claude Code - MCP servers connect at session start
 4. Check the server's credentials are correct (API token, OAuth, etc.)
 5. Run the server manually to see its error output:
    ```bash
@@ -152,7 +152,7 @@ The server is connected but the tool call is failing. Check:
 
 ### Sessions are very slow
 
-1. Check your internet connection — Claude Code streams responses
+1. Check your internet connection - Claude Code streams responses
 2. Check the [Anthropic status page](https://status.anthropic.com) for outages
 3. Switch to a faster model: `claude --model claude-haiku-4-5-20251001` (much faster, less capable)
 4. Reduce context: use `/clear` to wipe history and re-read only necessary files
@@ -165,7 +165,7 @@ Scope your prompts:
 > Understand the codebase and add error handling
 
 # Scoped (reads what's needed)
-> Read ONLY src/api/users.ts and add try-catch error handling 
+> Read ONLY src/api/users.ts and add try-catch error handling
   that returns a 500 response with a JSON error body on failure
 ```
 

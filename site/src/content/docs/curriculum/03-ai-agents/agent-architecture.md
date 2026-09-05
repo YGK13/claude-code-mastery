@@ -39,14 +39,14 @@ The orchestrator receives the task and delegates to specialized subagents. Each 
 
 ```python
 # Orchestrator prompt
-ORCHESTRATOR_SYSTEM = """You are a research report orchestrator. 
+ORCHESTRATOR_SYSTEM = """You are a research report orchestrator.
 For each research request:
 1. Call the research_agent tool to gather information
 2. Call the writing_agent tool to draft the report
 3. Call the review_agent tool to check for accuracy and clarity
 4. Return the final polished report
 
-Do not do any research or writing yourself — delegate to the specialized agents."""
+Do not do any research or writing yourself - delegate to the specialized agents."""
 ```
 
 ---
@@ -62,27 +62,27 @@ from datetime import datetime
 
 class PersistentAgent:
     """Agent that saves state to disk so it can resume after interruption."""
-    
+
     def __init__(self, session_id: str):
         self.session_id = session_id
         self.state_file = Path(f"agent_sessions/{session_id}.json")
         self.state = self._load_state()
-    
+
     def _load_state(self) -> dict:
         if self.state_file.exists():
             return json.loads(self.state_file.read_text())
         return {"messages": [], "completed_steps": [], "created_at": datetime.now().isoformat()}
-    
+
     def _save_state(self):
         self.state_file.parent.mkdir(exist_ok=True)
         self.state_file.write_text(json.dumps(self.state, indent=2))
-    
+
     def run_step(self, step_name: str, fn):
         """Run a step only if it hasn't been completed yet (idempotent)."""
         if step_name in self.state["completed_steps"]:
             print(f"Skipping {step_name} (already completed)")
             return self.state.get(f"result_{step_name}")
-        
+
         result = fn()
         self.state["completed_steps"].append(step_name)
         self.state[f"result_{step_name}"] = result
@@ -114,7 +114,7 @@ def call_with_retry(client: anthropic.Anthropic, max_retries: int = 3, **kwargs)
             time.sleep(wait)
         except APIStatusError as e:
             if e.status_code >= 500 and attempt < max_retries - 1:
-                # Server error — retry
+                # Server error - retry
                 time.sleep(2 ** attempt)
             else:
                 raise
@@ -133,14 +133,14 @@ def summarize_if_long(messages: list, client: anthropic.Anthropic, threshold: in
     total_chars = sum(
         len(str(m["content"])) for m in messages
     )
-    
+
     if total_chars < threshold * 4:
         return messages
-    
+
     # Summarize the older messages, keep the last few
     to_summarize = messages[:-4]  # keep last 4 exchanges
     keep = messages[-4:]
-    
+
     summary_response = client.messages.create(
         model="claude-haiku-4-5-20251001",  # cheap model for summarization
         max_tokens=1000,
@@ -151,7 +151,7 @@ def summarize_if_long(messages: list, client: anthropic.Anthropic, threshold: in
             }
         ]
     )
-    
+
     summary = summary_response.content[0].text
     return [{"role": "user", "content": f"[Prior conversation summary: {summary}]"}] + keep
 ```
@@ -214,10 +214,10 @@ def execute_tool_with_logging(name: str, inputs: dict) -> str:
 > Build a Python agent in agents/email_drafter.py that drafts cold outreach emails.
 
   The agent should have these tools:
-  1. lookup_contact(name: str) — looks up a contact in contacts.json and returns their info
-  2. get_email_templates() — reads templates from /templates/ and returns a list of templates
-  3. draft_email(contact_id: str, template_name: str, customizations: dict) — drafts an email
-  4. save_draft(contact_id: str, subject: str, body: str) — saves the draft to drafts/
+  1. lookup_contact(name: str) - looks up a contact in contacts.json and returns their info
+  2. get_email_templates() - reads templates from /templates/ and returns a list of templates
+  3. draft_email(contact_id: str, template_name: str, customizations: dict) - drafts an email
+  4. save_draft(contact_id: str, subject: str, body: str) - saves the draft to drafts/
 
   Architecture:
   - PersistentAgent class that saves session state to agent_sessions/
@@ -232,4 +232,4 @@ def execute_tool_with_logging(name: str, inputs: dict) -> str:
 
 ---
 
-Next module: [Workflows and Automation](../04-workflows-automation/README.md)
+Next module: [Workflows and Automation](/curriculum/04-workflows-automation/overview/)

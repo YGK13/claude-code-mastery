@@ -1,6 +1,6 @@
 ---
 title: Tools
-description: The exact stack — every tool, service and account you need to ship real AI products. Free tier or paid tier flagged for every one.
+description: The exact stack - every tool, service and account you need to ship real AI products. Free tier or paid tier flagged for every one.
 ---
 
 This is the complete executive AI stack. Use it as a checklist.
@@ -37,7 +37,7 @@ That's the minimum. With those six things you can ship everything in Modules 01-
 | **Stripe** | Charging money for what you build |
 | **Supabase** | Alternative to Neon + Clerk in one platform |
 
-## MCP servers — the connection layer
+## MCP servers - the connection layer
 
 These let Claude Code talk to your existing tools (covered in Module 05):
 

@@ -1,4 +1,4 @@
-# CLAUDE.md — Claude Code Mastery Teaching Repo
+# CLAUDE.md - Claude Code Mastery Teaching Repo
 
 This file configures how Claude Code behaves in this repo. It serves double duty:
 it's a real working CLAUDE.md AND a teaching example of how to write one.
@@ -10,7 +10,7 @@ it's a real working CLAUDE.md AND a teaching example of how to write one.
 This is a teaching curriculum for Claude Code. When working in this repo:
 - Keep all new content under the correct module directory
 - Follow the existing file naming convention: `kebab-case.md`
-- Code examples must be complete and runnable — no stubs or pseudocode
+- Code examples must be complete and runnable - no stubs or pseudocode
 - All markdown headings use sentence case (not Title Case)
 - No Oxford comma in prose
 

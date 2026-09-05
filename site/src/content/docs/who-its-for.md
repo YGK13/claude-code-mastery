@@ -7,18 +7,18 @@ description: Who gets value from Claude Code Mastery (executives, operators, con
 
 - You're a **C-level executive, VP, founder, partner, principal or senior consultant** with a billable hour rate above $300
 - You have **5-20 hours of repetitive work every week** that you know is automatable but don't have an engineer to delegate it to
-- You've watched ChatGPT and Claude get more capable for two years and you're tired of just *using* AI tools — you want to *build* them
+- You've watched ChatGPT and Claude get more capable for two years and you're tired of just *using* AI tools - you want to *build* them
 - You can read code well enough to follow what it does, even if you don't write it from scratch (most executives are at this bar already)
 - You learn best **by shipping**, not by passive video courses
 
 ## This is built specifically for these roles
 
-- **CHROs and VPs of People** — automate ticket routing, comp benchmarking, onboarding, employee FAQ bots
-- **Heads of Sales and Revenue Operations** — pipeline analysis agents, proposal generators, ICP scoring, follow-up sequencing
-- **Founders and CEOs** — investor update generators, market research agents, customer interview synthesis, board prep
-- **Consultants, coaches and fractional executives** — client intake automation, deliverable generators, IP-protecting knowledge bases, scaling your billable practice
-- **Marketing and content leaders** — content production agents, SEO research, brand-voice consistency tools
-- **Legal and compliance professionals** — contract review agents, policy generators, regulatory research
+- **CHROs and VPs of People** - automate ticket routing, comp benchmarking, onboarding, employee FAQ bots
+- **Heads of Sales and Revenue Operations** - pipeline analysis agents, proposal generators, ICP scoring, follow-up sequencing
+- **Founders and CEOs** - investor update generators, market research agents, customer interview synthesis, board prep
+- **Consultants, coaches and fractional executives** - client intake automation, deliverable generators, IP-protecting knowledge bases, scaling your billable practice
+- **Marketing and content leaders** - content production agents, SEO research, brand-voice consistency tools
+- **Legal and compliance professionals** - contract review agents, policy generators, regulatory research
 
 ## Developers and builders
 
@@ -33,11 +33,11 @@ Start at [Module 03](/curriculum/03-ai-agents/overview/) and come back to [Modul
 
 ## This is NOT for you if
 
-- You want to become a professional software developer — go to a bootcamp instead
-- You want a passive video course you can watch on a treadmill — this needs hands on keyboard
+- You want to become a professional software developer - go to a bootcamp instead
+- You want a passive video course you can watch on a treadmill - this needs hands on keyboard
 - You're not willing to fight through a real installation process and a few terminal commands
 - You expect to ship anything meaningful without putting in 5+ hours per week
-- You want an "AI strategy framework" with no actual building — there are plenty of those for free
+- You want an "AI strategy framework" with no actual building - there are plenty of those for free
 
 ## The honest economic case
 

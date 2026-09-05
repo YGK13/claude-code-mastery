@@ -4,7 +4,7 @@ title: "The CLAUDE.md File"
 description: "CLAUDE.md is a configuration file you place at the root of any project."
 ---
 
-`CLAUDE.md` is a configuration file you place at the root of any project. It tells Claude Code how to behave in that specific project — your coding style, project structure, which commands to run automatically and which need confirmation, and any context Claude needs to understand what you're building.
+`CLAUDE.md` is a configuration file you place at the root of any project. It tells Claude Code how to behave in that specific project - your coding style, project structure, which commands to run automatically and which need confirmation, and any context Claude needs to understand what you're building.
 
 It is the single most important file for making Claude Code feel like a teammate who already knows your codebase.
 
@@ -24,7 +24,7 @@ Without a `CLAUDE.md`, Claude Code has to infer everything from your codebase on
 ## Basic Structure
 
 ```markdown
-# CLAUDE.md — [Project Name]
+# CLAUDE.md - [Project Name]
 
 ## Project Overview
 Brief description of what this is and what it does.
@@ -49,7 +49,7 @@ What Claude Code can run automatically vs. what needs confirmation.
 Here's a production-grade `CLAUDE.md` for a Next.js project:
 
 ```markdown
-# CLAUDE.md — MyApp
+# CLAUDE.md - MyApp
 
 ## Project Overview
 MyApp is a B2B SaaS dashboard for HR teams. It shows employee analytics,
@@ -66,23 +66,23 @@ with a Neon PostgreSQL database via Drizzle ORM.
 - Vercel (deployment)
 
 ## Project Structure
-- /app              — Next.js App Router pages and layouts
-- /app/api          — API routes (server-side only)
-- /components       — Shared React components
-- /components/ui    — shadcn/ui base components (do not modify)
-- /lib              — Utility functions and server-side helpers
-- /lib/db.ts        — Drizzle database client
-- /lib/schema.ts    — Database schema definitions
-- /hooks            — Custom React hooks
-- /types            — TypeScript type definitions
+- /app              - Next.js App Router pages and layouts
+- /app/api          - API routes (server-side only)
+- /components       - Shared React components
+- /components/ui    - shadcn/ui base components (do not modify)
+- /lib              - Utility functions and server-side helpers
+- /lib/db.ts        - Drizzle database client
+- /lib/schema.ts    - Database schema definitions
+- /hooks            - Custom React hooks
+- /types            - TypeScript type definitions
 
 ## Coding Conventions
-- TypeScript strict mode — no `any` types
+- TypeScript strict mode - no `any` types
 - Component names: PascalCase
 - File names: kebab-case
-- All database queries go through /lib/db.ts — never query directly in components
+- All database queries go through /lib/db.ts - never query directly in components
 - Use server components by default; add 'use client' only when needed
-- No console.log in production code — use proper error handling
+- No console.log in production code - use proper error handling
 - All user-facing strings use the t() translation function
 
 ## Commands Claude Can Run Without Asking
@@ -102,8 +102,8 @@ with a Neon PostgreSQL database via Drizzle ORM.
 ## What Good Looks Like
 - Components are typed, handle loading and error states
 - API routes validate input with Zod before touching the database
-- UI matches the existing design — check /components/ui for existing components first
-- No magic numbers — use named constants
+- UI matches the existing design - check /components/ui for existing components first
+- No magic numbers - use named constants
 ```
 
 ---
@@ -145,7 +145,7 @@ This section is critical. It controls what Claude Code can do autonomously vs. w
 
 The rule of thumb: **reversible actions can be automatic, irreversible ones need confirmation.**
 
-Running tests is reversible. Pushing to production is not. Installing a package modifies `package.json` and `node_modules` — that's significant. File deletion without a backup is irreversible.
+Running tests is reversible. Pushing to production is not. Installing a package modifies `package.json` and `node_modules` - that's significant. File deletion without a backup is irreversible.
 
 ---
 
@@ -158,7 +158,7 @@ One of the most powerful sections to add:
 A feature is complete when:
 - It works end-to-end in the browser (not just in the console)
 - The TypeScript build passes (npm run build shows no errors)
-- The ESLint check passes (npm run lint shows no errors)  
+- The ESLint check passes (npm run lint shows no errors)
 - Loading and error states are handled
 - Mobile layout works at 375px width
 ```
@@ -172,7 +172,7 @@ Without this, Claude Code will stop when the code "looks right." With it, it run
 A minimal starting template for any project:
 
 ```markdown
-# CLAUDE.md — [Project Name]
+# CLAUDE.md - [Project Name]
 
 ## Project Overview
 [2-3 sentences: what this is, who it's for, what it does]
@@ -184,7 +184,7 @@ A minimal starting template for any project:
 [Key directories and their purpose]
 
 ## Coding Conventions
-- [Name your patterns — component naming, file naming, etc.]
+- [Name your patterns - component naming, file naming, etc.]
 - No Oxford comma in user-facing strings
 - [Other style rules]
 
@@ -215,4 +215,4 @@ Claude Code's response will show you exactly what it understood and what gaps ex
 
 ---
 
-Next: [Permissions and Safety](./permissions-and-safety.md)
+Next: [Permissions and Safety](/curriculum/01-getting-started/permissions-and-safety/)

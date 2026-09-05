@@ -47,10 +47,10 @@ If you can do those six things, you can build any of the apps on the home page.
 
 ## A note on the speed of this field
 
-Claude Code launched in early 2025. The official Anthropic docs change every few weeks. Models get faster, cheaper and more capable on a quarterly cadence. This curriculum is kept current — but when you find something stale, the right move is to ask Claude itself ("what's the current way to do X?") rather than trusting any static guide, including this one.
+Claude Code launched in early 2025. The official Anthropic docs change every few weeks. Models get faster, cheaper and more capable on a quarterly cadence. This curriculum is kept current - but when you find something stale, the right move is to ask Claude itself ("what's the current way to do X?") rather than trusting any static guide, including this one.
 
 The fundamentals stay stable. The specifics evolve. That's the trade.
 
 ## Ready?
 
-→ [Module 01 — Getting Started](/curriculum/01-getting-started/overview/)
+→ [Module 01 - Getting Started](/curriculum/01-getting-started/overview/)

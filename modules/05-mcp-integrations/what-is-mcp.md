@@ -1,6 +1,6 @@
 # What Is MCP?
 
-MCP (Model Context Protocol) is the standard that lets Claude connect to external systems. It defines how AI models and tools communicate — what format requests take, how results are returned and how capabilities are declared.
+MCP (Model Context Protocol) is the standard that lets Claude connect to external systems. It defines how AI models and tools communicate - what format requests take, how results are returned and how capabilities are declared.
 
 ---
 
@@ -22,7 +22,7 @@ MCP Server (e.g., Gmail server)
 Gmail API
 ```
 
-The MCP server translates between the MCP protocol and the native API. You never write that translation code — you just install the server.
+The MCP server translates between the MCP protocol and the native API. You never write that translation code - you just install the server.
 
 ---
 
@@ -30,21 +30,21 @@ The MCP server translates between the MCP protocol and the native API. You never
 
 Every MCP server declares:
 
-**Tools** — Actions Claude can take
+**Tools** - Actions Claude can take
 ```
 send_email(to, subject, body)
 create_issue(repo, title, body, labels)
 query_database(sql)
 ```
 
-**Resources** — Data Claude can read
+**Resources** - Data Claude can read
 ```
 file://path/to/document.pdf
 gmail://inbox/message-id
 notion://page/page-id
 ```
 
-**Prompts** — Reusable prompt templates
+**Prompts** - Reusable prompt templates
 ```
 "Summarize the last 10 emails from this sender"
 "Create a weekly status report from these Notion pages"
@@ -56,7 +56,7 @@ notion://page/page-id
 
 MCP servers communicate over two transports:
 
-**stdio** (most common): Claude Code launches the server as a child process, communicates via stdin/stdout. Simplest setup — just install the server and configure the path.
+**stdio** (most common): Claude Code launches the server as a child process, communicates via stdin/stdout. Simplest setup - just install the server and configure the path.
 
 **HTTP/SSE** (for remote servers): The server runs on a URL, Claude connects over the network. Used for shared servers, team-wide MCP, or serverless deployment.
 
@@ -68,7 +68,7 @@ MCP servers only run when Claude Code is active. They don't run in the backgroun
 
 Key points:
 - MCP servers run with the permissions of the user who starts them
-- Credentials (API keys, OAuth tokens) stay on your machine — they're never sent to Anthropic
+- Credentials (API keys, OAuth tokens) stay on your machine - they're never sent to Anthropic
 - You can restrict which MCP servers are available per project via `.claude/settings.json`
 
 ---
@@ -76,9 +76,9 @@ Key points:
 ## The Registry
 
 Thousands of MCP servers are publicly available. Browse them at:
-- [mcp-registry.io](https://mcp-registry.io) — community registry
-- [github.com/modelcontextprotocol/servers](https://github.com/modelcontextprotocol/servers) — official servers
-- [npmjs.com](https://npmjs.com) — search "mcp-server-"
+- [mcp-registry.io](https://mcp-registry.io) - community registry
+- [github.com/modelcontextprotocol/servers](https://github.com/modelcontextprotocol/servers) - official servers
+- [npmjs.com](https://npmjs.com) - search "mcp-server-"
 
 ---
 

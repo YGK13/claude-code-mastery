@@ -6,7 +6,9 @@ description: The free curriculum is enough to start. The 12-week Executive AI Co
 Everything on this site is free and self-paced. Some people want a deadline, a room and someone to review what they built. That is what the guided programs at [PortLev Academy](https://learn.portlev.com/programs) are for.
 
 <div class="cohort-callout">
+
 **Executive AI Cohort.** 12 weeks, three live workshops, three small-group sessions, three 1:1 coaching calls with Yuri and a peer advisory board. You leave with at least two fully built, deployed apps. Current pricing, dates and the application form are on the [cohort page at PortLev Academy](https://learn.portlev.com/cohort).
+
 </div>
 
 ## What you get

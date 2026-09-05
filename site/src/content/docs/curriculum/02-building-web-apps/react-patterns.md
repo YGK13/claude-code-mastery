@@ -13,9 +13,9 @@ These are the React patterns Claude Code handles best. Reference them in your pr
 The default for any data display page should be a Server Component:
 
 ```
-> Create a /users page as an async Server Component that fetches users 
+> Create a /users page as an async Server Component that fetches users
   directly from the database and renders them in a table.
-  No 'use client', no useState, no useEffect — just async/await in the component.
+  No 'use client', no useState, no useEffect - just async/await in the component.
 ```
 
 Claude Code will generate:
@@ -26,7 +26,7 @@ import { users } from '@/lib/schema';
 
 export default async function UsersPage() {
   const allUsers = await db.select().from(users);
-  
+
   return (
     <div>
       <h1>Users</h1>
@@ -66,8 +66,8 @@ This prompt produces a fully functional form with all the right patterns.
 For actions that should feel instant:
 
 ```
-> When the user clicks the delete button on a task, optimistically remove it 
-  from the UI immediately, then delete it from the server. If the server 
+> When the user clicks the delete button on a task, optimistically remove it
+  from the UI immediately, then delete it from the server. If the server
   returns an error, add the task back to the list and show a toast notification.
 ```
 
@@ -80,13 +80,13 @@ Claude Code will implement this using `useOptimistic` (React 19) or a manual opt
 ```
 > Add pagination to the /posts page. Show 20 posts per page.
   Add "Previous" and "Next" buttons at the bottom.
-  The current page number is a URL search param (?page=2) so it's shareable and 
+  The current page number is a URL search param (?page=2) so it's shareable and
   works with the browser back button.
 ```
 
 Or for infinite scroll:
 ```
-> Add infinite scroll to the posts list. Load the next 20 posts when 
+> Add infinite scroll to the posts list. Load the next 20 posts when
   the user scrolls to within 200px of the bottom of the page.
   Show a loading spinner while fetching. Stop loading when there are no more posts.
 ```
@@ -110,7 +110,7 @@ Or for infinite scroll:
 
 ```
 > Add real-time client-side search to the contacts list.
-  As the user types in the search box, filter the displayed contacts by 
+  As the user types in the search box, filter the displayed contacts by
   name or email (case-insensitive). Show a count of matching results.
   Keep the search term in the URL (?q=searchterm) so the filtered view is shareable.
 ```
@@ -121,8 +121,8 @@ Or for infinite scroll:
 
 ```
 > Add toast notifications for user actions: success on save, error on failure,
-  warning when deleting. Toasts appear in the top-right corner, auto-dismiss 
-  after 3 seconds and can be manually dismissed. Use Sonner (npm install sonner) 
+  warning when deleting. Toasts appear in the top-right corner, auto-dismiss
+  after 3 seconds and can be manually dismissed. Use Sonner (npm install sonner)
   which is the standard for Next.js Tailwind projects.
 ```
 
@@ -131,7 +131,7 @@ Or for infinite scroll:
 ## 8. Loading Skeletons
 
 ```
-> While the contacts data is loading, show 6 skeleton cards that match 
+> While the contacts data is loading, show 6 skeleton cards that match
   the shape of a real contact card (placeholder for name, email and avatar).
   Use the Tailwind animate-pulse class for the skeleton shimmer effect.
 ```
@@ -144,7 +144,7 @@ Always include empty state handling:
 
 ```
 > If there are no contacts, show an empty state with:
-  - An icon (use a Lucide icon — import ContactIcon from 'lucide-react')
+  - An icon (use a Lucide icon - import ContactIcon from 'lucide-react')
   - Headline: "No contacts yet"
   - Subtext: "Add your first contact to get started"
   - A primary button that opens the Add Contact modal
@@ -159,7 +159,7 @@ Always include empty state handling:
   - Desktop (>1024px): 3-column card grid
   - Tablet (768px–1024px): 2-column grid
   - Mobile (<768px): single column, full-width cards
-  Use Tailwind responsive prefixes (sm:, md:, lg:) — no custom media queries.
+  Use Tailwind responsive prefixes (sm:, md:, lg:) - no custom media queries.
 ```
 
 ---
@@ -189,4 +189,4 @@ Example:
 
 ---
 
-Next module: [AI Agents](../03-ai-agents/README.md)
+Next module: [AI Agents](/curriculum/03-ai-agents/overview/)

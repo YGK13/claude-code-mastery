@@ -19,7 +19,7 @@ npm install @modelcontextprotocol/sdk
 ## Minimal MCP Server (Node.js)
 
 ```javascript
-// server.mjs — A minimal MCP server with one tool
+// server.mjs - A minimal MCP server with one tool
 import { Server } from "@modelcontextprotocol/sdk/server/index.js";
 import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js";
 import {
@@ -57,15 +57,15 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
 server.setRequestHandler(CallToolRequestSchema, async (request) => {
   if (request.params.name === "get_current_user") {
     const { user_id } = request.params.arguments;
-    
+
     // Replace this with a real database call, API call, etc.
     const user = { id: user_id, name: "Jane Smith", role: "Engineering Manager" };
-    
+
     return {
       content: [{ type: "text", text: JSON.stringify(user, null, 2) }]
     };
   }
-  
+
   throw new Error(`Unknown tool: ${request.params.name}`);
 });
 
@@ -93,7 +93,7 @@ Register it in `~/.claude/claude.json`:
 Expose your CRM contacts to Claude Code:
 
 ```javascript
-// crm-server.mjs — Expose contacts, deals and notes to Claude Code
+// crm-server.mjs - Expose contacts, deals and notes to Claude Code
 import { Server } from "@modelcontextprotocol/sdk/server/index.js";
 import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js";
 import { CallToolRequestSchema, ListToolsRequestSchema } from "@modelcontextprotocol/sdk/types.js";
@@ -148,36 +148,36 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
 
 server.setRequestHandler(CallToolRequestSchema, async (request) => {
   const { name, arguments: args } = request.params;
-  
+
   if (name === "search_contacts") {
     const limit = args.limit || 10;
     const results = db.prepare(
-      `SELECT id, name, email, company, tags 
-       FROM contacts 
+      `SELECT id, name, email, company, tags
+       FROM contacts
        WHERE name LIKE ? OR email LIKE ? OR company LIKE ?
        LIMIT ?`
     ).all(`%${args.query}%`, `%${args.query}%`, `%${args.query}%`, limit);
-    
+
     return { content: [{ type: "text", text: JSON.stringify(results, null, 2) }] };
   }
-  
+
   if (name === "get_contact_history") {
     const contact = db.prepare("SELECT * FROM contacts WHERE id = ?").get(args.contact_id);
     const history = db.prepare(
       "SELECT * FROM interactions WHERE contact_id = ? ORDER BY created_at DESC"
     ).all(args.contact_id);
-    
+
     return { content: [{ type: "text", text: JSON.stringify({ contact, history }, null, 2) }] };
   }
-  
+
   if (name === "add_note") {
     db.prepare(
       "INSERT INTO interactions (contact_id, type, content, created_at) VALUES (?, 'note', ?, datetime('now'))"
     ).run(args.contact_id, args.note);
-    
+
     return { content: [{ type: "text", text: "Note added successfully." }] };
   }
-  
+
   throw new Error(`Unknown tool: ${name}`);
 });
 
@@ -185,22 +185,22 @@ const transport = new StdioServerTransport();
 await server.connect(transport);
 ```
 
-Now Claude Code can search your CRM, read contact history and add notes — from within any coding session.
+Now Claude Code can search your CRM, read contact history and add notes - from within any coding session.
 
 ---
 
 ## Prompting Claude Code to Build an MCP Server
 
 ```
-> Build a Node.js MCP server in mcp-servers/contacts-server.mjs that exposes 
+> Build a Node.js MCP server in mcp-servers/contacts-server.mjs that exposes
   my contacts stored in contacts.json.
 
   Tools to implement:
-  1. list_contacts() — returns all contacts
-  2. get_contact(id: string) — returns one contact by ID
-  3. search_contacts(query: string) — searches by name or email
-  4. add_contact(name, email, company, notes) — adds a new contact and saves to contacts.json
-  5. update_contact(id, updates) — updates specified fields of a contact
+  1. list_contacts() - returns all contacts
+  2. get_contact(id: string) - returns one contact by ID
+  3. search_contacts(query: string) - searches by name or email
+  4. add_contact(name, email, company, notes) - adds a new contact and saves to contacts.json
+  5. update_contact(id, updates) - updates specified fields of a contact
 
   Also provide the mcpServers config entry I need to add to ~/.claude/claude.json.
   Use the @modelcontextprotocol/sdk package. Include error handling for missing records.
@@ -213,7 +213,7 @@ Now Claude Code can search your CRM, read contact history and add notes — from
 Beyond tools, MCP servers can expose resources (readable data) and prompts (reusable templates):
 
 ```javascript
-// Expose a resource — Claude can read this directly
+// Expose a resource - Claude can read this directly
 server.setRequestHandler(ListResourcesRequestSchema, async () => ({
   resources: [
     {
@@ -243,4 +243,4 @@ server.setRequestHandler(ListPromptsRequestSchema, async () => ({
 
 ---
 
-Next module: [Advanced Patterns](../06-advanced-patterns/README.md)
+Next module: [Advanced Patterns](/curriculum/06-advanced-patterns/overview/)

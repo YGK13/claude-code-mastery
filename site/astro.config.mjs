@@ -108,9 +108,11 @@ export default defineConfig({
         { tag: 'script', attrs: { type: 'application/ld+json' }, content: JSON.stringify(SITE_GRAPH) },
         // The site is LOCKED to dark. This runs before Starlight's theme provider and
         // overwrites any stale 'light' preference an early visitor may have stored.
+        // It also sets .js-reveal, which is what arms the scroll-reveal animation:
+        // with scripting off the [data-reveal] sections stay fully visible.
         {
           tag: 'script',
-          content: `(function(){try{localStorage.setItem('starlight-theme','dark')}catch(e){}document.documentElement.dataset.theme='dark';})();`,
+          content: `(function(){try{localStorage.setItem('starlight-theme','dark')}catch(e){}var d=document.documentElement;d.dataset.theme='dark';d.classList.add('js-reveal');})();`,
         },
       ],
       social: [

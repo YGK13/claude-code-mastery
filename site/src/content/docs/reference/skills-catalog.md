@@ -21,7 +21,7 @@ These come pre-built with gstack. See Module 06 for installation.
 
 | Skill | Phase | What it does |
 |-------|-------|-------------|
-| `/office-hours` | Thinking | Product strategist — challenges premises, generates alternatives |
+| `/office-hours` | Thinking | Product strategist - challenges premises, generates alternatives |
 | `/plan-ceo-review` | Planning | Executive scope and strategic fit review |
 | `/plan-eng-review` | Planning | Staff engineer technical design review |
 | `/plan-design-review` | Planning | UX/design audit with 0-10 dimension ratings |
@@ -96,7 +96,7 @@ One-sentence description of what this skill does.
 
 ## Steps
 
-1. [First action — be specific]
+1. [First action - be specific]
 2. [Second action]
 3. [Ask user for confirmation if needed]
 4. [Final action]
@@ -117,5 +117,5 @@ One-sentence description of what this skill does.
 
 - Use kebab-case: `/new-component` not `/newComponent`
 - Use verb-noun pairs: `/create-feature`, `/review-security`, `/generate-tests`
-- Keep names short — you'll type them often
+- Keep names short - you'll type them often
 - Namespace team skills with a prefix: `/team-deploy`, `/team-release`

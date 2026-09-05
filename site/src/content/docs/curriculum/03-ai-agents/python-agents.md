@@ -26,7 +26,7 @@ export ANTHROPIC_API_KEY=sk-ant-...
 A "bare bones" agent: just Claude, no tools.
 
 ```python
-"""simple_agent.py — Bare bones Claude agent."""
+"""simple_agent.py - Bare bones Claude agent."""
 import anthropic
 
 client = anthropic.Anthropic()
@@ -44,7 +44,7 @@ if __name__ == "__main__":
     print(answer)
 ```
 
-This is useful for one-shot questions like board prep, talking-point generation or quick research. But the real power comes from giving the agent tools — letting it take actions in your world.
+This is useful for one-shot questions like board prep, talking-point generation or quick research. But the real power comes from giving the agent tools - letting it take actions in your world.
 
 ---
 
@@ -53,7 +53,7 @@ This is useful for one-shot questions like board prep, talking-point generation 
 Tools let Claude take actions in the world. You define the tool, Claude decides when to call it, you execute it and return the result.
 
 ```python
-"""prospect_agent.py — Executive research agent that looks up companies."""
+"""prospect_agent.py - Executive research agent that looks up companies."""
 import anthropic
 import json
 import urllib.request
@@ -62,7 +62,7 @@ import urllib.parse
 client = anthropic.Anthropic()
 
 # ============================================================
-# Tool definitions — what Claude is allowed to do
+# Tool definitions - what Claude is allowed to do
 # ============================================================
 # Two tools, both directly useful for executive research:
 # 1. Look up basic company info (size, industry, recent news)
@@ -98,7 +98,7 @@ TOOLS = [
 ]
 
 # ============================================================
-# Tool implementations — what each tool actually does
+# Tool implementations - what each tool actually does
 # ============================================================
 # These are stubs that show the pattern. In production you'd connect them
 # to your real data sources: Apollo, ZoomInfo, your CRM, Clearbit, etc.
@@ -142,7 +142,7 @@ def execute_tool(name: str, inputs: dict) -> str:
 def run_agent(user_message: str) -> str:
     """Run the agent until it produces a final text response."""
     messages = [{"role": "user", "content": user_message}]
-    
+
     while True:
         response = client.messages.create(
             model="claude-sonnet-4-6",
@@ -150,12 +150,12 @@ def run_agent(user_message: str) -> str:
             tools=TOOLS,
             messages=messages
         )
-        
+
         # If Claude wants to use a tool, execute it
         if response.stop_reason == "tool_use":
             # Add Claude's response (including the tool call) to history
             messages.append({"role": "assistant", "content": response.content})
-            
+
             # Execute each tool call and collect results
             tool_results = []
             for block in response.content:
@@ -166,13 +166,13 @@ def run_agent(user_message: str) -> str:
                         "tool_use_id": block.id,
                         "content": result
                     })
-            
+
             # Add tool results back to the conversation
             messages.append({"role": "user", "content": tool_results})
-            # Loop continues — Claude will reason with the tool results
-            
+            # Loop continues - Claude will reason with the tool results
+
         else:
-            # Claude is done — return the final text
+            # Claude is done - return the final text
             for block in response.content:
                 if hasattr(block, "text"):
                     return block.text
@@ -209,20 +209,20 @@ This loop is the foundation of every agent. Everything else is just tools.
 ## Prompting Claude Code to Build an Agent
 
 ```
-> Build a Python file called research_agent.py that is an AI agent using the 
+> Build a Python file called research_agent.py that is an AI agent using the
   Anthropic Python SDK (claude-sonnet-4-6 model).
-  
+
   The agent should have two tools:
-  1. web_search(query: str) — searches the web using the SerpAPI (use the 
+  1. web_search(query: str) - searches the web using the SerpAPI (use the
      SERPAPI_KEY environment variable) and returns the top 5 results as JSON
-  2. summarize_text(text: str) — sends the text to Claude for summarization 
+  2. summarize_text(text: str) - sends the text to Claude for summarization
      and returns a 3-sentence summary
-  
+
   The agent should:
   - Accept a research question as a command-line argument
   - Use the tools to research the question
   - Return a formatted answer with key findings and sources cited
-  
+
   Include full docstrings, type hints and error handling.
   The ANTHROPIC_API_KEY comes from the environment variable.
 ```
@@ -236,17 +236,17 @@ This prompt produces a complete, production-quality agent in one shot.
 For an agent that maintains conversation history across multiple exchanges:
 
 ```python
-"""conversation_agent.py — Stateful multi-turn agent."""
+"""conversation_agent.py - Stateful multi-turn agent."""
 
 class ConversationAgent:
     def __init__(self, system_prompt: str):
         self.client = anthropic.Anthropic()
         self.messages = []
         self.system = system_prompt
-    
+
     def chat(self, user_message: str) -> str:
         self.messages.append({"role": "user", "content": user_message})
-        
+
         response = self.client.messages.create(
             model="claude-sonnet-4-6",
             max_tokens=4096,
@@ -254,12 +254,12 @@ class ConversationAgent:
             tools=TOOLS,
             messages=self.messages
         )
-        
+
         # Run the tool loop, then add final response to history
         final_response = self._run_tool_loop(response)
         self.messages.append({"role": "assistant", "content": final_response})
         return final_response
-    
+
     def _run_tool_loop(self, response) -> str:
         # Same tool loop as before, returns the final text
         ...
@@ -276,7 +276,7 @@ SYSTEM_PROMPT = """You are a specialized HR assistant for Acme Corp.
 
 Your capabilities:
 - Look up employee information (use the get_employee tool)
-- Check time-off balances (use the get_pto_balance tool)  
+- Check time-off balances (use the get_pto_balance tool)
 - Submit time-off requests (use the submit_pto_request tool)
 
 Your constraints:
@@ -291,4 +291,4 @@ The system prompt is the "soul" of the agent. Spend time on it.
 
 ---
 
-Next: [Tool Use Patterns](./tool-use-patterns.md)
+Next: [Tool Use Patterns](/curriculum/03-ai-agents/tool-use-patterns/)

@@ -1,4 +1,4 @@
-# CLAUDE.md — [Project Name]
+# CLAUDE.md - [Project Name]
 # Replace all [bracketed placeholders] before using
 
 ---
@@ -35,10 +35,10 @@
 
 ## Coding Conventions
 
-- [Naming convention — e.g., "Components: PascalCase, files: kebab-case"]
-- [Import convention — e.g., "Always use @/ path aliases, never relative paths from src/"]
-- [Data convention — e.g., "All DB queries through /lib/db.ts, never in components"]
-- [No TypeScript any — or "TypeScript not used"]
+- [Naming convention - e.g., "Components: PascalCase, files: kebab-case"]
+- [Import convention - e.g., "Always use @/ path aliases, never relative paths from src/"]
+- [Data convention - e.g., "All DB queries through /lib/db.ts, never in components"]
+- [No TypeScript any - or "TypeScript not used"]
 - [No Oxford comma in user-facing copy]
 
 ---

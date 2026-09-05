@@ -1,10 +1,10 @@
 ---
-title: Module 04 — Workflows & Automation
+title: Module 04 - Workflows & Automation
 description: Hooks, multi-agent coordination and CI/CD integration. The automation layer that runs while you sleep.
 ---
 
-**Time estimate:** 3 hours total  
-**Prerequisite:** [Module 01 — Getting Started](/curriculum/01-getting-started/overview/)
+**Time estimate:** 3 hours total
+**Prerequisite:** [Module 01 - Getting Started](/curriculum/01-getting-started/overview/)
 
 ## What you'll be able to do after Module 04
 
@@ -23,16 +23,16 @@ That's the difference between $200/month of API usage and $200/month of API usag
 
 ## Your executive builds in this module
 
-1. **The weekly intelligence brief** — a scheduled job that every Sunday pulls news on your top 5 prospects, your top 3 competitors and your industry, summarizes everything and emails it to you Monday at 6am
-2. **The auto-responding inbox** — incoming emails matching certain criteria get a draft response generated and put in your Drafts folder ready to review and send
-3. **The KPI-watcher** — runs daily on your team's data, flags anomalies, posts to Slack only when something needs your attention
+1. **The weekly intelligence brief** - a scheduled job that every Sunday pulls news on your top 5 prospects, your top 3 competitors and your industry, summarizes everything and emails it to you Monday at 6am
+2. **The auto-responding inbox** - incoming emails matching certain criteria get a draft response generated and put in your Drafts folder ready to review and send
+3. **The KPI-watcher** - runs daily on your team's data, flags anomalies, posts to Slack only when something needs your attention
 
 ## Lessons in this module
 
-1. [The hooks system](/curriculum/04-workflows-automation/hooks-system/) — Trigger commands automatically on Claude Code events
-2. [Multi-agent coordination](/curriculum/04-workflows-automation/multi-agent/) — Spawn and orchestrate parallel agents
-3. [CI/CD integration](/curriculum/04-workflows-automation/cicd-integration/) — Claude in GitHub Actions: reviews, docs, quality gates, scheduled jobs
+1. [The hooks system](/curriculum/04-workflows-automation/hooks-system/) - Trigger commands automatically on Claude Code events
+2. [Multi-agent coordination](/curriculum/04-workflows-automation/multi-agent/) - Spawn and orchestrate parallel agents
+3. [CI/CD integration](/curriculum/04-workflows-automation/cicd-integration/) - Claude in GitHub Actions: reviews, docs, quality gates, scheduled jobs
 
 ## After this module
 
-→ [Module 05 — MCP Integrations](/curriculum/05-mcp-integrations/overview/)
+→ [Module 05 - MCP Integrations](/curriculum/05-mcp-integrations/overview/)

@@ -26,39 +26,39 @@ jobs:
     permissions:
       pull-requests: write
       contents: read
-    
+
     steps:
       - name: Checkout
         uses: actions/checkout@v4
         with:
           fetch-depth: 0  # full history so Claude can see the diff
-      
+
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '20'
-      
+
       - name: Install Claude Code
         run: npm install -g @anthropic-ai/claude-code
-      
+
       - name: Run Claude Review
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
         run: |
           # Get the diff
           git diff origin/${{ github.base_ref }}...HEAD > /tmp/pr-diff.txt
-          
+
           # Run Claude review
           cat /tmp/pr-diff.txt | claude --print \
             "Review this PR diff. Focus on: bugs, security issues, missing error handling,
              performance problems, and missing tests. Format output as markdown with
              specific file:line references for each issue. Be concise." \
             > /tmp/review.md
-          
+
           echo "REVIEW_CONTENT<<EOF" >> $GITHUB_ENV
           cat /tmp/review.md >> $GITHUB_ENV
           echo "EOF" >> $GITHUB_ENV
-      
+
       - name: Post Review Comment
         uses: actions/github-script@v7
         with:
@@ -95,24 +95,24 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: write
-    
+
     steps:
       - uses: actions/checkout@v4
-      
+
       - uses: actions/setup-node@v4
         with:
           node-version: '20'
-      
+
       - run: npm install -g @anthropic-ai/claude-code
-      
+
       - name: Update API docs
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
         run: |
-          echo "Update docs/api.md to reflect the current exported functions in src/. 
+          echo "Update docs/api.md to reflect the current exported functions in src/.
                 Keep the existing structure, just update content that changed." \
             | claude --print > docs/api.md
-      
+
       - name: Commit and push if changed
         run: |
           git config user.email "claude-bot@yourapp.com"
@@ -139,33 +139,33 @@ on:
 jobs:
   quality:
     runs-on: ubuntu-latest
-    
+
     steps:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
-      
+
       - run: npm install -g @anthropic-ai/claude-code
-      
+
       - name: Security check
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
         run: |
           git diff origin/${{ github.base_ref }}...HEAD > /tmp/diff.txt
-          
+
           RESULT=$(cat /tmp/diff.txt | claude --print \
             "Check this diff for security vulnerabilities (SQL injection, XSS, hardcoded secrets,
              insecure dependencies, auth bypasses). Reply with PASS if no issues, or FAIL followed
              by a description of each issue found. No other text.")
-          
+
           echo "Security check result: $RESULT"
-          
+
           if echo "$RESULT" | grep -q "^FAIL"; then
             echo "::error::Security issues found in this PR"
             echo "$RESULT"
             exit 1
           fi
-          
+
           echo "Security check passed"
 ```
 
@@ -189,12 +189,12 @@ on:
 jobs:
   health-check:
     runs-on: ubuntu-latest
-    
+
     steps:
       - uses: actions/checkout@v4
-      
+
       - run: npm install -g @anthropic-ai/claude-code
-      
+
       - name: Generate health report
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
@@ -207,14 +207,14 @@ jobs:
                 5. Top 3 recommended improvements this week
                 Format as a markdown report with a severity rating for each item." \
             | claude --print > health-report.md
-      
+
       - name: Read report into env
         run: |
           echo "REPORT_BODY<<EOF" >> $GITHUB_ENV
           cat health-report.md >> $GITHUB_ENV
           echo "EOF" >> $GITHUB_ENV
           echo "TODAY=$(date -u +%F)" >> $GITHUB_ENV
-      
+
       - name: Create GitHub Issue with report
         uses: actions/github-script@v7
         with:
@@ -222,7 +222,7 @@ jobs:
             await github.rest.issues.create({
               owner: context.repo.owner,
               repo: context.repo.repo,
-              title: `Weekly Health Report — ${process.env.TODAY}`,
+              title: `Weekly Health Report - ${process.env.TODAY}`,
               body: process.env.REPORT_BODY,
               labels: ['health-report']
             });
@@ -234,10 +234,10 @@ jobs:
 
 Claude Code in CI can get expensive at scale. Control costs:
 
-1. **Use Haiku for simple checks** — it's 10x cheaper than Sonnet
-2. **Cache results** — if nothing changed in a directory, skip that check
-3. **Limit to changed files only** — use `git diff --name-only` to scope reviews
-4. **Set `max_tokens`** — for short-answer quality gates, 100 tokens is enough
+1. **Use Haiku for simple checks** - it's 10x cheaper than Sonnet
+2. **Cache results** - if nothing changed in a directory, skip that check
+3. **Limit to changed files only** - use `git diff --name-only` to scope reviews
+4. **Set `max_tokens`** - for short-answer quality gates, 100 tokens is enough
 
 ```bash
 # Only review TypeScript files that changed
@@ -251,4 +251,4 @@ echo "Reviewing: $CHANGED_TS"
 
 ---
 
-Next module: [MCP Integrations](../05-mcp-integrations/README.md)
+Next module: [MCP Integrations](/curriculum/05-mcp-integrations/overview/)

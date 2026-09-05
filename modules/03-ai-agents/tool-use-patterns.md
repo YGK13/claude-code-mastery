@@ -6,7 +6,7 @@ Tool use is the mechanism that transforms Claude from a chatbot into an agent th
 
 ## Defining Good Tools
 
-A tool definition has three parts: name, description and input schema. The description is the most important — it's what Claude reads to decide when to call the tool.
+A tool definition has three parts: name, description and input schema. The description is the most important - it's what Claude reads to decide when to call the tool.
 
 **Bad tool description:**
 ```python
@@ -25,8 +25,8 @@ A tool definition has three parts: name, description and input schema. The descr
     Use this when you need facts, news, prices, or any information that may have
     changed after your training cutoff. Returns a list of relevant results with
     titles, snippets and URLs.
-    
-    When to use: answering questions about current events, recent data, 
+
+    When to use: answering questions about current events, recent data,
     specific products or anything requiring up-to-date information.
     When NOT to use: general knowledge questions you can answer directly,
     mathematical calculations, or code generation.""",
@@ -47,7 +47,7 @@ A rich description with when-to-use and when-not-to-use guidance makes Claude mu
     "properties": {
         "query": {
             "type": "string",
-            "description": "The search query. Be specific — include key terms and context."
+            "description": "The search query. Be specific - include key terms and context."
         }
     },
     "required": ["query"]
@@ -179,7 +179,7 @@ TOOLS = [
 
 Or instruct Claude in the system prompt:
 ```
-When using the send_email tool, always call preview_email first and ask 
+When using the send_email tool, always call preview_email first and ask
 the user to confirm before sending.
 ```
 
@@ -190,10 +190,10 @@ the user to confirm before sending.
 Format tool results so Claude can reason about them clearly. JSON is best for structured data:
 
 ```python
-# Unstructured — hard for Claude to parse
+# Unstructured - hard for Claude to parse
 return "John Smith john@example.com Manager Engineering 2021-03-15"
 
-# Structured JSON — Claude parses this reliably
+# Structured JSON - Claude parses this reliably
 return json.dumps({
     "employee": {
         "name": "John Smith",
@@ -216,16 +216,16 @@ import sys
 
 def long_running_analysis(data: str) -> str:
     print("Analyzing...", flush=True)  # visible in terminal during execution
-    
+
     # Do the work
     result = expensive_analysis(data)
-    
+
     return result
 ```
 
-For a web app, use Server-Sent Events (SSE) to stream agent progress to the browser — Claude Code can implement this pattern for you:
+For a web app, use Server-Sent Events (SSE) to stream agent progress to the browser - Claude Code can implement this pattern for you:
 ```
-> Add streaming to the agent so that tool execution progress is sent to the 
+> Add streaming to the agent so that tool execution progress is sent to the
   browser via SSE (text/event-stream). The user should see "Searching the web..."
   as each tool runs rather than waiting for the final result.
 ```
@@ -240,13 +240,13 @@ Some tools are naturally chained. Design them to work together:
 search_web → get_page_content → extract_key_facts → write_summary
 ```
 
-You don't need to code the chain — Claude will chain them automatically if the tool descriptions make the relationship clear:
+You don't need to code the chain - Claude will chain them automatically if the tool descriptions make the relationship clear:
 
 ```python
 {
     "name": "get_page_content",
     "description": """Fetches the full text content of a web page given its URL.
-    Use this AFTER search_web when you need the complete article text rather than 
+    Use this AFTER search_web when you need the complete article text rather than
     just the snippet. Returns plain text of the page content.""",
     ...
 }

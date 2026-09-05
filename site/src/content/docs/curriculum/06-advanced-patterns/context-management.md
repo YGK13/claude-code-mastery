@@ -11,7 +11,7 @@ Claude Code has a large context window, but context management is still the skil
 
 Every Claude Code session maintains a conversation history: your prompts, Claude's responses, file contents it read and the outputs of commands it ran. This all fits within a context window.
 
-The context window for Claude Sonnet is approximately 180,000 tokens (~135,000 words). It sounds enormous — and it is for most sessions. But a large codebase, many file reads and a long conversation can fill it.
+The context window for Claude Sonnet is approximately 180,000 tokens (~135,000 words). It sounds enormous - and it is for most sessions. But a large codebase, many file reads and a long conversation can fill it.
 
 When context fills up:
 - Older parts of the conversation get compressed or dropped
@@ -76,7 +76,7 @@ Within a session, use `/clear` when switching to a different subtask. It wipes t
 > /clear
 
 # Now start the payments work fresh
-> Implement Stripe payments. Read the existing auth implementation in /lib/auth.ts 
+> Implement Stripe payments. Read the existing auth implementation in /lib/auth.ts
   first so you understand the pattern.
 ```
 
@@ -87,11 +87,11 @@ Within a session, use `/clear` when switching to a different subtask. It wipes t
 When Claude Code reads files, their content fills the context. Guide it to read what's relevant:
 
 ```
-# Too broad — reads everything
+# Too broad - reads everything
 > Look at the codebase and understand how data flows
 
-# Scoped — reads just what's needed
-> Read only /lib/auth.ts and /app/api/auth/route.ts to understand 
+# Scoped - reads just what's needed
+> Read only /lib/auth.ts and /app/api/auth/route.ts to understand
   the auth flow, then tell me where the session token is stored
 ```
 
@@ -102,8 +102,8 @@ When Claude Code reads files, their content fills the context. Guide it to read 
 When you've done significant work and need to switch focus, ask Claude to summarize:
 
 ```
-> Before we move on to the dashboard: write a brief summary of what we implemented 
-  in the auth module — what files were created, what patterns were used, and any 
+> Before we move on to the dashboard: write a brief summary of what we implemented
+  in the auth module - what files were created, what patterns were used, and any
   important decisions made. Save it to .claude/session-notes/auth-summary.md
 ```
 
@@ -149,7 +149,7 @@ Claude Code has an `--auto-compact` flag that automatically summarizes older par
 claude --auto-compact
 ```
 
-This is useful for very long sessions, but don't use it as a substitute for the strategies above — it compresses context, which can lose nuance.
+This is useful for very long sessions, but don't use it as a substitute for the strategies above - it compresses context, which can lose nuance.
 
 ---
 

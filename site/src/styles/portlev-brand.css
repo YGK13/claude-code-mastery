@@ -264,6 +264,23 @@ ul.top-level > li > a {
 }
 
 /* Proof bar */
+/* Starlight gives every element that follows a sibling inside .sl-markdown-content
+   a top margin. On the landing-page grids the spacing already comes from `gap`, so
+   that margin was pure surplus: it pushed every card after the first down by 4 to
+   16px, leaving each row visibly out of alignment (worst on the two pricing cards
+   and the two audience cards). Spacing in these containers is gap's job alone. */
+.ccm-proof > li + li,
+.ccm-split > * + *,
+.ccm-steps > li + li,
+.ccm-map__list > li + li,
+.ccm-map__lessons > li + li,
+.ccm-outcomes > li + li,
+.ccm-pricing > * + *,
+.ccm-faq > * + *,
+.ccm-instructor > * + * {
+  margin-top: 0;
+}
+
 .ccm-proof {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(9rem, 1fr));
@@ -451,10 +468,14 @@ ul.top-level > li > a {
 .ccm-definition { border-left: 4px solid var(--ccm-lavender); padding: 0.2rem 0 0.2rem 1.2rem; color: var(--sl-color-gray-1); font-size: 1.05rem; line-height: 1.65; max-width: 72ch; }
 .ccm-definition strong { color: var(--sl-color-white); }
 
-/* Reveal on scroll (opt-in via data-reveal; the banner script toggles is-visible) */
-[data-reveal] { opacity: 0; transform: translateY(14px); transition: opacity 0.5s ease, transform 0.5s ease; }
-[data-reveal].is-visible { opacity: 1; transform: none; }
+/* Reveal on scroll (opt-in via data-reveal; the banner script toggles is-visible).
+   The hidden state is scoped to .js-reveal, a class set synchronously in <head>
+   only when scripting is on. Without JS - and for print, previews and crawlers
+   that do not run scripts - every section renders at full opacity instead of a
+   blank page. */
+.js-reveal [data-reveal] { opacity: 0; transform: translateY(14px); transition: opacity 0.5s ease, transform 0.5s ease; }
+.js-reveal [data-reveal].is-visible { opacity: 1; transform: none; }
 @media (prefers-reduced-motion: reduce) {
-  [data-reveal] { opacity: 1; transform: none; transition: none; }
+  .js-reveal [data-reveal] { opacity: 1; transform: none; transition: none; }
   .ccm-map__module, .card, .sl-link-card, .sl-link-button.primary, .ccm-btn { transition: none; }
 }

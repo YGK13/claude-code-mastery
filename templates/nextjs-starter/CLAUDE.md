@@ -1,7 +1,7 @@
-# CLAUDE.md — Next.js Starter
+# CLAUDE.md - Next.js Starter
 
 ## Project Overview
-[Describe this app — what it does, who uses it, what problem it solves]
+[Describe this app - what it does, who uses it, what problem it solves]
 
 ## Tech Stack
 - Next.js 15 (App Router)
@@ -12,22 +12,22 @@
 - Vercel (deployment)
 
 ## Project Structure
-- /app                  — App Router pages and layouts
-- /app/api              — API routes (server-side only)
-- /app/(auth)           — Auth pages (sign-in, sign-up)
-- /app/dashboard        — Protected dashboard routes
-- /components           — Shared React components
-- /components/ui        — shadcn/ui base components (do not modify directly)
-- /lib                  — Server-side utilities
-- /lib/db.ts            — Drizzle database client
-- /lib/schema.ts        — Database schema definitions
-- /hooks                — Custom React hooks (client-side)
-- /types                — TypeScript type definitions
+- /app - App Router pages and layouts
+- /app/api - API routes (server-side only)
+- /app/(auth) - Auth pages (sign-in, sign-up)
+- /app/dashboard - Protected dashboard routes
+- /components - Shared React components
+- /components/ui - shadcn/ui base components (do not modify directly)
+- /lib - Server-side utilities
+- /lib/db.ts - Drizzle database client
+- /lib/schema.ts - Database schema definitions
+- /hooks - Custom React hooks (client-side)
+- /types - TypeScript type definitions
 
 ## Coding Conventions
 - Server Components by default; add 'use client' only when needed
-- No TypeScript `any` — use proper types or `unknown`
-- All database queries through /lib/db.ts — never in components
+- No TypeScript `any` - use proper types or `unknown`
+- All database queries through /lib/db.ts - never in components
 - API routes validate input with Zod before touching the database
 - Error boundaries on all route-level layouts
 - Loading.tsx files for all routes that fetch data

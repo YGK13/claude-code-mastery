@@ -9,9 +9,12 @@
  *   - A source lesson with NO page on the site gets generated: frontmatter
  *     (title from the H1, description from the first paragraph), H1 stripped,
  *     relative ./x.md links rewritten to site routes.
- *   - A page that already exists is left alone. Several site pages carry
- *     executive-flavoured rewrites that are richer than the repo copy and
- *     must not be clobbered.
+ *   - A page that already exists is left alone, EXCEPT for its links: relative
+ *     ./x.md and ../module/README.md targets are always rewritten to site
+ *     routes. The repo keeps .md links so the modules read correctly on GitHub;
+ *     on the site those same links 404, so this pass is not optional.
+ *     Several site pages carry executive-flavoured rewrites that are richer
+ *     than the repo copy and must not otherwise be clobbered.
  *   - `--refresh-meta` rewrites ONLY the frontmatter of existing pages whose
  *     title/description were auto-generated (title-cased slug, "Part of ..."),
  *     replacing them with the real H1 and first-paragraph summary.
@@ -114,10 +117,11 @@ function clip(s, max = 155) {
 /** Hand-written descriptions for pages whose first paragraph is not a summary. */
 const DESCRIPTION_OVERRIDES = {
   'reference/commands-cheatsheet': 'Every Claude Code CLI flag, slash command and keyboard shortcut on one page. Startup options, session commands, permissions and model selection.',
-  'reference/hooks-patterns': 'Copy-paste hook configurations for Claude Code: settings.json structure, PreToolUse and PostToolUse patterns, notifications, git checkpoints and formatters.',
+  'reference/hooks-patterns': 'Copy-paste hook configurations for Claude Code: settings.json structure, PreToolUse and PostToolUse patterns, notifications and git checkpoints.',
   'reference/skills-catalog': 'A catalog of reusable Claude Code skills and slash commands, how to install them globally or per project and how to write your own.',
   'reference/troubleshooting': 'Fixes for the most common Claude Code problems: install and PATH errors, API key issues, permission prompts, context overflow and MCP server failures.',
-  'curriculum/05-mcp-integrations/installing-mcp-servers': 'How to install and configure the most useful MCP servers for Claude Code (GitHub, filesystem, Slack, Google Drive, databases) and register them in claude.json.',
+  'curriculum/05-mcp-integrations/installing-mcp-servers': 'How to install and configure the most useful MCP servers for Claude Code - GitHub, filesystem, Slack, Google Drive and databases - and register them.',
+  'curriculum/06-advanced-patterns/overview': 'Module 06: skills and slash commands, context management and a full multi-agent engineering workflow that takes a feature from idea to deployed code.',
   'curriculum/01-getting-started/permissions-and-safety': 'What Claude Code can do on your machine, what it asks permission for, how to allow or deny commands in settings.json and how to work safely with git.',
 };
 
@@ -186,7 +190,7 @@ function writePage(target, title, description, body, rel) {
   fs.writeFileSync(target, fm + body.trimEnd() + '\n');
 }
 
-let created = 0, refreshed = 0, skipped = 0;
+let created = 0, refreshed = 0, skipped = 0, relinked = 0;
 for (const entry of collectSources()) {
   const target = path.join(docs, entry.slug + '.md');
   const parsed = parseSource(entry.source, entry.moduleDir);
@@ -197,6 +201,18 @@ for (const entry of collectSources()) {
     created++;
     console.log(`${exists ? 'regenerated' : 'created'}  ${entry.slug}`);
     continue;
+  }
+
+  // Always repair .md links on existing pages, even without --refresh-meta.
+  // Nothing else about the page is touched.
+  {
+    const raw = fs.readFileSync(target, 'utf8');
+    const fixed = rewriteLinks(raw, entry.moduleDir);
+    if (fixed !== raw) {
+      fs.writeFileSync(target, fixed);
+      relinked++;
+      console.log(`relinked   ${entry.slug}`);
+    }
   }
 
   if (refreshMeta) {
@@ -230,4 +246,4 @@ for (const entry of collectSources()) {
   }
   skipped++;
 }
-console.log(`\n${created} created/regenerated, ${refreshed} frontmatter refreshed, ${skipped} left untouched.`);
+console.log(`\n${created} created/regenerated, ${refreshed} frontmatter refreshed, ${relinked} relinked, ${skipped} left untouched.`);
