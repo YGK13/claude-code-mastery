@@ -41,6 +41,12 @@ export default defineConfig({
             document.documentElement.dataset.theme = 'dark';
           })();`,
         },
+        // Vercel Web Analytics
+        {
+          tag: 'script',
+          attrs: { type: 'module' },
+          content: `import { inject } from '@vercel/analytics'; inject();`,
+        },
       ],
       social: [
         { icon: 'linkedin', label: 'LinkedIn', href: 'https://linkedin.com/in/yurikruman' },
