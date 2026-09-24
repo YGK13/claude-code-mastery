@@ -44,7 +44,7 @@ This means you've hit context limits. Strategies:
 1. Add the forgotten context to `CLAUDE.md` — it's re-read every session
 2. Use `/clear` to start a fresh context window for a new subtask
 3. Start a new session — `claude` — for unrelated tasks
-4. Use `--auto-compact` flag for long sessions
+4. Run `/compact` at a natural break (auto-compaction also runs when the window fills)
 
 ### Claude is editing the wrong file
 

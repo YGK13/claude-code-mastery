@@ -140,13 +140,13 @@ At the start of each session: `> Read CLAUDE.md and tell me what we were working
 
 ## Strategy 7: Auto-Compact
 
-Claude Code has an `--auto-compact` flag that automatically summarizes older parts of the conversation to stay within context limits:
+Claude Code compacts automatically: when the context window fills up, it summarizes older parts of the conversation so the session can keep going. There is no flag to turn on. You can also compact yourself at a good stopping point, with optional instructions about what to keep:
 
 ```bash
-claude --auto-compact
+/compact keep the API design decisions and the list of open bugs
 ```
 
-This is useful for very long sessions, but don't use it as a substitute for the strategies above — it compresses context, which can lose nuance.
+Run `/context` to see how full the window is. Auto-compaction is useful for very long sessions, but don't use it as a substitute for the strategies above — it compresses context, which can lose nuance.
 
 ---
 
