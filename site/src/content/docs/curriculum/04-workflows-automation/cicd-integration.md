@@ -11,7 +11,49 @@ Claude Code can run in GitHub Actions, giving you an AI code reviewer, automated
 
 ## Claude Code in GitHub Actions
 
-The setup: install Node, install Claude Code, set the API key as a repository secret.
+Use the official action, [`anthropics/claude-code-action@v1`](https://github.com/anthropics/claude-code-action). You don't install Node or Claude Code yourself; the action does it.
+
+**Fastest setup:** open `claude` in your repository and run `/install-github-app`. It installs the Claude GitHub App, adds the `ANTHROPIC_API_KEY` secret and opens a pull request with a working workflow.
+
+**Manual setup:** install the [Claude GitHub App](https://github.com/apps/claude), add `ANTHROPIC_API_KEY` to your repository secrets (Settings → Secrets and variables → Actions) and add a workflow file like the ones below. On a Claude subscription, use `claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}` (generate it with `claude setup-token`) instead of `anthropic_api_key`.
+
+The action has two modes:
+- **Interactive:** no `prompt` input. Claude responds when someone writes `@claude` in an issue or PR comment.
+- **Automation:** with a `prompt` input, Claude runs on any event (PRs, pushes, a schedule). It can only use the tools you allow in `claude_args` with `--allowedTools`.
+
+### Respond to @claude mentions
+
+```yaml
+# .github/workflows/claude.yml
+name: Claude Code
+
+on:
+  issue_comment:
+    types: [created]
+  pull_request_review_comment:
+    types: [created]
+
+jobs:
+  claude:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+      issues: write
+      id-token: write
+      actions: read
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+      - uses: anthropics/claude-code-action@v1
+        with:
+          anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
+```
+
+Now comment `@claude fix the failing test in auth.test.ts` on a PR and Claude does the work on a branch.
+
+### Review every pull request
 
 ```yaml
 # .github/workflows/claude-review.yml
@@ -25,54 +67,24 @@ jobs:
   review:
     runs-on: ubuntu-latest
     permissions:
-      pull-requests: write
       contents: read
-    
+      pull-requests: write
+      id-token: write
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
         with:
-          fetch-depth: 0  # full history so Claude can see the diff
-      
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
+          fetch-depth: 1
+      - uses: anthropics/claude-code-action@v1
         with:
-          node-version: '20'
-      
-      - name: Install Claude Code
-        run: npm install -g @anthropic-ai/claude-code
-      
-      - name: Run Claude Review
-        env:
-          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-        run: |
-          # Get the diff
-          git diff origin/${{ github.base_ref }}...HEAD > /tmp/pr-diff.txt
-          
-          # Run Claude review
-          cat /tmp/pr-diff.txt | claude --print \
-            "Review this PR diff. Focus on: bugs, security issues, missing error handling,
-             performance problems, and missing tests. Format output as markdown with
-             specific file:line references for each issue. Be concise." \
-            > /tmp/review.md
-          
-          echo "REVIEW_CONTENT<<EOF" >> $GITHUB_ENV
-          cat /tmp/review.md >> $GITHUB_ENV
-          echo "EOF" >> $GITHUB_ENV
-      
-      - name: Post Review Comment
-        uses: actions/github-script@v7
-        with:
-          script: |
-            github.rest.issues.createComment({
-              issue_number: context.issue.number,
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              body: process.env.REVIEW_CONTENT
-            })
+          anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
+          prompt: |
+            Review pull request #${{ github.event.pull_request.number }} in ${{ github.repository }}.
+            Read the diff with `gh pr diff ${{ github.event.pull_request.number }}`.
+            Focus on bugs, security issues, missing error handling, performance problems
+            and missing tests. Give specific file:line references and be concise.
+            Post the review with `gh pr comment ${{ github.event.pull_request.number }} --body "..."`.
+          claude_args: '--allowedTools "Bash(gh pr diff:*),Bash(gh pr view:*),Bash(gh pr comment:*)"'
 ```
-
-Add `ANTHROPIC_API_KEY` to your repository secrets (Settings → Secrets → Actions).
 
 ---
 
@@ -96,24 +108,19 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: write
-    
+      id-token: write
     steps:
       - uses: actions/checkout@v4
-      
-      - uses: actions/setup-node@v4
-        with:
-          node-version: '20'
-      
-      - run: npm install -g @anthropic-ai/claude-code
-      
+
       - name: Update API docs
-        env:
-          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-        run: |
-          echo "Update docs/api.md to reflect the current exported functions in src/. 
-                Keep the existing structure, just update content that changed." \
-            | claude --print > docs/api.md
-      
+        uses: anthropics/claude-code-action@v1
+        with:
+          anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
+          prompt: |
+            Update docs/api.md to reflect the current exported functions in src/.
+            Keep the existing structure; only change content that is out of date.
+          claude_args: '--allowedTools "Read,Glob,Grep,Edit(docs/api.md),Write(docs/api.md)"'
+
       - name: Commit and push if changed
         run: |
           git config user.email "claude-bot@yourapp.com"
@@ -127,7 +134,7 @@ jobs:
 
 ## Quality Gate: Block Merges with Issues
 
-Use Claude as a quality gate that can block a PR:
+Use Claude as a quality gate that can block a PR. Claude writes its verdict to a file; the next step fails the job on `FAIL`:
 
 ```yaml
 # .github/workflows/quality-gate.yml
@@ -140,37 +147,37 @@ on:
 jobs:
   quality:
     runs-on: ubuntu-latest
-    
+    permissions:
+      contents: read
+      pull-requests: read
+      id-token: write
     steps:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
-      
-      - run: npm install -g @anthropic-ai/claude-code
-      
+
       - name: Security check
-        env:
-          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        uses: anthropics/claude-code-action@v1
+        with:
+          anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
+          prompt: |
+            Run `git diff origin/${{ github.base_ref }}...HEAD` and check the diff for security
+            vulnerabilities (SQL injection, XSS, hardcoded secrets, insecure dependencies,
+            auth bypasses). Write the result to quality-result.txt: the first line must be
+            exactly PASS or FAIL, followed by a description of each issue found.
+          claude_args: '--allowedTools "Bash(git diff:*),Read,Write(quality-result.txt)"'
+
+      - name: Enforce result
         run: |
-          git diff origin/${{ github.base_ref }}...HEAD > /tmp/diff.txt
-          
-          RESULT=$(cat /tmp/diff.txt | claude --print \
-            "Check this diff for security vulnerabilities (SQL injection, XSS, hardcoded secrets,
-             insecure dependencies, auth bypasses). Reply with PASS if no issues, or FAIL followed
-             by a description of each issue found. No other text.")
-          
-          echo "Security check result: $RESULT"
-          
-          if echo "$RESULT" | grep -q "^FAIL"; then
+          cat quality-result.txt
+          if ! head -1 quality-result.txt | grep -qx "PASS"; then
             echo "::error::Security issues found in this PR"
-            echo "$RESULT"
             exit 1
           fi
-          
           echo "Security check passed"
 ```
 
-A `FAIL` response from Claude causes the workflow to exit with code 1, blocking the PR merge.
+Anything other than a clean `PASS` (including a missing file) fails the job, which blocks the merge when the check is required in branch protection.
 
 ---
 
@@ -190,44 +197,38 @@ on:
 jobs:
   health-check:
     runs-on: ubuntu-latest
-    
+    permissions:
+      contents: read
+      issues: write
+      id-token: write
     steps:
       - uses: actions/checkout@v4
-      
-      - run: npm install -g @anthropic-ai/claude-code
-      
+
       - name: Generate health report
-        env:
-          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-        run: |
-          echo "Analyze this codebase and generate a health report covering:
-                1. Technical debt (specific examples)
-                2. Outdated dependencies (check package.json)
-                3. Test coverage gaps (look at test files vs source files)
-                4. Documentation gaps
-                5. Top 3 recommended improvements this week
-                Format as a markdown report with a severity rating for each item." \
-            | claude --print > health-report.md
-      
-      - name: Read report into env
-        run: |
-          echo "REPORT_BODY<<EOF" >> $GITHUB_ENV
-          cat health-report.md >> $GITHUB_ENV
-          echo "EOF" >> $GITHUB_ENV
-          echo "TODAY=$(date -u +%F)" >> $GITHUB_ENV
-      
-      - name: Create GitHub Issue with report
-        uses: actions/github-script@v7
+        uses: anthropics/claude-code-action@v1
         with:
-          script: |
-            await github.rest.issues.create({
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              title: `Weekly Health Report — ${process.env.TODAY}`,
-              body: process.env.REPORT_BODY,
-              labels: ['health-report']
-            });
+          anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
+          prompt: |
+            Analyze this codebase and write a health report to health-report.md covering:
+            1. Technical debt (specific examples)
+            2. Outdated dependencies (check package.json)
+            3. Test coverage gaps (look at test files vs source files)
+            4. Documentation gaps
+            5. Top 3 recommended improvements this week
+            Format it as markdown with a severity rating for each item.
+          claude_args: '--allowedTools "Read,Glob,Grep,Write(health-report.md)"'
+
+      - name: Create GitHub Issue with report
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh issue create \
+            --title "Weekly Health Report - $(date -u +%F)" \
+            --body-file health-report.md \
+            --label health-report
 ```
+
+The `health-report` label must exist in the repository first.
 
 ---
 
@@ -238,7 +239,7 @@ Claude Code in CI can get expensive at scale. Control costs:
 1. **Use Haiku for simple checks** — it's 10x cheaper than Sonnet
 2. **Cache results** — if nothing changed in a directory, skip that check
 3. **Limit to changed files only** — use `git diff --name-only` to scope reviews
-4. **Set `max_tokens`** — for short-answer quality gates, 100 tokens is enough
+4. **Cap the run** — add `--max-turns 5` (and `--model claude-haiku-4-5-20251001` for simple checks) to `claude_args`
 
 ```bash
 # Only review TypeScript files that changed
