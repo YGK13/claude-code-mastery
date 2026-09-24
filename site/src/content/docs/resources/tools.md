@@ -12,7 +12,7 @@ This is the complete executive AI stack. Use it as a checklist.
 | **Node.js v20+** | Runtime for Claude Code and Next.js | Free | [nodejs.org](https://nodejs.org) |
 | **Git** | Version control / undo system | Free | [git-scm.com](https://git-scm.com) |
 | **VS Code** | Code editor | Free | [code.visualstudio.com](https://code.visualstudio.com) |
-| **Claude Code** | The AI coding agent | Free CLI + API usage | `npm install -g @anthropic-ai/claude-code` |
+| **Claude Code** | The AI coding agent | Claude subscription or API usage | `curl -fsSL https://claude.ai/install.sh \| bash` (Windows: `irm https://claude.ai/install.ps1 \| iex`) |
 | **Anthropic API key** | Powers Claude | ~$10-30/month at learning pace | [console.anthropic.com](https://console.anthropic.com) |
 | **GitHub account** | Code hosting + version sync | Free | [github.com](https://github.com) |
 

@@ -5,48 +5,42 @@ description: Part of 01-getting-started in the PortLev Learn Claude Code curricu
 
 # Installation
 
-Claude Code runs as a CLI tool on top of Node.js. Here's the complete setup for every platform.
+Claude Code installs with a single command. The native installer needs no Node.js, and it keeps itself up to date automatically.
 
 ---
 
-## Step 1 — Install Node.js
+## Step 1 — Install Claude Code
 
-Claude Code requires Node.js v18 or higher. Use v20 LTS or v22 for best results.
-
-**Mac (Homebrew):**
+**Mac, Linux or WSL:**
 ```bash
-brew install node
+curl -fsSL https://claude.ai/install.sh | bash
 ```
 
-**Windows:**
-Download the installer from [nodejs.org](https://nodejs.org). During install, check "Add to PATH".
-
-**Linux (Ubuntu/Debian):**
-```bash
-curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash -
-sudo apt-get install -y nodejs
+**Windows (PowerShell):**
+```powershell
+irm https://claude.ai/install.ps1 | iex
 ```
 
-Verify the install:
-```bash
-node --version   # should print v20.x.x or higher
-npm --version    # should print 10.x.x or higher
+**Windows (Command Prompt):**
+```batch
+curl -fsSL https://claude.ai/install.cmd -o install.cmd && install.cmd && del install.cmd
 ```
 
----
+Prefer a package manager? `brew install --cask claude-code` (Mac) and `winget install Anthropic.ClaudeCode` (Windows) also work, but they don't auto-update: run `brew upgrade claude-code` or `winget upgrade Anthropic.ClaudeCode` from time to time.
 
-## Step 2 — Install Claude Code
-
-```bash
-npm install -g @anthropic-ai/claude-code
-```
+On native Windows, install [Git for Windows](https://git-scm.com/downloads/win) as well so Claude Code can use Bash.
 
 Verify:
 ```bash
 claude --version
+claude doctor      # checks the install and your settings
 ```
 
-You should see a version number like `1.x.x`.
+---
+
+## Step 2 — Sign in
+
+Run `claude` and follow the prompts. You can sign in with a Claude subscription (Pro, Max, Team or Enterprise) or with an Anthropic Console account that bills per token. If you use a Console API key instead, follow Steps 3 and 4.
 
 ---
 
@@ -130,11 +124,12 @@ Set a spending limit in the Anthropic console under **Billing** to avoid surpris
 
 **"command not found: claude" after install**
 
-npm's global bin directory isn't in your PATH. Fix:
+The install directory isn't in your PATH. The installer puts `claude` in `~/.local/bin` (Mac/Linux) or `%USERPROFILE%\.local\bin` (Windows). Fix on Mac/Linux:
 ```bash
-npm config get prefix    # shows where global packages are installed
-# add that path + /bin to your PATH
+echo 'export PATH="$HOME/.local/bin:$PATH"' >> ~/.zshrc   # or ~/.bashrc
+source ~/.zshrc
 ```
+On Windows, add `%USERPROFILE%\.local\bin` to your user PATH and open a new terminal.
 
 **"Invalid API key"**
 
