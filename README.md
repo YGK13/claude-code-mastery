@@ -68,10 +68,10 @@ Before starting Module 01, install these:
 
 | Tool | Purpose | Install |
 |------|---------|---------|
-| Node.js v20+ | JavaScript runtime | [nodejs.org](https://nodejs.org) |
+| Node.js v20+ | JavaScript runtime for the web-app modules (not needed to install Claude Code) | [nodejs.org](https://nodejs.org) |
 | Git | Version control | [git-scm.com](https://git-scm.com) |
 | VS Code | Editor | [code.visualstudio.com](https://code.visualstudio.com) |
-| Claude Code | The AI coding agent | `npm install -g @anthropic-ai/claude-code` |
+| Claude Code | The AI coding agent | `curl -fsSL https://claude.ai/install.sh \| bash` (Windows: `irm https://claude.ai/install.ps1 \| iex`) |
 | Anthropic API key | Powers Claude | [console.anthropic.com](https://console.anthropic.com) |
 
 ---
@@ -79,17 +79,15 @@ Before starting Module 01, install these:
 ## Quick Start
 
 ```bash
-# 1. Install Claude Code
-npm install -g @anthropic-ai/claude-code
+# 1. Install Claude Code (native installer; Windows PowerShell: irm https://claude.ai/install.ps1 | iex)
+curl -fsSL https://claude.ai/install.sh | bash
 
-# 2. Set your API key
-export ANTHROPIC_API_KEY=sk-ant-...
-
-# 3. Open any project folder and start a session
+# 2. Open any project folder and start a session (sign in when prompted,
+#    or export ANTHROPIC_API_KEY=sk-ant-... first to use an API key)
 cd my-project
 claude
 
-# 4. Your first prompt
+# 3. Your first prompt
 > Create a React app that shows today's date and lets users add tasks to a todo list
 ```
 

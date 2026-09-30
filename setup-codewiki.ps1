@@ -9,6 +9,8 @@ param(
 
 $CODEWIKI = "C:\Users\yurik\AppData\Roaming\Python\Python314\Scripts\codewiki.exe"
 $REPO_DIR = $PSScriptRoot  # this file is in the repo root
+$MODEL = "claude-sonnet-5"                     # one place to change the main model
+$FALLBACK_MODEL = "claude-haiku-4-5-20251001"
 
 Write-Host "Configuring CodeWiki with Anthropic..." -ForegroundColor Cyan
 
@@ -16,9 +18,9 @@ Write-Host "Configuring CodeWiki with Anthropic..." -ForegroundColor Cyan
     --api-key $ApiKey `
     --base-url "https://api.anthropic.com" `
     --provider anthropic `
-    --main-model "claude-sonnet-4-6" `
-    --cluster-model "claude-sonnet-4-6" `
-    --fallback-model "claude-haiku-4-5-20251001" `
+    --main-model $MODEL `
+    --cluster-model $MODEL `
+    --fallback-model $FALLBACK_MODEL `
     --max-tokens 8192
 
 if ($LASTEXITCODE -ne 0) {

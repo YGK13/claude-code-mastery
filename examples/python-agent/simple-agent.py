@@ -14,6 +14,9 @@ import sys
 import json
 import anthropic
 
+# Default model; override with the CLAUDE_MODEL environment variable.
+MODEL = os.getenv("CLAUDE_MODEL", "claude-sonnet-5")  # one place to change the model
+
 # ============================================================
 # TOOL DEFINITIONS
 # ============================================================
@@ -109,7 +112,7 @@ def run_agent(question: str) -> str:
 
     while True:
         response = client.messages.create(
-            model="claude-sonnet-4-6",
+            model=MODEL,
             max_tokens=1024,
             tools=TOOLS,
             messages=messages

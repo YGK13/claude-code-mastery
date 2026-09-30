@@ -33,7 +33,7 @@ logger = logging.getLogger(__name__)
 # ============================================================
 # CONSTANTS
 # ============================================================
-MODEL = "claude-sonnet-4-6"
+MODEL = os.getenv("CLAUDE_MODEL", "claude-sonnet-5")  # override with CLAUDE_MODEL
 MAX_TOKENS = 4096
 MAX_RETRIES = 3
 

@@ -1,14 +1,16 @@
 # Skills Catalog
 
-A skills catalog is a directory of available slash commands for Claude Code. Install skills globally in `~/.claude/skills/` or per-project in `.claude/skills/`.
+A skills catalog is a directory of available slash commands for Claude Code. Install skills globally in `~/.claude/skills/<skill-name>/SKILL.md` or per-project in `.claude/skills/<skill-name>/SKILL.md`.
 
 ---
 
 ## How to Install a Skill
 
-1. Create the file: `~/.claude/skills/skill-name.md`
-2. Write the instructions (see [Module 06](../modules/06-advanced-patterns/skills-slash-commands.md))
-3. In any Claude Code session, type `/skill-name`
+1. Create the folder: `mkdir -p ~/.claude/skills/skill-name`
+2. Write `~/.claude/skills/skill-name/SKILL.md` with YAML frontmatter (`name`, `description`) and the instructions (see [Module 06](../modules/06-advanced-patterns/skills-slash-commands.md))
+3. Start a new Claude Code session and type `/skill-name`, or ask for something that matches the `description`
+
+A loose file like `~/.claude/skills/skill-name.md` does not load. The folder name is the command name.
 
 ---
 
@@ -81,15 +83,14 @@ Walks a new team member through the codebase: architecture overview, key files t
 
 ## Skill Template
 
-Copy this to start a new skill:
+Copy this to `.claude/skills/skill-name/SKILL.md` to start a new skill:
 
 ```markdown
-# skill-name
-
-One-sentence description of what this skill does.
-
-## When to Use
-[Describe the trigger: "Use when you've finished a feature and want to review it"]
+---
+name: skill-name
+description: One sentence on what this skill does. Use when [the words a user would say]. Not for [neighbouring tasks].
+# disable-model-invocation: true   # uncomment for skills with side effects (only /skill-name runs it)
+---
 
 ## Steps
 
@@ -112,7 +113,7 @@ One-sentence description of what this skill does.
 
 ## Skill Naming Conventions
 
-- Use kebab-case: `/new-component` not `/newComponent`
+- Use kebab-case for the folder and `name`: `/new-component` not `/newComponent`
 - Use verb-noun pairs: `/create-feature`, `/review-security`, `/generate-tests`
 - Keep names short — you'll type them often
 - Namespace team skills with a prefix: `/team-deploy`, `/team-release`

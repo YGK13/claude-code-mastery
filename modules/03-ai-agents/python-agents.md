@@ -23,13 +23,15 @@ A "bare bones" agent: just Claude, no tools.
 
 ```python
 """simple_agent.py — Bare bones Claude agent."""
+import os
 import anthropic
 
 client = anthropic.Anthropic()
+MODEL = os.getenv("CLAUDE_MODEL", "claude-sonnet-5")  # one place to change the model
 
 def ask(question: str) -> str:
     response = client.messages.create(
-        model="claude-sonnet-4-6",
+        model=MODEL,
         max_tokens=1024,
         messages=[{"role": "user", "content": question}]
     )
@@ -50,10 +52,12 @@ Tools let Claude take actions in the world. You define the tool, Claude decides 
 
 ```python
 """agent_with_tools.py — Agent that can look things up."""
+import os
 import anthropic
 import json
 
 client = anthropic.Anthropic()
+MODEL = os.getenv("CLAUDE_MODEL", "claude-sonnet-5")
 
 # ============================================================
 # Tool definitions — what Claude is allowed to do
@@ -120,7 +124,7 @@ def run_agent(user_message: str) -> str:
     
     while True:
         response = client.messages.create(
-            model="claude-sonnet-4-6",
+            model=MODEL,
             max_tokens=4096,
             tools=TOOLS,
             messages=messages
@@ -178,7 +182,7 @@ This loop is the foundation of every agent. Everything else is just tools.
 
 ```
 > Build a Python file called research_agent.py that is an AI agent using the 
-  Anthropic Python SDK (claude-sonnet-4-6 model).
+  Anthropic Python SDK (claude-sonnet-5 model, kept in a MODEL constant).
   
   The agent should have two tools:
   1. web_search(query: str) — searches the web using the SerpAPI (use the 
@@ -216,7 +220,7 @@ class ConversationAgent:
         self.messages.append({"role": "user", "content": user_message})
         
         response = self.client.messages.create(
-            model="claude-sonnet-4-6",
+            model=MODEL,
             max_tokens=4096,
             system=self.system,
             tools=TOOLS,

@@ -83,9 +83,11 @@ The minimum viable agent with tool use, from Module 03:
 
 ```python
 """agent.py — Bare-bones Claude agent with tools."""
+import os
 import anthropic
 
 client = anthropic.Anthropic()
+MODEL = os.getenv("CLAUDE_MODEL", "claude-sonnet-5")  # one place to change the model
 
 TOOLS = [
     {
@@ -105,7 +107,7 @@ def run(user_message):
     messages = [{"role": "user", "content": user_message}]
     while True:
         response = client.messages.create(
-            model="claude-sonnet-4-6",
+            model=MODEL,
             max_tokens=4096,
             tools=TOOLS,
             messages=messages

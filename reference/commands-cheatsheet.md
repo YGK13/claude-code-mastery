@@ -7,8 +7,7 @@
 | `claude` | Start an interactive session in the current directory |
 | `claude "prompt"` | Start a session with an initial prompt |
 | `claude --print "prompt"` | Run non-interactively, print output and exit |
-| `claude --model claude-opus-4-7` | Use a specific model |
-| `claude --auto-compact` | Auto-summarize context when it fills up |
+| `claude --model claude-opus-5-5` | Use a specific model (aliases like `opus` / `sonnet` also work) |
 | `claude --dangerously-skip-permissions` | Skip all permission prompts (use with caution) |
 
 ## Slash Commands (in-session)
@@ -19,11 +18,11 @@
 | `/status` | Show session info: model, token usage, working directory |
 | `/cost` | Show token usage and estimated cost so far |
 | `/clear` | Clear conversation history (files are NOT deleted) |
-| `/compact` | Manually trigger context compaction |
+| `/compact` | Manually trigger context compaction (auto-compaction is on by default) |
 | `/exit` or `/quit` | End the session |
 | `/config` | Open configuration settings |
 | `/mcp` | List connected MCP servers and their tools |
-| `/memory` | Show current memory / context summary |
+| `/memory` | Open your CLAUDE.md memory files for editing |
 
 ## Keyboard Shortcuts
 
@@ -37,7 +36,7 @@
 
 ## Custom Skill Commands
 
-These run when you have the matching `.md` file in `~/.claude/skills/`:
+These run when you have the matching skill folder, `~/.claude/skills/<name>/SKILL.md` (or `.claude/skills/<name>/SKILL.md` in the project):
 
 | Command | Typical use |
 |---------|------------|
@@ -67,8 +66,8 @@ Install gstack for 30+ production-ready skills: see Module 06.
 | `~/.claude/settings.json` | Global permissions, hooks, MCP |
 | `.claude/settings.json` | Project-level overrides |
 | `~/.claude/claude.json` | MCP server registrations |
-| `~/.claude/skills/` | Global skill definitions |
-| `.claude/skills/` | Project-specific skills |
+| `~/.claude/skills/<name>/SKILL.md` | Global skill definitions |
+| `.claude/skills/<name>/SKILL.md` | Project-specific skills |
 | `CLAUDE.md` (project root) | Project configuration for Claude |
 | `~/.claude/CLAUDE.md` | Global configuration |
 
