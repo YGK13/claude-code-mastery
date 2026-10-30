@@ -22,6 +22,7 @@ export default defineConfig({
         './src/styles/portlev-brand.css',
       ],
       head: [
+        { tag: 'script', attrs: { defer: true, src: '/_vercel/insights/script.js' } },
         { tag: 'link', attrs: { rel: 'preconnect', href: 'https://fonts.googleapis.com' } },
         { tag: 'link', attrs: { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: true } },
         {
